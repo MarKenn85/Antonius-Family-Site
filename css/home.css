@@ -1,10 +1,12 @@
-html, body {
+/*
+  html, body {
   width: 1024px;
   height: 1024px;
   margin: 0;
   padding: 0;
   overflow: hidden; /* no scrollbars */
-}
+
+*/
 
 .container {
   box-sizing: border-box;
@@ -17,11 +19,9 @@ body#home {
   color: #2b2118;
   font-family: 'Libre Baskerville', serif;
   margin: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -31,21 +31,21 @@ body#home {
 .container {
   position: absolute;
   text-align: center;
-  width: 95vw;
-  max-width: 900px;
-  height: 800px;
-  margin: auto;
-  padding: 1.5rem 2rem 2rem 1.5rem;
+  width: 95vw;              /* fills 90% of the viewport width */
+  max-width: 900px;         /* stays manageable on big screens */
+  max-height: 95vh;
+  /*margin: auto;*/
+  padding: 2rem;
   border: 2px solid #b8a27a;
   background-color: #fffaf3;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
   animation: fadeIn 1.5s ease-out;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 /* === Emblem === */
@@ -99,7 +99,7 @@ p.note {
 /* === Menu toggle === */
 #menu-toggle {
   position: fixed;      /* instead of absolute */
-  top: 1rem;
+  top: 0.1rem !important;
   left: 1rem;
   width: 36px;
   cursor: pointer;

@@ -1,8 +1,8 @@
 /* === Sidebar (styled like container) === */
 .sidebar {
   position: fixed;
-  top: 10px;
-  bottom: 10px;
+  top: 22px;
+  bottom: 22px;
   left: 0;
   width: 325px;
   background-color: #fffaf3;

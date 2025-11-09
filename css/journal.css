@@ -1,10 +1,10 @@
-html, body {
+/*html, body {
   width: 1024px;
   height: 1024px;
   margin: 0;
   padding: 0;
   overflow: hidden; /* no scrollbars */
-}
+/*}*/
 
 .container, .sidebar, .journal-content {
   box-sizing: border-box;
@@ -30,8 +30,8 @@ body#journal {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 95vw;
-  height: 800px; /* fixed content size */
-  margin: auto;
+  height: 93vh;
+  /* margin: auto;*/
   background-color: #fffaf3;
   border: 2px solid #b8a27a;
   border-radius: 32px;
@@ -41,10 +41,12 @@ body#journal {
   align-items: stretch;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1.5rem 2rem 2rem 1.5rem; /* extra bottom padding for arrows */
-  padding-bottom: 4rem;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
   box-sizing: border-box;
   z-index: 1000;
+  overflow: hidden;
 }
 
 .journal-container.loading {
@@ -74,17 +76,20 @@ body#journal {
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: 0.0rem;
   overflow: hidden;
   height: 100%;         /* ensure it fills the container */
   min-height: 0;        /* allows child to scroll inside flex */
+  font-size: 1.225rem;     /* 👈 THIS controls text size */
+  letter-spacing: 0.02em;  /* subtle spacing between letters */
+  line-height: 1.26;       /* vertical spacing between lines */
+  margin: 0 0 0 0;      /* spacing between paragraphs */
 }
 
 /* Fixed lineage + title area */
 .text-header {
   flex: 0 0 auto;
   margin-top: 2rem;
-  margin-bottom: 0.0rem;
+  margin-bottom: 0.3rem;
 }
 
 .text-header h2 {
@@ -113,12 +118,9 @@ body#journal {
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  padding-right: 1rem;
+  padding-right: 0.5rem;
   padding-bottom: 2rem;
-  font-size: 1.225rem;     /* 👈 THIS controls text size */
-  letter-spacing: 0.02em;  /* subtle spacing between letters */
-  line-height: 1.26;       /* vertical spacing between lines */
-  margin: 0 0 1rem 0;      /* spacing between paragraphs */
+  margin-bottom: 5rem;
 
   /* hide scrollbar but keep scroll */
   scrollbar-width: none; /* Firefox */
@@ -133,6 +135,7 @@ body#journal {
 .nav-arrows {
   position: absolute;
   bottom: 0.1rem;
+  left: 8rem;
   width: 100%;
   text-align: center;
   display: flex;

@@ -19,7 +19,7 @@ body#index {
   text-align: center;
   width: 95vw;              /* fills 90% of the viewport width */
   max-width: 900px;         /* stays manageable on big screens */
-  max-height: 90vh;         /* prevents overflow on smaller screens */
+  max-height: 95vh;         /* prevents overflow on smaller screens */
   padding: 3rem;
   border: 2px solid #b8a27a;
   background-color: #fffaf3;

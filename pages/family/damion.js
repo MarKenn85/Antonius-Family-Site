@@ -1,5 +1,5 @@
 window.damionPage = {
-    name: "Damion Antonius",
+    name: "Damion Draco Antonius",
     title: "Pater Famiglia",
     parent: "antonia",
     portrait: "images/portraits/damion.png",

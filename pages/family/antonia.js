@@ -40,17 +40,17 @@ window.antoniaPage = {
       She wasn't the best mother, and he wasn't the most disciplined child, but she did instill, in all her children, the values and principles this family is built around.
       <br>
       <br>
-      Now, with her children all grown, Antonia spends a great deal of time away from Rome. I receive numerous letters from her often, telling me of the things she has seen and experienced.
+      Now, with her children all grown, Antonia spends a great deal of time away from Rome. I receive frequent letters from her, telling me of the things she has seen and experienced.
       </p>
 
       <p>
       Many times, she travels with her sisters, Selene and Airiana, exploring the exotic imports of the Empire before they reach us.
       <br>
       <br>
-      I also receive more private letters from her as well. She tells me of the latest happenings in the provinces—the upheavals, conflicts.
+      I also receive more private letters from her. She tells me of the latest happenings in the provinces—the upheavals, conflicts.
       <br>
       <br>
-      She will often meet with the local leaders, even spend the night with them, carefully extracting information that might not make it to Rome ordinarily. 
+      She will often meet with the local leaders, even spending the night with them, carefully extracting information that might not make it to Rome ordinarily. 
       <br>
       <br>
       I remember one letter she sent me, telling me of how she had heard of a local magistrate dealing with a rival's pathetic attempts to usurp his power.
@@ -79,7 +79,10 @@ window.antoniaPage = {
       My dearest Antonia is the epitome of Roman elegance and beauty, while also a great player of the political game.
       <br>
       <br>
-      Her cunning, abilities and intelligence have led her to become a very important woman of her generation. She has come far, and I believe the Roman Empire will go even further because of her.
+      Her cunning, abilities and intelligence have led her to become a very important woman of her generation.
+      <br>
+      <br>
+      She has come far, and I believe the Roman Empire will go even further because of her.
       </p>
     `
     ]
