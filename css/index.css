@@ -1,0 +1,101 @@
+/* === General layout for square HUD (e.g., 1024×1024) === */
+body#index {
+  background-color: #eeebe4;
+  color: #2b2118;
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* no scrollbars */
+  opacity: 0;
+  animation: fadeFromWhite 2s ease-out forwards;
+}
+
+/* === Content container === */
+.container {
+  text-align: center;
+  width: 95vw;              /* fills 90% of the viewport width */
+  max-width: 900px;         /* stays manageable on big screens */
+  max-height: 90vh;         /* prevents overflow on smaller screens */
+  padding: 3rem;
+  border: 2px solid #b8a27a;
+  background-color: #fffaf3;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  animation: fadeIn 1.0s ease-out;
+  animation-delay: 3.0s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  overflow: hidden;         /* guarantees no scrollbars */
+}
+
+/* === Emblem === */
+.emblem {
+  width: 140px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  opacity: 0.95;
+}
+
+/* === Text === */
+h1 {
+  font-size: 2.2rem;
+  letter-spacing: 0.08em;
+  color: #5a422a;
+  font-variant: small-caps;
+  text-transform: none;
+  margin: 0.8rem 0 1rem 0;
+}
+
+p {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin: 0.8rem 0;
+}
+
+p.closing {
+  margin-top: 1.2rem;
+  font-style: italic;
+}
+
+/* === Continue Button === */
+.continue-btn {
+  align-self: center;
+  margin-top: 1.8rem;
+  padding: 0.8rem 1.4rem;
+  background-color: #b8a27a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.continue-btn:hover {
+  background-color: #a28c64;
+  transform: translateY(-2px);
+}
+
+/* === Simple fade animation === */
+@keyframes fadeFromWhite {
+  0% {
+    background-color: #fff; /* matches HUD startup white */
+    opacity: 0;
+  }
+  30% {
+    background-color: #fff;
+    opacity: 0.5;
+  }
+  100% {
+    background-color: #eeebe4; /* parchment tone */
+    opacity: 1;
+  }
+}

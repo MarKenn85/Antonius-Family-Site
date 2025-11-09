@@ -1,0 +1,147 @@
+/* === Sidebar (styled like container) === */
+.sidebar {
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 325px;
+  background-color: #fffaf3;
+  border-right: 2px solid #b8a27a;
+  border-radius: 0 32px 32px 0;
+  box-sizing: border-box;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.25);
+  padding: 1.8rem;
+  transform: translateX(-270px);
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1001;
+  overflow-y: scroll;             /* allows scrolling */
+  overflow-x: hidden;
+  max-height: calc(100vh - 20px);
+  transform: translateX(-310px); /* keeps it within screen */
+}
+
+/* === Hide scrollbar but preserve scroll behavior === */
+.sidebar::-webkit-scrollbar {
+  width: 0px;       /* hides scrollbar on Chrome/Safari */
+  background: none;
+}
+.sidebar {
+  scrollbar-width: none;          /* hides scrollbar on Firefox */
+  -ms-overflow-style: none;       /* hides scrollbar on IE/Edge */
+}
+
+.sidebar.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* === Sidebar header === */
+#sidebar-content h2 {
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  color: #5a422a;
+  border-bottom: 1px solid #b8a27a;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+/* === Marcus title === */
+.sidebar-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5rem;
+  font-variant: small-caps;
+  color: #5a422a;
+  text-align: center;
+  border-bottom: 2px solid #b8a27a;
+  margin-bottom: 1.0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.0rem;
+  letter-spacing: 0.08em;
+  cursor: default;
+  user-select: none;
+}
+
+/* === Section headers (dropdown toggles) === */
+.section-header {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.3rem;
+  color: #5a422a;
+  margin-top: 0.0rem;
+  padding: 0.3rem 0;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.section-header:hover {
+  color: #a28c64;
+}
+
+/* Add subtle arrow indicator */
+.section-header::after {
+  content: "▸";
+  float: right;
+  font-size: 0.9em;
+  transition: transform 0.2s ease;
+}
+
+.nav-list.open ~ .section-header::after,
+.section-header.active::after {
+  transform: rotate(90deg);
+}
+
+/* === Dropdown lists === */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  border-left: 1px solid #e4d6b2;
+  margin-left: 0.4rem;
+}
+
+.nav-list.open {
+  max-height: 400px; /* adjustable depending on how many items */
+}
+
+.nav-list li {
+  margin: 0.25rem 0;
+}
+
+.nav-list a {
+  color: #2b2118;
+  text-decoration: none;
+  font-size: 1.0rem;
+  display: block;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-list a:hover {
+  background-color: #efe6d2;
+  color: #a28c64;
+}
+
+/* === Menu toggle button === */
+#menu-toggle {
+  position: fixed;
+  top: 0.7rem;
+  left: 8rem;
+  width: 48px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  z-index: 1002;
+}
+
+#menu-toggle:hover {
+  opacity: 1;
+}

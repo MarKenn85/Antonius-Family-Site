@@ -1,0 +1,119 @@
+html, body {
+  width: 1024px;
+  height: 1024px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* no scrollbars */
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1024px;
+  max-height: 1024px;
+}
+
+body#main {
+  background-color: #eeebe4;
+  color: #2b2118;
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === Content container === */
+.container {
+  position: absolute;
+  text-align: center;
+  width: 95vw;
+  max-width: 900px;
+  height: 800px;
+  margin: auto;
+  padding: 1.5rem 2rem 2rem 1.5rem;
+  border: 2px solid #b8a27a;
+  background-color: #fffaf3;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  animation: fadeIn 1.5s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Emblem === */
+.emblem {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1.2rem;
+  opacity: 0.95;
+}
+
+/* === Title === */
+h1 {
+  font-size: 2.2rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: #5a422a;
+  margin-bottom: 1.5rem;
+}
+
+/* === Introductory text === */
+p.intro {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* === Note text === */
+p.note {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* === Read Button === */
+.read-btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  background-color: #b8a27a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.read-btn:hover {
+  background-color: #a28c64;
+  transform: translateY(-2px);
+}
+
+/* === Menu toggle === */
+#menu-toggle {
+  position: fixed;      /* instead of absolute */
+  top: 1rem;
+  left: 1rem;
+  width: 36px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  z-index: 1000;        /* ensures it stays above sidebar & content */
+}
+
+#menu-toggle:hover {
+  opacity: 1;
+}
+
+/* === Fade animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

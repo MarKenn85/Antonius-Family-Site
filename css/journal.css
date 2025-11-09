@@ -1,0 +1,214 @@
+html, body {
+  width: 1024px;
+  height: 1024px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* no scrollbars */
+}
+
+.container, .sidebar, .journal-content {
+  box-sizing: border-box;
+  max-width: 1024px;
+  max-height: 1024px;
+}
+
+body#journal {
+  background-color: #eeebe4;
+  color: #2b2118;
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* === Journal container === */
+.journal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95vw;
+  height: 800px; /* fixed content size */
+  margin: auto;
+  background-color: #fffaf3;
+  border: 2px solid #b8a27a;
+  border-radius: 32px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row; /* side-by-side layout */
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 2rem 2rem 1.5rem; /* extra bottom padding for arrows */
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.journal-container.loading {
+  opacity: 0.3;
+}
+
+/* === Portrait === */
+.portrait-area {
+  flex: 0 0 325px;      /* slightly smaller fixed width */
+  text-align: center;
+  align-self: flex-start;
+  margin-top: 2rem;
+  margin-left: -2rem;
+  margin-right: -2.5rem;
+}
+
+.portrait-area img {
+  width: 275px;         /* fixed size instead of 100% */
+  height: auto;
+  border-radius: 24px;
+  border: 2px solid #b8a27a;
+  background-color: #f8f6f2;
+}
+
+/* === Text area === */
+.text-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.0rem;
+  overflow: hidden;
+  height: 100%;         /* ensure it fills the container */
+  min-height: 0;        /* allows child to scroll inside flex */
+}
+
+/* Fixed lineage + title area */
+.text-header {
+  flex: 0 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 0.0rem;
+}
+
+.text-header h2 {
+  font-variant: small-caps;
+  font-size: 1.7rem;
+  color: #5a422a;
+  margin: 0;
+}
+
+.text-header h3 {
+  font-variant: small-caps;
+  text-decoration: underline;
+  text-decoration-color: #b8a27a;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-size: 1.4rem;
+  color: #7b6141;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Scrollable journal text */
+.text-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;     /* <— make sure it never escapes the frame */
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  font-size: 1.225rem;     /* 👈 THIS controls text size */
+  letter-spacing: 0.02em;  /* subtle spacing between letters */
+  line-height: 1.26;       /* vertical spacing between lines */
+  margin: 0 0 1rem 0;      /* spacing between paragraphs */
+
+  /* hide scrollbar but keep scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.text-scroll::-webkit-scrollbar {
+  display: none; /* hides scrollbar Chrome/Safari */
+}
+
+/* === Navigation arrows === */
+.nav-arrows {
+  position: absolute;
+  bottom: 0.1rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 4rem; 
+}
+
+.nav-arrows img {
+  width: 100px;
+  height: 25px;
+  margin: 0 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.nav-arrows img:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* === Back to Main button === */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.3rem 4.0rem;
+  background-color: #b8a27a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  vertical-align: middle;
+}
+
+.back-btn:hover {
+  background-color: #a28c64;
+  transform: translateY(-2px);
+}
+
+/* === Lineage Trail === */
+
+#lineage-trail {
+  position: absolute;
+  top: 1rem;             /* adjust vertical placement */
+  left: 2rem;
+  right: 2rem;
+  z-index: 10;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+
+  font-family: 'Libre Baskerville', serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #5a422a;
+  opacity: 0.9;
+  pointer-events: none;     /* so it doesn’t block clicks */
+}
+
+#lineage-trail span {
+  cursor: default;
+  pointer-events: auto;     /* restores clicks if needed later */
+}
+
+#lineage-trail span.ancestor {
+  color: #8a6b42;
+}
+
+#lineage-trail span.current {
+  font-weight: bold;
+  color: #2b2118;
+}

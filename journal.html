@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Antonius Family Journal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/journal.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+</head>
+<body id="journal">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar hidden">
+    <div id="sidebar-content">Loading sidebar...</div>
+  </aside>
+  <img src="images/ui/menu.png" id="menu-toggle" alt="Menu" onclick="toggleSidebar()" />
+
+  <!-- Journal display -->
+  <div class="journal-container">
+
+    <div class="journal-container">
+      <div id="lineage-trail"></div>
+
+    <div class="portrait-area">
+      <img id="portrait" src="images/background/emblem.png" alt="Family Emblem" />
+    </div>
+    
+    <div class="text-area">
+      <div class="text-header">
+        <h2 id="entry-name"></h2>
+        <h3 id="entry-title"></h3>
+      </div>
+
+      <!-- This is the ONLY entry-text; it's inside the scroll area -->
+      <div class="text-scroll">
+        <div id="entry-text"></div>
+      </div>
+    </div>
+
+     <!-- Navigation arrows -->
+    <div class="nav-arrows">
+      <img src="images/ui/previous.png" id="prev-entry" alt="Previous">
+      <a href="main.html" class="back-btn">back</a>
+      <img src="images/ui/next.png" id="next-entry" alt="Next">
+    </div>
+  </div>
+
+  <!-- Scripts (ORDER MATTERS) -->
+  <!-- 1️⃣ Define loadCharacter FIRST -->
+  <script src="scripts/journal.js"></script>
+
+  <!-- 2️⃣ Then load the sidebar (so it can call loadCharacter) -->
+  <script src="scripts/sidebar.js"></script>
+
+  <!-- 3️⃣ Optional data helper (if used for preloading extra info) -->
+  <script src="scripts/journal-data.js"></script>
+
+  <!-- Reload protection for SL testing -->
+  <script>
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    window.location.href = "index.html";
+  }
+  </script>
+
+</body>
+</html>

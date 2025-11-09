@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Journal of Octavia the Younger</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+</head>
+
+<body id="main">
+  <!-- Sidebar container (same frame as journal) -->
+  <aside id="sidebar" class="sidebar hidden">
+    <div id="sidebar-content">Loading sidebar...</div>
+  </aside>
+
+  <!-- Sidebar toggle button -->
+  <img src="images/ui/menu.png" id="menu-toggle" alt="Menu" onclick="toggleSidebar()" />
+
+  <!-- Main content container -->
+  <div class="container">
+    <img src="images/background/emblem.png" alt="Antonius Family Emblem" class="emblem" />
+    <p>
+    </p>
+    <h1>The Journal of<br>Octavia the Younger</h1>
+    <p class="intro">
+      Begin with the reflections of Octavia,<br>the last Roman wife of<br>Marcus Antonius.
+    </p>
+    <p class="note">
+      Note the sidebar menu in the top left.
+      <br>
+      You may click and navigate to specific individuals if you wish.
+    </p>
+
+    <a href="journal.html" class="read-btn">Read the Journal</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts/sidebar.js"></script>
+
+  <script>
+  // If page is reloaded (F5 or Ctrl+R), return to the landing page
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>
