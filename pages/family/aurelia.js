@@ -1,8 +1,8 @@
-window.claudiaPage = {
-    name: "Claudia Antonius",
+window.aureliaPage = {
+    name: "Aurelia Antonius",
     title: "Daughter of Rome",
     parent: "aemelia",
-    portrait: "images/background/emblem.png",
+    portrait: "images/portraits/aurelia.png",
     next: "",
     previous: "",
     text: [
