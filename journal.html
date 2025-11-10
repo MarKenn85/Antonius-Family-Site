@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-  window.addEventListener("load", () => {
-    // If this page was opened as a HUD reattachment (no referrer or SL context reset)
-    const ref = document.referrer || "";
-    const fromSL = /secondlife/i.test(navigator.userAgent);
-    if (fromSL && !ref.includes("index.html")) {
-      // Always return to index.html when attached fresh
-      window.location.replace("index.html");
-    }
-  });
-  </script>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Antonius Family Journal</title>
@@ -24,6 +12,22 @@
   <link rel="stylesheet" href="css/journal.css">
   <link rel="stylesheet" href="css/sidebar.css">
 </head>
+
+<script>
+window.addEventListener("load", () => {
+  const fromSL = /secondlife/i.test(navigator.userAgent);
+
+  // Check if this is a true HUD reattach (no referrer AND no query params)
+  const noReferrer = !document.referrer;
+  const noQuery = !window.location.search;
+
+  // Only redirect if coming fresh from SL attachment (not internal navigation)
+  if (fromSL && noReferrer && noQuery && !window.location.href.includes("localhost")) {
+    window.location.replace("index.html");
+  }
+});
+</script>
+
 <body id="journal">
 
   <!-- Sidebar -->

@@ -8,6 +8,7 @@ window.gagePage = {
     text: [
       `
         <p>
+        This story is yet to be written.
         </p>
       `
     ]
