@@ -31,8 +31,9 @@ body#home {
 .container {
   position: absolute;
   text-align: center;
-  width: 95vw;              /* fills 90% of the viewport width */
+  width: 900px;              /* fills 90% of the viewport width */
   max-width: 900px;         /* stays manageable on big screens */
+  height: 95vh;
   max-height: 95vh;
   /*margin: auto;*/
   padding: 2rem;

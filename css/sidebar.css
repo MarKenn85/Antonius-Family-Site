@@ -90,8 +90,8 @@
   transition: transform 0.2s ease;
 }
 
-.nav-list.open ~ .section-header::after,
-.section-header.active::after {
+/* Rotate the arrow when menu is open */
+.section-header.open::after {
   transform: rotate(90deg);
 }
 
@@ -130,18 +130,22 @@
   color: #a28c64;
 }
 
-/* === Menu toggle button === */
-#menu-toggle {
-  position: fixed;
-  top: 0.7rem;
-  left: 8rem;
-  width: 48px;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-  z-index: 1002;
+.nav-list a.starred::before {
+  content: "★ ";
+  color: #b8a27a;
+  margin-left: 2px;
+  font-size: 1.2em;
+  filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0.6));
 }
 
-#menu-toggle:hover {
+/* Sidebar visible when hovered */
+  .sidebar:hover {
+  transform: translateX(0);
   opacity: 1;
+}
+
+/* Highlighted (current) member */
+.nav-list a.current {
+  background-color: #f0e6d3;
+  color: #7b6141;
 }

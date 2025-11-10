@@ -54,6 +54,36 @@ window.loadCharacter = async function (id) {
       currentPageIndex = 0;
       displayPage();
       await buildLineageTrail(id);
+
+      // === Sidebar highlight + accordion behavior ===
+      const allLinks = document.querySelectorAll("#sidebar-content a");
+      allLinks.forEach(a => a.classList.remove("current"));
+
+      // Close all open lists first
+      document.querySelectorAll("#sidebar-content .nav-list.open").forEach(list => {
+        list.classList.remove("open");
+        list.style.maxHeight = "0";
+        if (list.previousElementSibling) list.previousElementSibling.classList.remove("open");
+      });
+
+      // Find and highlight the active link
+      const activeLink = document.querySelector(`#sidebar-content a[data-id='${id}']`);
+      if (activeLink) {
+        activeLink.classList.add("current");
+
+        // Open only this list
+        const list = activeLink.closest(".nav-list");
+        if (list) {
+          list.classList.add("open");
+          list.style.maxHeight = list.scrollHeight + "px";
+
+          // Mark header open
+          if (list.previousElementSibling) {
+            list.previousElementSibling.classList.add("open");
+          }
+        }
+      }
+
     } else {
       throw new Error(`No data object found for ${id}`);
     }

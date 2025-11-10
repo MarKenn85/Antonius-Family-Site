@@ -17,8 +17,9 @@ body#index {
 /* === Content container === */
 .container {
   text-align: center;
-  width: 95vw;              /* fills 90% of the viewport width */
+  width: 900px;              /* fills 90% of the viewport width */
   max-width: 900px;         /* stays manageable on big screens */
+  height: 95vh;
   max-height: 95vh;         /* prevents overflow on smaller screens */
   padding: 3rem;
   border: 2px solid #b8a27a;
@@ -27,12 +28,10 @@ body#index {
   border-radius: 32px;
   animation: fadeIn 1.0s ease-out;
   animation-delay: 3.0s;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   box-sizing: border-box;
   overflow: hidden;         /* guarantees no scrollbars */
 }

@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "Servus / Custo": ["kenny", "miklos", "zane", "tor", "dane", "quintus", "wilhelm", "talon", "inanna"]
   };
 
+  // === Starred members ===
+  const starredMembers = ["damion"];
+
   // === Folder resolver ===
   function getCharacterFolder(id) {
     const servusList = ["kenny", "miklos", "zane", "tor", "dane", "quintus", "wilhelm", "talon", "inanna"];
@@ -45,39 +48,53 @@ document.addEventListener("DOMContentLoaded", () => {
   function linkHandler(id) {
     return (e) => {
       e.preventDefault();
+
+      // Clear old highlight
+      document.querySelectorAll("#sidebar-content a.current").forEach(a =>
+        a.classList.remove("current")
+      );
+
+      // Highlight this one
+      const clickedLink = document.querySelector(`#sidebar-content a[data-id='${id}']`);
+      if (clickedLink) {
+        clickedLink.classList.add("current");
+
+        // Keep parent dropdown open
+        const parentList = clickedLink.closest(".nav-list");
+        if (parentList && !parentList.classList.contains("open")) {
+          parentList.classList.add("open");
+          parentList.style.maxHeight = parentList.scrollHeight + "px";
+          parentList.previousElementSibling.classList.add("open"); // keep header visually open
+        }
+      }
+
       if (typeof window.loadCharacter === "function") {
-        // If journal.js is active
         window.loadCharacter(id);
       } else {
-        // Go to journal page directly
         window.location.href = `journal.html?char=${encodeURIComponent(id)}`;
       }
     };
   }
 
-  // === Build sidebar structure ===
+  // === Build sidebar ===
   async function buildSidebar() {
     const family = await loadFamilyData();
     const wrapper = document.createElement("div");
 
-    // Static title
     const marcusTitle = document.createElement("div");
     marcusTitle.classList.add("sidebar-title");
     marcusTitle.textContent = "The House of Marcus Antonius";
     wrapper.appendChild(marcusTitle);
 
-    // Each category section
     for (const [section, ids] of Object.entries(categories)) {
       const sectionDiv = document.createElement("div");
       sectionDiv.classList.add("sidebar-section");
 
-      // Header
       const header = document.createElement("button");
       header.classList.add("section-header");
       header.textContent = section;
       sectionDiv.appendChild(header);
 
-      // Member list
       const list = document.createElement("ul");
       list.classList.add("nav-list");
       list.style.maxHeight = "0";
@@ -88,6 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const a = document.createElement("a");
         a.textContent = family[id]?.name || id;
         a.href = "#";
+        a.dataset.id = id;
+
+        if (starredMembers.includes(id)) a.classList.add("starred");
+
         a.addEventListener("click", linkHandler(id));
         li.appendChild(a);
         list.appendChild(li);
@@ -95,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       header.addEventListener("click", () => {
         const isOpen = list.classList.toggle("open");
+        header.classList.toggle("open", isOpen);
         list.style.maxHeight = isOpen ? list.scrollHeight + "px" : "0";
       });
 
@@ -102,26 +124,26 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.appendChild(sectionDiv);
     }
 
-    // Replace sidebar content
     content.innerHTML = "";
     content.appendChild(wrapper);
+
+    // === Auto-expand current section if URL has ?char= ===
+    const url = new URL(window.location.href);
+    const activeChar = url.searchParams.get("char");
+    if (activeChar) {
+      const activeLink = document.querySelector(`#sidebar-content a[data-id='${activeChar}']`);
+      if (activeLink) {
+        activeLink.classList.add("current");
+        const list = activeLink.closest(".nav-list");
+        if (list) {
+          list.classList.add("open");
+          list.style.maxHeight = list.scrollHeight + "px";
+          list.previousElementSibling.classList.add("open");
+        }
+      }
+    }
   }
 
+    // === Run it ===
   buildSidebar();
-});
-
-// === Sidebar toggle ===
-window.toggleSidebar = function () {
-  const sidebar = document.getElementById("sidebar");
-  if (sidebar) sidebar.classList.toggle("visible");
-};
-
-// === Auto-hide on mouse leave ===
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebar = document.getElementById("sidebar");
-  if (!sidebar) return;
-
-  sidebar.addEventListener("mouseleave", () => {
-    sidebar.classList.remove("visible");
-  });
 });
