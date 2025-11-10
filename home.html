@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  window.addEventListener("load", () => {
+    // If this page was opened as a HUD reattachment (no referrer or SL context reset)
+    const ref = document.referrer || "";
+    const fromSL = /secondlife/i.test(navigator.userAgent);
+    if (fromSL && !ref.includes("index.html")) {
+      // Always return to index.html when attached fresh
+      window.location.replace("index.html");
+    }
+  });
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Journal of Octavia the Younger</title>
