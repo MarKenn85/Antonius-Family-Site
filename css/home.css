@@ -6,7 +6,11 @@
   padding: 0;
   overflow: hidden; /* no scrollbars */
 
-*/
+/* Hide everything by default until verified as not resetting */
+body.fade-prevent {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
 
 .container {
   box-sizing: border-box;

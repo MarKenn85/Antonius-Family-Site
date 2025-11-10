@@ -16,17 +16,24 @@
 </head>
 
 <script>
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-prevent");
+});
+
 window.addEventListener("load", () => {
   const fromSL = /secondlife/i.test(navigator.userAgent);
-
-  // Check if this is a true HUD reattach (no referrer AND no query params)
   const noReferrer = !document.referrer;
   const noQuery = !window.location.search;
 
-  // Only redirect if coming fresh from SL attachment (not internal navigation)
   if (fromSL && noReferrer && noQuery) {
-    window.location.replace("index.html");
+    // Redirect immediately without showing content
+    return window.location.replace("index.html");
   }
+
+  // Safe to show content now
+  requestAnimationFrame(() => {
+    document.body.style.opacity = "1";
+  });
 });
 </script>
 
