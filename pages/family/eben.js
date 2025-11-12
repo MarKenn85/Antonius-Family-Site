@@ -2,7 +2,7 @@ window.ebenPage = {
     name: "Eben Antonius Tenebrus",
     title: "Pontifex of Pluto & Brother of Kierdyn",
     parent: "aurelia",
-    portrait: "images/background/eben.png",
+    portrait: "images/portraits/eben.png",
     next: "kierdyn",
     previous: "blay",
     text: [
