@@ -1,4 +1,4 @@
-window.ebenPage = {
+window.frederickPage = {
     name: "Aulus Antonius Feradachus",
     title: "Son of Gamila",
     parent: "Gamila",
