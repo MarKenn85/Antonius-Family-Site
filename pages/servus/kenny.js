@@ -4,7 +4,7 @@ window.kennyPage = {
     parent: "",
     portrait: "images/background/emblem.png",
     next: "miklos",
-    previous: "rose",
+    previous: "frederick",
     text: [
       `
         <p>

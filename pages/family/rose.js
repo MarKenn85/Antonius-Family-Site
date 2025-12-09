@@ -3,7 +3,7 @@ window.rosePage = {
     title: "Daughter of Rome",
     parent: "gamilla",
     portrait: "images/background/emblem.png",
-    next: "kenny",
+    next: "frederick",
     previous: "taurus",
     text: [
       `
