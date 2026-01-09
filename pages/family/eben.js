@@ -35,7 +35,10 @@ window.ebenPage = {
         Some might think this has made Eben reclusive and unapproachable. Far from it. He may be shy and take his time to grow comfortable with someone, but once he finds his place of ease, he is very vocal and opinionated, as an Antonius should be.
         <br>
         <br>
-        Eben has been a joy to this old woman. Watching him grow and change over the years has given me a certainty that the future of our family is in good hands. People like Eben will be leading us forward, and I see that future as bright and prosperous.
+        Eben has been a joy to this old woman. Watching him grow and change over the years has given me a certainty that the future of our family is in good hands.
+        <br>
+        <br>
+        People like Eben will be leading us forward, and I see that future as bright and prosperous.
       </p>
       `
     ]
