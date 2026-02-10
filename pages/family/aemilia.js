@@ -1,8 +1,8 @@
 window.aemeliaPage = {
-    name: "Aemelia Antonius",
+    name: "Aemilia Antonius",
     title: "Present Antonius Matriarch",
     parent: "fulvia",
-    portrait: "images/portraits/aemelia.png",
+    portrait: "images/portraits/aemilia.png",
     next: "airiana",
     previous: "octavia",
     text: [
