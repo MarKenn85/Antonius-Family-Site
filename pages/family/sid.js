@@ -2,7 +2,7 @@ window.sidPage = {
     name: "Sidonius Antonius",
     title: "Son of Rome",
     parent: "damion",
-    portrait: "images/background/emblem.png",
+    portrait: "images/background/sidonius.png",
     next: "claudius",
     previous: "nero",
     text: [

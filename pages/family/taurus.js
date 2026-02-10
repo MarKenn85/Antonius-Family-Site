@@ -2,7 +2,7 @@ window.taurusPage = {
     name: "Taurus Antonius Crystalis",
     title: "Son of Rome",
     parent: "xal",
-    portrait: "images/background/emblem.png",
+    portrait: "images/background/taurus.png",
     next: "rose",
     previous: "josiah",
     text: [

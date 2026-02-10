@@ -2,7 +2,7 @@ window.frederickPage = {
     name: "Aulus Antonius Feradachus",
     title: "Son of Rome",
     parent: "gamilla",
-    portrait: "images/background/emblem.png",
+    portrait: "images/background/frederick.png",
     next: "kenny",
     previous: "rose",
     text: [

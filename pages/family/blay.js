@@ -2,7 +2,7 @@ window.blayPage = {
     name: "Blay Antonius",
     title: "Son of Rome",
     parent: "filipa",
-    portrait: "images/background/emblem.png",
+    portrait: "images/background/blay.png",
     next: "eben",
     previous: "claudius",
     text: [
