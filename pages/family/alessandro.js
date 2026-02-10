@@ -1,8 +1,8 @@
 window.alessandroPage = {
     name: "Alessandro Antonius",
     title: "Legatus of the Antonius armies",
-    parent: "aemelia",
-    portrait: "images/background/alessandro.png",
+    parent: "aemilia",
+    portrait: "images/portraits/alessandro.png",
     next: "jaiden",
     previous: "filipa",
     text: [

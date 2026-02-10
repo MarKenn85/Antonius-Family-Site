@@ -2,7 +2,7 @@ window.josiahPage = {
     name: "Josiah Antonius",
     title: "Son of Rome",
     parent: "zarek",
-    portrait: "images/background/josiah.png",
+    portrait: "images/portraits/josiah.png",
     next: "taurus",
     previous: "kierdyn",
     text: [

@@ -1,7 +1,7 @@
 window.aureliaPage = {
     name: "Aurelia Antonius",
     title: "Daughter of Rome",
-    parent: "aemelia",
+    parent: "aemilia",
     portrait: "images/portraits/aurelia.png",
     next: "",
     previous: "",

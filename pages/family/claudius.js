@@ -2,7 +2,7 @@ window.claudiusPage = {
     name: "Claudius Antonius Paullus",
     title: "Son of Rome",
     parent: "damion",
-    portrait: "images/background/claudius.png",
+    portrait: "images/portraits/claudius.png",
     next: "blay",
     previous: "sid",
     text: [
