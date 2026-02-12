@@ -1,6 +1,6 @@
 window.quintusPage = {
     name: "Quintus",
-    title: "Antonius Custo & Sporting Champion",
+    title: "Antonius Custos & Sporting Champion",
     parent: "",
     portrait: "images/portraits/quintus.png",
     next: "wilhelm",
@@ -11,7 +11,7 @@ window.quintusPage = {
       I cannot speak highly enough of this fine young man. Quintus came to us years ago with a fighting spirit and a warrior’s heart.
       <br>
       <br>
-      He has served our family faithfully as Custo, defending many of us as we journey across the Empire. He is loyal, brave, and rather fetching—if you will permit this 'old woman' her flights of fancy.
+      He has served our family faithfully as Custos, defending many of us as we journey across the Empire. He is loyal, brave, and rather fetching—if you will permit this 'old woman' her flights of fancy.
       </p>
 
       <p>
