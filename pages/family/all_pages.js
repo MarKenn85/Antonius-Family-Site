@@ -24,6 +24,7 @@ if (typeof neroPage === "undefined") console.error("⚠️ Nero page missing or 
 if (typeof rosePage === "undefined") console.error("⚠️ Rose page missing or not loaded!");
 if (typeof sidPage === "undefined") console.error("⚠️ Sid page missing or not loaded!");
 if (typeof taurusPage === "undefined") console.error("⚠️ Taurus page missing or not loaded!");
+if (typeof doxPage === "undefined") console.error("⚠️ Dox page missing or not loaded!");
 if (typeof zanePage === "undefined") console.error("⚠️ Zane page missing or not loaded!");
 
 // Build master array
@@ -49,6 +50,7 @@ const pages = [
   rosePage,
   sidPage,
   taurusPage,
+  doxPage,
   zanePage
   // Add new members here
 ];
