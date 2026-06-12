@@ -1,5 +1,5 @@
 window.gamilaPage = {
-    name: "Gamila",
+    name: "Gamila Antonius",
     title: "Daughter of the Sun",
     parent: "helios",
     portrait: "images/portraits/gamila.png",
