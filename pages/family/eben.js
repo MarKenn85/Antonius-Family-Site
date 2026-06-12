@@ -4,7 +4,7 @@ window.ebenPage = {
     parent: "aurelia",
     portrait: "images/portraits/eben.png",
     next: "kierdyn",
-    previous: "dox",
+    previous: "blay",
     text: [
       `
         <p>

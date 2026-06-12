@@ -4,7 +4,7 @@ window.airianaPage = {
     parent: "octavia",
     portrait: "images/portraits/airiana.png",
     next: "antonia",
-    previous: "aemelia",
+    previous: "aemilia",
     text: [
     `
       <p>
