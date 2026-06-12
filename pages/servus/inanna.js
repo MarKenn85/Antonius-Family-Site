@@ -3,8 +3,8 @@ window.inannaPage = {
     title: "Servus Antonius",
     parent: "",
     portrait: "images/portraits/inanna.png",
-    next: "home.html",
-    previous: "talon",
+    next: "zane",
+    previous: "arnulf",
     text: [
       `
         <p>

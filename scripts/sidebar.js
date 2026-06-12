@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Children": ["aemilia", "airiana", "antonia", "selene"],
     "Grandchildren": ["damion", "filipa", "alessandro", "jaiden", "zarek", "xal", "batresh", "gamila", "gage"],
     "Great Grandchildren": ["nero", "sid", "claudius", "blay", "eben", "kierdyn", "josiah", "taurus", "rose", "frederick", "vincent"],
-    "Servus / Custo": ["kenny", "miklos", "zane", "tor", "dane", "quintus", "wilhelm", "talon", "inanna"]
+    "Servus / Custo": ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"]
   };
 
   // === Starred members ===
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // === Folder resolver ===
   function getCharacterFolder(id) {
-    const servusList = ["kenny", "miklos", "zane", "tor", "dane", "quintus", "wilhelm", "talon", "inanna"];
+    const servusList = ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"];
     return servusList.includes(id) ? "servus" : "family";
   }
 

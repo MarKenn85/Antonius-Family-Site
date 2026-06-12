@@ -3,8 +3,8 @@ window.miklosPage = {
     title: "Servus Antonius",
     parent: "",
     portrait: "images/portraits/miklos.png",
-    next: "zane",
-    previous: "kenny",
+    next: "joak",
+    previous: "wilhelm",
     text: [
       `
         <p>

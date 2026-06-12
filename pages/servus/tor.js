@@ -3,8 +3,8 @@ window.torPage = {
     title: "Servus Antonius",
     parent: "",
     portrait: "images/portraits/tor.png",
-    next: "dane",
-    previous: "zane",
+    next: "quintus",
+    previous: "vincent",
     text: [
       `
         <p>

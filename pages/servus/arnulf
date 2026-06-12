@@ -1,10 +1,10 @@
-window.kennyPage = {
-    name: "Kenneth",
-    title: "Servus Antonius",
+window.arnulfPage = {
+    name: "Arnulf",
+    title: "Custos Antonius",
     parent: "",
-    portrait: "images/portraits/kenny.png",
-    next: "wilhelm",
-    previous: "talon",
+    portrait: "images/portraits/arnulf.png",
+    next: "inanna",
+    previous: "dane",
     text: [
       `
         <p>

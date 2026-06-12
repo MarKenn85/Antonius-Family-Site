@@ -7,7 +7,7 @@ let currentScriptEl = null;
 // === Folder resolver ===
 function getCharacterFolder(id) {
   // Add any new Servus entries here
-  const servusList = ["kenny", "miklos", "zane", "tor", "dane", "quintus", "wilhelm", "talon", "inanna"];
+  const servusList = ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"];
   return servusList.includes(id) ? "servus" : "family";
 }
 

@@ -3,8 +3,8 @@ window.zanePage = {
     title: "Servus Antonius",
     parent: "",
     portrait: "images/portraits/zane.png",
-    next: "tor",
-    previous: "miklos",
+    next: "talon",
+    previous: "inanna",
     text: [
       `
         <p>

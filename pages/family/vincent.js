@@ -3,7 +3,7 @@ window.vincentPage = {
     title: "Champion of Rome",
     parent: "gage",
     portrait: "images/portraits/vincent.png",
-    next: "kenny",
+    next: "tor",
     previous: "frederick",
     text: [
         `
