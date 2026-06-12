@@ -3,7 +3,7 @@ window.batreshPage = {
     title: "Scholar of Alexandria",
     parent: "selene",
     portrait: "images/portraits/batresh.png",
-    next: "gage",
+    next: "gamila",
     previous: "xal",
     text: [
       `

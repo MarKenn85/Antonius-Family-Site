@@ -1,10 +1,10 @@
-window.gamillaPage = {
-    name: "Gamilla",
-    title: "Daughter of Rome",
+window.gamilaPage = {
+    name: "Gamila",
+    title: "Daughter of the Sun",
     parent: "helios",
-    portrait: "images/portraits/gamilla.png",
-    next: "",
-    previous: "",
+    portrait: "images/portraits/gamila.png",
+    next: "gage",
+    previous: "batresh",
     text: [
       `
         <p>

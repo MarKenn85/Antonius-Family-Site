@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // === Categories ===
   const categories = {
     "Children": ["aemilia", "airiana", "antonia", "selene"],
-    "Grandchildren": ["damion", "filipa", "alessandro", "jaiden", "zarek", "xal", "batresh", "gage"],
-    "Great Grandchildren": ["nero", "sid", "claudius", "blay", "eben", "kierdyn", "josiah", "taurus", "rose", "frederick"],
+    "Grandchildren": ["damion", "filipa", "alessandro", "jaiden", "zarek", "xal", "batresh", "gamila", "gage"],
+    "Great Grandchildren": ["nero", "sid", "claudius", "blay", "eben", "kierdyn", "josiah", "taurus", "rose", "frederick", "vincent"],
     "Servus / Custo": ["kenny", "miklos", "zane", "tor", "dane", "quintus", "wilhelm", "talon", "inanna"]
   };
 
