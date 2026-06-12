@@ -89,13 +89,13 @@ window.batreshPage = {
         However, it was clear that something in her wasn't the same. She had changed somehow. Perhaps the injuries had left scars that couldn't be seen.
         <br>
         <br>
-        In the weeks that followed, Batresh returned home to the villa and resumed her studies. While Juba had returned to Cyrene, Selene remained for a time and watched over her child.
+        In the weeks that followed, Batresh returned home with her mother to Caesarea to fully recover, while Juba returned to Cyrene. Selene watched over her child like a lioness watches her cubs.
         <br>
         <br>
-        Batresh returned to her tutors without complaint and seemed genuinely interested in the lessons.
+        Months later, Batresh returned to her tutors, who were brought to Caesarea, without complaint and seemed genuinely interested in the lessons.
         <br>
         <br>
-        Selene eventually returned home and removed the guardians from their task of watching her daughter so closely.
+        Selene eventually withdrew, satisfied that her daughter was recovered and could continue her own duties as queen.
         </p>
 
         <p>
@@ -105,7 +105,7 @@ window.batreshPage = {
         She also developed a love for debate. Many afternoons were spent discussing many issues with scholars and philosophers.
         <br>
         <br>
-        To this day, as the time for her to be married draws closer, Batresh continues to reside in Alexandria and has developed into a highly learned scholar.
+        To this day, as the time for her to be married draws closer, Batresh continues to reside in Caesarea and has developed into a highly learned scholar.
         <br>
         <br>
         While I have spent little time with the girl myself, I can only imagine the accomplishments she will turn out and I am certain she has a bright future indeed.
