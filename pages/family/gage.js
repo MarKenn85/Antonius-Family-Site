@@ -4,7 +4,7 @@ window.gagePage = {
     parent: "helios",
     portrait: "images/portraits/gage.png",
     next: "nero",
-    previous: "batresh",
+    previous: "gamila",
     text: [
     `
       <p>
