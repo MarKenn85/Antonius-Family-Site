@@ -2,7 +2,7 @@ window.wilhelmPage = {
     name: "Wilhelm",
     title: "Servus Antonius",
     parent: "",
-    portrait: "images/background/wilhelm.png",
+    portrait: "images/portraits/wilhelm.png",
     next: "talon",
     previous: "quintus",
     text: [

@@ -2,7 +2,7 @@ window.zanePage = {
     name: "Zane",
     title: "Servus Antonius",
     parent: "",
-    portrait: "images/background/zane.png",
+    portrait: "images/portraits/zane.png",
     next: "tor",
     previous: "miklos",
     text: [

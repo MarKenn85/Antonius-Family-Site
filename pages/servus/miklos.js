@@ -2,7 +2,7 @@ window.miklosPage = {
     name: "Miklos",
     title: "Servus Antonius",
     parent: "",
-    portrait: "images/background/miklos.png",
+    portrait: "images/portraits/miklos.png",
     next: "zane",
     previous: "kenny",
     text: [
