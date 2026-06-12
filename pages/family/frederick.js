@@ -7,68 +7,56 @@ window.frederickPage = {
     previous: "rose",
     text: [
       `
-        <p>
-        The Red Wolf of Eboracum
-        before he bore the name Antonius
+      <p>
+      I have often thought that the gods delight in disguising the most important moments of our lives as ordinary ones.
 
-        He was born in the shadow of the fortress at Eboracum, where Rome’s standards snapped in the north wind and legionaries marched like thunder across the land. The Romans called the place civilization. His mother called it occupation. He grew up believing both.
+      When Gamilia first wrote to me about a Brigantian woman named Maela, there was nothing in her letters to suggest how important that friendship would one day become to our family. Maela was intelligent, stubborn, and entirely unimpressed by Rome's opinion of itself, which I suspect is precisely why Gamilia liked her so much.
 
-        His mother, Maela of the Brigantes, was not a peasant woman pressed low by empire, but a daughter of a noble line that had learned—too early—how to survive conquest without kneeling. In her youth, she traveled often between Brigantian lands and the Eboracum region, acting as envoy, negotiator, and quiet observer of Rome’s long hunger. It was on one such journey that she met Gamilia Antonius.
+      It was through those letters that I first heard of her son, Feradach.
 
-        The two women should never have trusted one another. One was born of ancient earth and painted gods, the other of marble halls and Roman law. And yet they were alike in ways that mattered: sharp-minded, unflinching, and deeply aware that empires were less eternal than they pretended. Over shared wine and guarded conversation, an unlikely friendship formed—one built not on loyalty to Rome or rebellion against it, but on mutual clarity.
+      At the time he was merely a boy. Tall, copper-haired, and possessed of the sort of watchful silence that often unsettles adults. Gamilia remarked that he seemed older than his years. Some children laugh without restraint and move through the world believing themselves immortal. Feradach was never one of them. Even in youth he carried himself as though he already understood that life could be unkind.
 
-        It was Gamilia who first saw Feradach as a boy and remarked, not unkindly, that he carried the look of someone who would survive whatever world tried to break him.
+      His father, Aedan, taught him discipline, duty, and the ways of soldiers. His mother taught him the older truths of Britannia, the traditions of her people, and the quiet certainty that a person belongs to the land as much as the land belongs to them. Looking back, I think this explains much about the man he became. Rome taught him structure. Britannia taught him endurance. Neither ever fully claimed him, and perhaps because of that he learned to stand firmly upon his own feet.
 
-        Before they parted ways, Gamilia made Maela a promise—quiet, deliberate, and spoken without witnesses: if harm ever came to her, the Antonii would take in her son. Maela accepted the promise without sentiment. She understood Rome well enough to know that only vows made by powerful women endured.
+      When the raid came, it took nearly everything.
 
-        Feradach’s father, Aedan, had traded years of service in the auxilia for a strip of land and the illusion of Roman protection. From him, the boy learned the straight thrust of the gladius, the discipline of a shield wall, and how to curse fluently in three dialects. From Maela, he learned the older truths: how woad on the skin binds courage to bone, how ravens remember blood, and how the land never forgets its children—no matter how many roads Rome lays over it.
+      The stories tell us he fought, though he was scarcely more than a child. His father was slain. His mother was slain. The settlement was left to ash and ruin, and by the time word reached Gamilia there was little left to search but ghosts.
 
-        He was a child who wore two skins: the Empire’s leather and the earth’s blue.
+      She honored her promise nonetheless. Men were sent north. Questions were asked. Coin was spent. Years passed. Nothing was found. For a long time she believed she had failed him. Yet fate, stubborn thing that it is, had other plans.
 
-        When traders mocked his fiery copper hair, his mother told him it was the mark of ancestral favor. When soldiers smirked that he was too tall for a Briton and too wild for a Roman, his father only said, “Good. Let them doubt. Doubt is the first crack before defeat.”
+      When reports began arriving from Britannia of a red-haired warrior serving among the auxiliaries, Gamilia recognized him almost immediately. The soldiers called him the Red Wolf. They wrote of his ferocity in battle, his discipline, his refusal to yield, and his uncanny ability to survive circumstances that should have killed him.
 
-        He was twelve when the raiders came.
+      Soldiers always favor dramatic stories. What interests me far more is what happened afterward. Anyone can become hardened by suffering. There is nothing remarkable in bitterness. The world manufactures it daily. What astonishes me is that Feradach endured everything he endured and still emerged with kindness intact.
 
-        Men loyal to no banner but hunger and steel slipped through the mist before sunrise. By morning, the settlement was smoke and screaming. Feradach fought—barefoot, woad-streaked, and half-grown—driving a spear into a man twice his size because fear and rage fused into the same sharp thing.
+      He became protective rather than cruel. Loyal rather than cynical. Steadfast rather than cold. I have often believed this is his greatest victory.
 
-        When the noise died, his father’s sword lay still. His mother’s voice was gone to ash.
+      People see his size before they see the man. They notice the broad shoulders, the commanding presence, the reputation earned on distant battlefields. They expect severity. Instead they discover patience.
 
-        Word of the raid traveled poorly. When news finally reached Rome, Gamilia Antonius sent men to search, invoking an old promise. They found nothing. No body. No boy. Only ruin. Feradach was listed among the dead, another provincial loss unworthy of record.
+      Children have always trusted him. Animals seem drawn to him without hesitation. Those who seek his counsel rarely leave disappointed. There is a gentleness in him that many overlook, hidden beneath the appearance of a warrior. I suspect the boy who survived among ashes never forgot what it felt like to be vulnerable, and because of that the man became determined to protect those who were.
 
-        Rome, as ever, moved on.
+      Though I should also note that he possesses the Antonius gift for stubbornness. On this matter I blame both Rome and Britannia equally.
 
-        A patrol found him days later—standing waist-deep in ruin, face painted, eyes feral. Not a son of Rome. Not a child to be rescued. Simply something left behind.
+      Once Aulus has decided upon a course of action, moving him from it can feel like attempting to redirect a river. It is maddening. It is also one of the reasons so many of us trust him. He does not abandon those under his care simply because circumstances become difficult.
 
-        He was taken into the legion’s camp as circumstance made flesh: a servant boy, a laborer, a body useful enough to keep alive. But soldiers have instincts as sharp as any animal’s. They saw how quickly he learned their drills, how stubbornly he held a shield, how something dangerous coiled behind his silence.
+      I saw that same devotion reflected in his marriage to Lhiannon. No account of Aulus would be complete without her.
 
-        They trained him not out of kindness, but because greatness is obvious even when it’s starving.
+      There are some loves that arrive with great fanfare and others that reveal their strength quietly over time. Theirs was the latter. Lhiannon possessed a calm strength that complemented him beautifully. She understood him in ways few others did. Where Aulus could become burdened by responsibility, she reminded him that he was not required to carry the world alone. Where others saw only the warrior, she saw the man beneath the armor.
 
-        He became a contubernalis, living among soldiers. Muscle came faster than mercy. Every slight was filed down into a blade.
+      I always admired that. Many people treated Aulus as a legend. Lhiannon treated him as a husband. There is a difference.
 
-        At sixteen, steel drew first blood under his command. A skirmish near Hadrian’s Wall turned ugly. A centurion fell. Feradach stepped into the breach like a wolf loosed among sheep. When the fighting ended, he returned soaked in the enemy’s red.
+      In her presence there was a lightness to him that I treasured seeing. Not because she changed who he was, but because she allowed him to set aside, if only for a moment, the weight he so often carried. The strongest relationships do not transform us into different people. They give us permission to be fully ourselves.
 
-        The men cheered.
-        The officers whispered.
+      Though time carried them along different paths, I have never thought of Lhiannon as absent from his story. Some souls leave footprints too deep for even the years to erase. The shape of our lives is determined not only by those who remain beside us, but also by those who walked with us for a time and changed us forever.
 
-        The Red Wolf, they called him—for hair like flame and a hunger that did not fade.
+      Aulus was shaped by many things. By a father who taught him courage. By a mother who taught him identity. By loss that taught him endurance. By family that taught him belonging. And by love that taught him grace.
 
-        By eighteen, he was impossible to ignore. Elevated to fight alongside the auxilia, he learned horsemanship, Roman tactics, and the weight of being watched. He spoke Latin well enough to command and Brythonic well enough to pray. He was beloved by the ranks and unsettling to those who preferred their soldiers obedient and forgettable.
+      When the soldiers called him the Red Wolf of Eboracum, they believed they were describing the most important thing about him.
 
-        It was then—too late for innocence, too early for safety—that his name began to travel.
+      And when I think of Aulus Antonius, I do not think first of battlefields or victories. I think of promises kept. I think of loyalty freely given. I think of a boy who lost everything and yet somehow grew into a man capable of giving so much of himself to others.
 
-        Reports reached Rome of a northern fighter: ferocious, disciplined, unmistakably other. A man who should not exist. A survivor of a settlement long believed erased.
+      In my experience, that is the rarer achievement. And the far nobler one.
 
-        Gamilia Antonius read the accounts and understood immediately.
-
-        The promise, thought buried with ash and time, had not failed.
-
-        It had merely been delayed.
-
-        Some said he worshipped conquest.
-        Some said he merely survived it.
-
-        Both were correct.
-        </p>
+      </p>
       `
     ]
   };
