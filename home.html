@@ -25,11 +25,6 @@ window.addEventListener("load", () => {
   const noReferrer = !document.referrer;
   const noQuery = !window.location.search;
 
-  if (fromSL && noReferrer && noQuery) {
-    // Redirect immediately without showing content
-    return window.location.replace("index.html");
-  }
-
   // Safe to show content now
   requestAnimationFrame(() => {
     document.body.style.opacity = "1";
