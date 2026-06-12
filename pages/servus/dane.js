@@ -2,7 +2,7 @@ window.danePage = {
     name: "Dane",
     title: "Servus Antonius",
     parent: "",
-    portrait: "images/background/emblem.png",
+    portrait: "images/background/dane.png",
     next: "quintus",
     previous: "tor",
     text: [
