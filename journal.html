@@ -77,12 +77,30 @@ window.addEventListener("load", () => {
   <!-- 3️⃣ Optional data helper (if used for preloading extra info) -->
   <script src="scripts/journal-data.js"></script>
 
-  <!-- Reload protection for SL testing -->
-  <!-- <script>
-  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-    window.location.href = "index.html";
+  
+  <!-- Scripts -->
+  <script src="scripts/sidebar.js"></script>
+
+  <script>
+  const INACTIVITY_LIMIT = 15 * 1000; //10 * 60 * 1000; // 10 minutes
+  let inactivityTimer;
+
+  function resetInactivityTimer() {
+    clearTimeout(inactivityTimer);
+
+    inactivityTimer = setTimeout(() => {
+      window.location.href = "index.html";
+    }, INACTIVITY_LIMIT);
   }
-  </script> -->
+
+  // Reader activity
+  window.addEventListener("scroll", resetInactivityTimer);
+  window.addEventListener("click", resetInactivityTimer);
+  window.addEventListener("touchstart", resetInactivityTimer);
+
+  // Start timer when page loads
+  resetInactivityTimer();
+</script>
 
 </body>
 </html>
