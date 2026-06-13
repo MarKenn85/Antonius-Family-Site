@@ -11,25 +11,25 @@ window.gagePage = {
       My dearest Gaius! He is kind, commanding, and a real charmer. A Consiliario with Zarek and Xal, he helps Damion lead us forward.
       <br>
       <br>
-      Gaius' father, Alexander Helios, was Cleopatra Selene's twin brother, and I often wonder what life he might have lived had he not disappeared mysteriously.  At the age of six at the Donations of Alexandria he was given the  title of King of Kings, ruler of Armenia, Media, Parthia and all the lands between the Euphrates and Indus rivers.
+      Gaius' father, Alexander Helios, was Cleopatra Selene's twin brother, and I often wonder what life he might have lived had he not disappeared mysteriously.  At the age of six at the Donations of Alexandria he was given the title, King of Kings, ruler of Armenia, Media, Parthia and all the lands between the Euphrates and Indus rivers.
       </p>
 
       <p>
       A year later, at seven, he was engaged to a distant relative, Iotape, daughter of Artavasdes I of Media Atropatene. All of that changed after the unpleasantness at Actium. 
       <br>
       <br>
-      Like his sister Selene, Helios was spared and entrusted to my care. Iotape left Egypt around this time to return to return to her father; but her younger sister Galatea remained behind and she accompanied the Twins and many other noble children take to Rome.
+      Like his sister, Selene, Helios was spared and entrusted to my care. Iotape left Egypt around this time to return to her father; but her younger sister Galatea remained behind and she accompanied the twins and many other noble children taken to Rome.
       </p>
 
       <p>
-      Being much closer in age, Helios and Galatea formed a bond early on, and were married after he reached maturity. Helios took up residence near Athens, in a Villa not far from the great Port of Piraeus. Gaius was born soon after.
+      Being much closer in age, Helios and Galatea formed a bond early on, and were married after he reached maturity. Helios took up residence near Athens, in a villa not far from the great Port of Piraeus. Gaius was born soon after.
       <br>
       <br>
       Growing up in a villa on the coast gave him an affinity for the sea. He loved to play in the waves whenever Galatea took him to the beach. Sadly, when he was only eight years of age his mother died in childbirth, delivering his sister Gamilla. Helios was devastated and never fully recovered.
       </p>
 
       <p>
-      He left the villa one day to join friends on a hunting trip, but never arrived.. and never seen again. Gaius was still a boy beginning his education, and Gamilla an infant. Of course I did the best I could for them, They were family. Once Gamilla was weaned she was fostered by Aemilia, Widow of Iullus - but Gaius' path lay elsewhere.
+      He left the villa one day to join friends on a hunting trip, but never arrived... and was never seen again. Gaius was still a boy beginning his education, and Gamilla an infant. Of course I did the best I could for them, they were family. Once Gamilla was weaned she was fostered by Aemilia, widow of Iullus - but Gaius' path lay elsewhere.
       <br>
       <br>
       Gaius' trip across Mare Nostrum from Alexandria to Portus, then Rome itself had a profound impact on the boy. He remained in Athens for the beginning of his education, but his affinity for the sea grew as he did.
