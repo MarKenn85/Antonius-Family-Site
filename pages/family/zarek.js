@@ -4,7 +4,7 @@ window.zarekPage = {
     parent: "selene",
     portrait: "images/portraits/zarek.png",
     next: "xal",
-    previous: "jaiden",
+    previous: "kaleb",
     text: [
       `
         <p>

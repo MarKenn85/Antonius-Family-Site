@@ -1,10 +1,10 @@
-window.jaidenPage = {
-    name: "Jaiden Antonius",
-    title: "Son of Rome",
-    parent: "aemilia",
-    portrait: "images/portraits/jaiden.png",
-    next: "kaleb",
-    previous: "alessandro",
+window.kalebPage = {
+    name: "Kaleb Antonius Jaymes",
+    title: "Son of Liesure",
+    parent: "airiana",
+    portrait: "images/portraits/kaleb.png",
+    next: "zarek",
+    previous: "jaiden",
     text: [
       `
         <p>
