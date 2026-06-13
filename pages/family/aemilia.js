@@ -1,7 +1,7 @@
 window.aemiliaPage = {
-    name: "Aemilia Antonius",
+    name: "Claudia (Aemilia) Marcella Major",
     title: "Present Antonius Matriarch",
-    parent: "",
+    parent: "octavia",
     portrait: "images/portraits/aemilia.png",
     next: "airiana",
     previous: "iullus",
