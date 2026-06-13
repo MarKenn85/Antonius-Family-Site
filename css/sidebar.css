@@ -156,7 +156,7 @@
 
 .nav-list li.spouse-link a {
   font-size: 0.95rem;
-  opacity: 0.65;
+  opacity: 0.8;
   padding-left: 1.3rem;
   margin-top: -6px;
 }
@@ -171,7 +171,7 @@
   color: #b8a27a;
   font-size: 0.9rem;
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.85;
 
   pointer-events: none;
 }
