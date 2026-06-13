@@ -4,7 +4,7 @@ window.josiahPage = {
     parent: "zarek",
     portrait: "images/portraits/josiah.png",
     next: "taurus",
-    previous: "kierdyn",
+    previous: "vincent",
     text: [
       `
         <p>

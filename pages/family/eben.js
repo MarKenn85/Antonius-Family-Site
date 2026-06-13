@@ -3,8 +3,8 @@ window.ebenPage = {
     title: "Custos Sacrī Plutonis",
     parent: "aurelia",
     portrait: "images/portraits/eben.png",
-    next: "kierdyn",
-    previous: "blay",
+    next: "blay",
+    previous: "kierdyn",
     text: [
       `
         <p>

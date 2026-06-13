@@ -130,12 +130,50 @@
   color: #a28c64;
 }
 
+.nav-list a.starred {
+  position: relative;
+  padding-left: 1.8rem;
+}
+
 .nav-list a.starred::before {
-  content: "★ ";
+  content: "⚜";
+  position: absolute;
+  left: 0.0rem;
+  top: 40%;
+  transform: translateY(-50%);
+
   color: #b8a27a;
-  margin-left: 2px;
-  font-size: 1.2em;
-  filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0.6));
+  font-size: 1.6rem;
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.nav-list li.spouse-link {
+  position: relative;
+  margin-left: 0;
+}
+
+.nav-list li.spouse-link a {
+  font-size: 0.95rem;
+  opacity: 0.65;
+  padding-left: 1.3rem;
+  margin-top: -6px;
+}
+
+.nav-list li.spouse-link a::before {
+  content: "🎔";
+  position: absolute;
+  left: 0.25rem;
+  top: 40%;
+  transform: translateY(-50%);
+
+  color: #b8a27a;
+  font-size: 0.9rem;
+  line-height: 1;
+  opacity: 0.9;
+
+  pointer-events: none;
 }
 
 /* Sidebar visible when hovered */

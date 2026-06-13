@@ -3,8 +3,8 @@ window.kalebPage = {
     title: "Son of Liesure",
     parent: "airiana",
     portrait: "images/portraits/kaleb.png",
-    next: "zarek",
-    previous: "jaiden",
+    next: "filipa",
+    previous: "aurelia",
     text: [
       `
         <p>

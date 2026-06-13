@@ -3,8 +3,8 @@ window.kierdynPage = {
     title: "Son of Rome & Brother of Eben",
     parent: "aurelia",
     portrait: "images/portraits/kierdyn.png",
-    next: "josiah",
-    previous: "eben",
+    next: "eben",
+    previous: "amun",
     text: [
       `
         <p>

@@ -3,8 +3,8 @@ window.gamilaPage = {
     title: "Daughter of the Sun",
     parent: "helios",
     portrait: "images/portraits/gamila.png",
-    next: "gage",
-    previous: "batresh",
+    next: "decimus",
+    previous: "damion",
     text: [
       `
         <p>

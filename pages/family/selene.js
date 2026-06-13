@@ -3,8 +3,8 @@ window.selenePage = {
     title: "Daughter of Isis & Queen of Mauritania",
     parent: "cleopatra",
     portrait: "images/portraits/selene.png",
-    next: "damion",
-    previous: "antonia",
+    next: "juba",
+    previous: "helios",
     text: [
     `
       <p>

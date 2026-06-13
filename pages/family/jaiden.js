@@ -1,9 +1,9 @@
 window.jaidenPage = {
     name: "Jaiden Antonius",
     title: "Son of Rome",
-    parent: "aemilia",
+    parent: "iullus",
     portrait: "images/portraits/jaiden.png",
-    next: "kaleb",
+    next: "aurelia",
     previous: "alessandro",
     text: [
       `

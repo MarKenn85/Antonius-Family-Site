@@ -1,10 +1,10 @@
-window.torPage = {
-    name: "Tor",
-    title: "Servus Antonius",
+window.decimusPage = {
+    name: "Decimus Cosmas",
+    title: "Son of Rome",
     parent: "",
-    portrait: "images/portraits/tor.png",
-    next: "quintus",
-    previous: "taurus",
+    portrait: "images/portraits/decimus.png",
+    next: "gage",
+    previous: "gamila",
     text: [
       `
         <p>

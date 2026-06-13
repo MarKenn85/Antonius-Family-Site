@@ -1,10 +1,10 @@
-window.torPage = {
-    name: "Tor",
-    title: "Servus Antonius",
+window.lhiannonPage = {
+    name: "Lhiannon Antonius",
+    title: "Daughter of Brigatane",
     parent: "",
-    portrait: "images/portraits/tor.png",
-    next: "quintus",
-    previous: "taurus",
+    portrait: "images/portraits/lhiannon.png",
+    next: "vincent",
+    previous: "frederick",
     text: [
       `
         <p>

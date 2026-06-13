@@ -4,7 +4,7 @@ window.neroPage = {
     parent: "damion",
     portrait: "images/portraits/nero.png",
     next: "sid",
-    previous: "gage",
+    previous: "blay",
     text: [
       `
         <p>

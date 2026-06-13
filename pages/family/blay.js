@@ -3,8 +3,8 @@ window.blayPage = {
     title: "Son of Rome",
     parent: "filipa",
     portrait: "images/portraits/blay.png",
-    next: "eben",
-    previous: "claudius",
+    next: "nero",
+    previous: "eben",
     text: [
       `
         <p>

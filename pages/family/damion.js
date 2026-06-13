@@ -3,8 +3,8 @@ window.damionPage = {
     title: "Pater Famiglia",
     parent: "antonia",
     portrait: "images/portraits/damion.png",
-    next: "filipa",
-    previous: "selene",
+    next: "gamila",
+    previous: "teriteqas",
     text: [
       `
         <p>

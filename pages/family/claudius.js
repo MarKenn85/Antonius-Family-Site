@@ -3,7 +3,7 @@ window.claudiusPage = {
     title: "Son of Rome",
     parent: "damion",
     portrait: "images/portraits/claudius.png",
-    next: "blay",
+    next: "rose",
     previous: "sid",
     text: [
       `

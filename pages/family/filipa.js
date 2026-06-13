@@ -3,8 +3,8 @@ window.filipaPage = {
     title: "Queen of Nubia & Renowned Architect",
     parent: "antonia",
     portrait: "images/portraits/filipa.png",
-    next: "alessandro",
-    previous: "damion",
+    next: "teriteqas",
+    previous: "kaleb",
     text: [
       `
         <p>

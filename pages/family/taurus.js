@@ -3,7 +3,7 @@ window.taurusPage = {
     title: "Son of Rome",
     parent: "xal",
     portrait: "images/portraits/taurus.png",
-    next: "rose",
+    next: "tor",
     previous: "josiah",
     text: [
       `

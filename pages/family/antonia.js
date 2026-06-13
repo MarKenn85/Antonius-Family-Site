@@ -3,7 +3,7 @@ window.antoniaPage = {
     title: "Lady of the People",
     parent: "octavia",
     portrait: "images/portraits/antonia.png",
-    next: "selene",
+    next: "nerod",
     previous: "airiana",
     text: [
     `

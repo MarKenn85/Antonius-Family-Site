@@ -1,10 +1,10 @@
-window.torPage = {
-    name: "Tor",
-    title: "Servus Antonius",
+window.amunPage = {
+    name: "Amun Antonius",
+    title: "Nobleman of Tyre",
     parent: "",
-    portrait: "images/portraits/tor.png",
-    next: "quintus",
-    previous: "taurus",
+    portrait: "images/portraits/amun.png",
+    next: "kierdyn",
+    previous: "batresh",
     text: [
       `
         <p>

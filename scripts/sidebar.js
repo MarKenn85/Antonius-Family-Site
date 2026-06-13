@@ -6,14 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // === Categories ===
   const categories = {
-    "Children": ["aemilia", "airiana", "antonia", "selene"],
-    "Grandchildren": ["damion", "filipa", "alessandro", "jaiden", "kaleb", "zarek", "xal", "batresh", "gamila", "gage"],
-    "Great Grandchildren": ["nero", "sid", "claudius", "blay", "eben", "kierdyn", "josiah", "taurus", "rose", "frederick", "vincent"],
+    "Children": ["iullus", "aemilia", "airiana", "antonia", "nerod", "helios", "selene", "juba"],
+    "Grandchildren": ["alessandro", "jaiden", "aurelia", "kaleb", "filipa", "teriteqas", "damion", "gamila", "decimus", "gage", "zarek", "xal", "batresh", "amun"],
+    "Great Grandchildren": ["eben", "kierdyn", "blay", "nero", "sid", "claudius", "rose", "frederick", "lhiannon", "vincent", "josiah", "taurus"],
     "Servus / Custo": ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"]
   };
 
   // === Starred members ===
   const starredMembers = ["damion"];
+
+  // === Spouses ===
+  const spouses = ["aemilia", "nerod", "juba", "teriteqas", "decimus", "amun", "lhiannon"];
 
   // === Folder resolver ===
   function getCharacterFolder(id) {
@@ -63,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const parentList = clickedLink.closest(".nav-list");
         if (parentList && !parentList.classList.contains("open")) {
           parentList.classList.add("open");
-          parentList.style.maxHeight = parentList.scrollHeight + "px";
+          parentList.style.maxHeight = (parentList.scrollHeight + 28) + "px";
           parentList.previousElementSibling.classList.add("open"); // keep header visually open
         }
       }
@@ -102,6 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (const id of ids) {
         const li = document.createElement("li");
+        if (spouses.includes(id)) {
+        li.classList.add("spouse-link");
+        }
         const a = document.createElement("a");
         a.textContent = family[id]?.name || id;
         a.href = "#";
@@ -117,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       header.addEventListener("click", () => {
         const isOpen = list.classList.toggle("open");
         header.classList.toggle("open", isOpen);
-        list.style.maxHeight = isOpen ? list.scrollHeight + "px" : "0";
+        list.style.maxHeight = isOpen ? (list.scrollHeight + 28) + "px" : "0";
       });
 
       sectionDiv.appendChild(list);
@@ -137,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const list = activeLink.closest(".nav-list");
         if (list) {
           list.classList.add("open");
-          list.style.maxHeight = list.scrollHeight + "px";
+          list.style.maxHeight = (list.scrollHeight + 28) + "px";
           list.previousElementSibling.classList.add("open");
         }
       }

@@ -2,8 +2,8 @@ window.octaviaPage = {
   name: "Octavia the Younger",
   title: "Matriarch of the Antonii",
   portrait: "images/portraits/octavia.png",
-  next: "aemilia",
-  previous: "",
+  next: "iullus",
+  previous: "joak",
   text: [
     `
     <p>

@@ -4,7 +4,7 @@ window.rosePage = {
     parent: "gamilla",
     portrait: "images/portraits/rose.png",
     next: "frederick",
-    previous: "taurus",
+    previous: "claudius",
     text: [
       `
         <p>
