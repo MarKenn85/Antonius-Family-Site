@@ -618,11 +618,24 @@ function drawMarriageLines() {
     /* Marcus connection point */
 
     const marcusCard = document.querySelector('[data-id="marcus"]');
+    if (!marcusCard) return;
+
     const marcusPos = getCanvasPosition(marcusCard);
+
+    const wifeCards = Array.from(document.querySelectorAll('[data-connect="wife"]'));
+
+    let spouseLineY = marcusPos.y + (marcusCard.offsetHeight / 2);
+
+    if (wifeCards.length > 0) {
+        const firstWife = wifeCards[0];
+        const firstWifePos = getCanvasPosition(firstWife);
+
+        spouseLineY = firstWifePos.y + firstWife.offsetHeight / 2;
+    }
 
     const marcusPoint = {
         x: marcusPos.x + marcusCard.offsetWidth,
-        y: marcusPos.y + (marcusCard.offsetHeight / 2)
+        y: spouseLineY
     };
 
     /* Dynamic canvas size */
@@ -653,8 +666,6 @@ function drawMarriageLines() {
     const svgOffsetY = 0;
 
     /* Main spouse trunk line */
-
-    const wifeCards = Array.from(document.querySelectorAll('[data-connect="wife"]'));
 
     if (wifeCards.length > 0) {
         const lastCard = wifeCards[wifeCards.length - 1];
@@ -772,7 +783,7 @@ partnerCards.forEach(person => {
 
         /* Multiple children: branching connector */
 
-        const branchY = parentBottomY + 80;
+        const branchY = parentBottomY + 140;
 
         const leftX = Math.min(...childPoints.map(point => point.x));
         const rightX = Math.max(...childPoints.map(point => point.x));
@@ -802,7 +813,6 @@ partnerCards.forEach(person => {
     });
 }
 
-
 /* =========================================================
    INITIAL DRAW
 ========================================================= */
@@ -825,7 +835,26 @@ sizeMainBranches();
 
 layoutBranches();
 
+addTreeImages();
+
 drawMarriageLines();
+
+/* =========================================================
+   CARD IMAGES
+========================================================= */
+
+function addTreeImages() {
+    const cards = document.querySelectorAll("[data-image]");
+
+    cards.forEach(card => {
+        const img = document.createElement("img");
+
+        img.className = "tree-card-img";
+        img.src = card.dataset.image;
+
+        card.prepend(img);
+    });
+}
 
 /* =========================================================
    DRAG / PAN / ZOOM CANVAS

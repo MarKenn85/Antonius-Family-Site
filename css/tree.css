@@ -147,7 +147,7 @@ body {
 .tree-wife-card {
     position: absolute;
 
-    width: 200px;
+    width: 260px;
     padding: 12px;
 
     text-align: center;
@@ -187,6 +187,19 @@ body {
 
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     z-index: 2;
+}
+
+.tree-card-img {
+    width: 110px;
+    height: 160px;
+    object-fit: cover;
+
+    display: block;
+    margin: 0 auto 10px auto;
+
+    border-radius: 8px;
+    border: 2px solid #b8a27a;
+    background: #efe4ce;
 }
 
 /* Temporary placeholder */
