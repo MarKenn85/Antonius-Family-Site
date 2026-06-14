@@ -1,0 +1,222 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Libre Baskerville', serif;
+    background: #f2ead7;
+}
+
+#tree-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Marcus panel */
+
+#side-panel {
+    width: 220px;
+    min-width: 220px;
+
+    border-right: 2px solid #b89b68;
+
+    background: #efe4ce;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#side-panel h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  font-variant: small-caps;
+  color: #5a422a;
+  text-align: center;
+  border-bottom: 2px solid #b8a27a;
+  margin-bottom: 1.0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.0rem;
+  letter-spacing: 0.08em;
+  cursor: default;
+  user-select: none;
+}
+
+#side-panel h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5rem;
+  font-variant: small-caps;
+  color: #b8a27a;
+  text-align: center;
+  border-bottom: 2px solid #b8a27a;
+  margin-bottom: 1.0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.0rem;
+  letter-spacing: 0.08em;
+  cursor: default;
+  user-select: none;
+}
+
+#side-panel b {
+  color: #5a422a;
+  text-decoration: none;
+  font-size: 1.0rem;
+  display: block;
+  font-variant: small-caps;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Tree viewport */
+
+#tree-viewport {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background: #f8f3e8;
+}
+
+/* Tree canvas */
+
+#tree-canvas {
+    position: absolute;
+
+    width: 3000px;
+    height: 2000px;
+
+    left: 0;
+    top: 0;
+
+    user-select: none;
+}
+
+#tree-viewport {
+    cursor: grab;
+}
+
+#tree-lines {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+}
+
+.branch-container {
+    position: absolute;
+}
+
+.sub-branch-container {
+    position: absolute;
+}
+
+.tree-marcus-card {
+    position: absolute;
+
+    width: 200px;
+    padding: 12px;
+
+    text-align: center;
+
+    background: #efe4ce;
+    border: 2px solid #b8a27a;
+    border-radius: 8px;
+
+    font-family: 'Libre Baskerville', serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #5a422a;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+    z-index: 2;
+}
+
+.tree-wife-card {
+    position: absolute;
+
+    width: 200px;
+    padding: 12px;
+
+    text-align: center;
+
+    background: #efe4ce;
+    border: 2px solid #b8a27a;
+    border-radius: 8px;
+
+    font-family: 'Libre Baskerville', serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #5a422a;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+    z-index: 2;
+}
+
+.tree-child-card {
+    position: absolute;
+
+    width: 260px;
+    padding: 12px;
+
+    text-align: center;
+
+    background: #f7efe0;
+    border: 2px solid #b8a27a;
+    border-radius: 8px;
+
+    font-family: 'Libre Baskerville', serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.0rem;
+    color: #5a422a;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+/* Temporary placeholder */
+
+.placeholder {
+    position: absolute;
+
+    left: 400px;
+    top: 200px;
+
+    padding: 15px 25px;
+
+    background: white;
+
+    border: 1px solid #cdb387;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  background-color: #b8a27a;
+  color: #fff;
+  text-decoration: none;
+  font-variant: small-caps;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.home-btn:hover {
+  background-color: #a28c64;
+  transform: translateY(-2px);
+}
