@@ -158,15 +158,23 @@ document.getElementById("next-entry").addEventListener("click", async () => {
 
 // === Lineage trail builder (non-clickable) ===
 async function buildLineageTrail(id) {
+  const LINEAGE_ROOT_ID = "octavia";
+
   const trailContainer = document.getElementById("lineage-trail");
   if (!trailContainer) return;
 
   const lineage = [];
-  let current = window[`${id}Page`];
+  let currentId = id;
+  let current = window[`${currentId}Page`];
 
   // Walk up through parents — load missing ones if needed
   while (current) {
     lineage.unshift(current);
+
+    if (currentId === LINEAGE_ROOT_ID && id !== LINEAGE_ROOT_ID) {
+      break;
+    }
+
     const parentId = current.parent;
 
     if (parentId && !window[`${parentId}Page`]) {
@@ -185,6 +193,7 @@ async function buildLineageTrail(id) {
       }
     }
 
+    currentId = parentId;
     current = parentId ? window[`${parentId}Page`] : null;
   }
 

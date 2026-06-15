@@ -1,10 +1,15 @@
-window.joakPage = {
-    name: "Joak",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/joak.png",
-    next: "caesar",
-    previous: "miklos",
+window.atiaPage = {
+    name: "Atia Balba Caesonia",
+    title: "Granddaughter of Caesar",
+	status: "Deceased",
+	residence: "Antonius Estate - Ilva",
+    parent: "julia",
+	spouses: [],
+	children: ["octavia", "octavian"],
+	role: "A powerful Roman noble who always goes first.",
+    portrait: "images/portraits/atia.png",
+    next: "octavian",
+    previous: "julia",
     text: [
       `
         <p>

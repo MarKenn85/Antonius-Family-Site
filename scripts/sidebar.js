@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!sidebar || !content) return;
 
   // === Categories ===
+  
   const categories = {
+    "Ancestors": ["caesar", "julius", "julia", "atia", "octavian"],
+    "Wives": ["fulvia", "octavia", "cleopatra"],
     "Children": ["iullus", "aemilia", "airiana", "antonia", "nerod", "helios", "selene", "juba"],
     "Grandchildren": ["alessandro", "jaiden", "aurelia", "kaleb", "filipa", "teriteqas", "damion", "gamila", "decimus", "gage", "zarek", "xal", "batresh", "amun"],
     "Great Grandchildren": ["eben", "kierdyn", "blay", "nero", "sid", "claudius", "rose", "frederick", "lhiannon", "vincent", "josiah", "taurus"],
@@ -133,13 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
     content.innerHTML = "";
     content.appendChild(wrapper);
 
-    // === Auto-expand current section if URL has ?char= ===
+    // === Auto-expand current section ===
     const url = new URL(window.location.href);
-    const activeChar = url.searchParams.get("char");
+    const isJournalPage = document.body.id === "journal";
+    const activeChar = url.searchParams.get("char") || (isJournalPage ? "octavia" : null);
+
     if (activeChar) {
       const activeLink = document.querySelector(`#sidebar-content a[data-id='${activeChar}']`);
+
       if (activeLink) {
         activeLink.classList.add("current");
+
         const list = activeLink.closest(".nav-list");
         if (list) {
           list.classList.add("open");

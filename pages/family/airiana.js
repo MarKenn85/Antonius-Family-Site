@@ -1,5 +1,5 @@
 window.airianaPage = {
-    name: "Antonia (Airiana) Major",
+    name: "Antonia 'Airiana' Major",
     title: "Lady of Liesure",
 	status: "Living",
 	residence: "Antonius Estate - Ilva",

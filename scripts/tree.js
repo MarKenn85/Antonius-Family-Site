@@ -1041,6 +1041,30 @@ function centerOnCard(id) {
    TEST MODAL
 ========================================================= */
 
+async function getTreeLineage(id) {
+    const LINEAGE_ROOT_ID = "octavia";
+
+    const lineage = [];
+    let currentId = id;
+
+    while (currentId) {
+        await loadTreeCharacterScript(currentId);
+
+        const data = window[`${currentId}Page`];
+        if (!data) break;
+
+        lineage.unshift(data.name || formatTreeName(currentId));
+
+        if (currentId === LINEAGE_ROOT_ID && id !== LINEAGE_ROOT_ID) {
+            break;
+        }
+
+        currentId = data.parent || null;
+    }
+
+    return lineage.join('<span class="lineage-separator">/</span>');
+}
+
 async function openTreeModal(card) {
 
     const modal = document.getElementById("tree-modal");
@@ -1076,7 +1100,13 @@ async function openTreeModal(card) {
     modalName.textContent = data.name || modalName.textContent;
     modalTitle.textContent = data.title || "";
 
+    const lineage = await getTreeLineage(id);
+
+    const modalLineage = document.getElementById("tree-modal-lineage");
+
+    modalLineage.innerHTML = lineage;
     modalSummary.innerHTML = buildTreeModalFacts(data);
+    
 }
 
 function loadTreeCharacterScript(id) {

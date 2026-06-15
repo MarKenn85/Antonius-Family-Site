@@ -9,7 +9,7 @@ window.octaviaPage = {
 	role: "Third wife of Marcus and adored mother to many Antonii.",
 	portrait: "images/portraits/octavia.png",
 	next: "iullus",
-	previous: "joak",
+	previous: "octavian",
 	text: [
     `
     <p>

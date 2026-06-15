@@ -1,10 +1,15 @@
-window.joakPage = {
-    name: "Joak",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/joak.png",
-    next: "caesar",
-    previous: "miklos",
+window.juliusPage = {
+    name: "Julius Caesar",
+    title: "The man who would be Emperor of Rome",
+	status: "Deceased",
+	residence: "Antonius Estate - Ilva",
+    parent: "caesar",
+	spouses: [],
+	children: [],
+	role: "The greatest Roman in history.",
+    portrait: "images/portraits/julius.png",
+    next: "julia",
+    previous: "caesar",
     text: [
       `
         <p>
