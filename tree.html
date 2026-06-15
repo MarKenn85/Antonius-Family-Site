@@ -104,17 +104,23 @@
                             style="top:500px;">
                             Jaiden Antonius
                         </div>
-                    
-                        <!-- === AURELIA === -->
+
+                        <!-- === AURELIA BRANCH === -->
                         <div
-                        class="tree-child-card"
-                        data-image="images/portraits/aurelia.png"
-                        data-id="aurelia"
-                        data-parents="aemilia,iullus"
-                        data-auto="children"
-                        style="top:500px;">
-                        Aurelia Antonius
-                        </div>
+                            class="sub-branch-container"
+                            data-id="aurelia-branch"
+                            style="left:60px; top:0px;">
+
+                            <!-- === AURELIA === -->
+                            <div
+                                class="tree-child-card"
+                                data-image="images/portraits/aurelia.png"
+                                data-id="aurelia"
+                                data-parent="aemilia,iullus"
+                                data-auto="children"
+                                style="top:500px;">
+                                Aurelia Antonius
+                            </div>
                             
                             <!-- === KIERDYN === -->
                             <div
@@ -135,7 +141,7 @@
                                 style="top:800px;">
                                 Eben Antonius
                             </div>
-
+                        </div>
                 </div>
 
             </div>
@@ -144,26 +150,58 @@
             <div
                 class="branch-container"
                 style="top:200px;">
+                 
+                <!-- === GAIUS JULIUS CAESAR === -->
+                <div
+                    class="tree-child-card"
+                    data-image="images/portraits/caesar.png"
+                    data-id="caesar"
+                    data-auto="children"
+                    style="left:400px; top:-1400px;">
+                    Gaius Julius Caesar
+                </div>
 
-                <!-- === Atia Test === -->
+                <!-- === JULIUS CAESAR === -->
+                <div
+                    class="tree-child-card"
+                    data-image="images/portraits/julius.png"
+                    data-id="julius"
+                    data-line-parent="caesar"
+                    style="left:600px; top:-1100px;">
+                    Julius Caesar
+                </div>
+
+                <!-- === JULIA === -->
+                <div
+                    class="tree-child-card"
+                    data-image="images/portraits/julia.png"
+                    data-id="julia"
+                    data-line-parent="caesar"
+                    data-auto="children"
+                    style="left:200px; top:-1100px;">
+                    Julia Minor
+                </div>
+
+                <!-- === ATIA === -->
                 <div
                     class="tree-child-card"
                     data-image="images/portraits/atia.png"
                     data-id="atia"
+                    data-line-parent="julia"
                     data-auto="children"
                     style="left:200px; top:-800px;">
-                    Atia
+                    Atia Balba Caesonia
                 </div>
 
-                <!-- === Octavian Test === -->
+                <!-- === OCTAVIAN === -->
                 <div
                     class="tree-child-card"
                     data-image="images/portraits/octavian.png"
                     data-id="octavian"
                     data-line-parent="atia"
                     data-connect="child"
-                    style="left:500px; top:-400px;">
-                    Octavian
+                    style="left:600px; top:-500px;">
+                    Caesar Augustus
                 </div>
 
                 <!-- === OCTAVIA MINOR === -->
@@ -175,7 +213,7 @@
                     data-connect="wife"
                     data-auto="children"
                     style="top:0px;">
-                    Octavia
+                    Octavia the Younger
                 </div>
 
             <!-- === AIRIANA BRANCH === -->
@@ -237,6 +275,13 @@
                         Nero Claudius Drusus
                     </div>
 
+                    <!-- === FILIPA BRANCH === -->
+                    <div
+                        class="sub-branch-container"
+                        data-id="filipa-branch"
+                        data-parent="antonia,nerod"
+                        style="top:0px; min-width:520px;">
+
                         <!-- === FILIPA === -->
                         <div
                             class="tree-child-card"
@@ -248,16 +293,34 @@
                             Filipa Antonius
                         </div>
 
+                        <!-- === TERITEQAS === -->
+                        <div
+                            class="tree-child-card"
+                            data-image="images/portraits/teriteqas.png"
+                            data-id="teriteqas"
+                            data-partner="filipa"
+                            style="top:500px;">
+                            Teriteqas
+                        </div>
+
                             <!-- === BLAY === -->
                             <div
                                 class="tree-child-card"
                                 data-image="images/portraits/blay.png"
                                 data-id="blay"
-                                data-parents="filipa"
+                                data-parents="filipa,teriteqas"
                                 data-auto="children"
                                 style="top:800px;">
                                 Blay Antonius
                             </div>
+                    </div>
+
+                    <!-- === DAMION BRANCH === -->
+                    <div
+                        class="sub-branch-container"
+                        data-id="damion-branch"
+                        data-parent="antonia,nerod"
+                        style="top:0px; min-width:780px;">
 
                         <!-- === DAMION === -->
                         <div
@@ -297,8 +360,9 @@
                                 data-id="claudius"
                                 data-parents="damion"
                                 style="top:800px;">
-                                Claudius Antonius Palus
+                                Claudius Antonius Paullus
                             </div>
+                    </div>
                 </div>
 
             </div>
@@ -409,7 +473,7 @@
                                 data-id="vincent"
                                 data-parents="gage"
                                 style="top:800px;">
-                                Vincent Antonius Hawke
+                                Vincent Hawke Antonius
                             </div>
                 </div>
 
@@ -508,6 +572,25 @@
 
     </main>
 
+</div>
+
+<div id="tree-modal" class="tree-modal" aria-hidden="true">
+    <div class="tree-modal-backdrop" data-close-modal></div>
+
+    <div class="tree-modal-card">
+
+        <img id="tree-modal-img" class="tree-modal-img" src="" alt="">
+
+        <div class="tree-modal-copy">
+            <h2 id="tree-modal-name"></h2>
+            <h3 id="tree-modal-title"></h3>
+            <p id="tree-modal-summary"></p>
+
+            <a id="tree-modal-journal" class="tree-modal-link" href="#">
+                Read Journal Entry
+            </a>
+        </div>
+    </div>
 </div>
 
 <script src="scripts/tree.js"></script>

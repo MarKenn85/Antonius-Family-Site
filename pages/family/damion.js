@@ -1,7 +1,12 @@
 window.damionPage = {
     name: "Damion Draco Antonius",
     title: "Pater Famiglia",
+	status: "Living",
+	residence: "Antonius Estate - Ilva",
     parent: "antonia",
+	spouses: [],
+	children: ["nero", "sidonius", "claudius"],
+	role: "Head of the Antonius family and all around sweet boy.",
     portrait: "images/portraits/damion.png",
     next: "gamila",
     previous: "teriteqas",

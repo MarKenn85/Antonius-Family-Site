@@ -1,7 +1,12 @@
 window.aemiliaPage = {
-    name: "Claudia (Aemilia) Marcella Major",
+    name: "Claudia 'Aemilia' Marcella Major",
     title: "Present Antonius Matriarch",
+	status: "Living",
+	residence: "Antonius Estate - Ilva",
     parent: "octavia",
+	spouses: ["iullus"],
+	children: ["alessandro", "jaiden", "aurelia"],
+	role: "Keeper of the Lares and scolder of naughty children.",
     portrait: "images/portraits/aemilia.png",
     next: "airiana",
     previous: "iullus",

@@ -1,7 +1,12 @@
 window.antoniaPage = {
     name: "Antonia Minor",
     title: "Lady of the People",
+	status: "Living",
+	residence: "Antonius Estate - Ilva",
     parent: "octavia",
+	spouses: ["nerod"],
+	children: ["filipa", "damion"],
+	role: "Shrewd political figure and cunning diplomat.",
     portrait: "images/portraits/antonia.png",
     next: "nerod",
     previous: "airiana",

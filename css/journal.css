@@ -79,6 +79,26 @@ body#journal {
   background-color: #f8f6f2;
 }
 
+.tree-link-btn {
+  display: inline-block;
+
+  margin-top: 0.8rem;
+  padding: 0.45rem 1.2rem;
+
+  background-color: #b8a27a;
+  color: #fff;
+
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.tree-link-btn:hover {
+  background-color: #a28c64;
+}
+
 /* === Text area === */
 .text-area {
   flex: 1;

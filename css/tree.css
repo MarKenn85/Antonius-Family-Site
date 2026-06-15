@@ -136,7 +136,7 @@ body {
     font-family: 'Libre Baskerville', serif;
     font-variant: small-caps;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #5a422a;
 
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -159,7 +159,7 @@ body {
     font-family: 'Libre Baskerville', serif;
     font-variant: small-caps;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #5a422a;
 
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -190,7 +190,7 @@ body {
 }
 
 .tree-card-img {
-    width: 110px;
+    width: 120px;
     height: 160px;
     object-fit: cover;
 
@@ -232,4 +232,198 @@ body {
 .home-btn:hover {
   background-color: #a28c64;
   transform: translateY(-2px);
+}
+
+/* =========================================================
+   PORTRAIT POPUP MODAL
+========================================================= */
+
+.tree-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.tree-modal.open {
+    display: flex;
+}
+
+.tree-modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 12, 6, 0.75);
+}
+
+.tree-modal-card {
+    position: relative;
+    z-index: 10001;
+
+    width: min(700px, calc(100vw - 40px));
+    display: flex;
+    gap: 16px;
+
+    padding: 20px;
+
+    background: #fffaf3;
+    border: 2px solid #b8a27a;
+    border-radius: 18px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+
+    color: #5a422a;
+}
+
+.tree-modal-img {
+    width: 230px;
+    height: 360px;
+    object-fit: cover;
+
+    border: 2px solid #b8a27a;
+    border-radius: 12px;
+    background: #f8f6f2;
+}
+
+.tree-modal-copy {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tree-modal-copy h2 {
+    margin: 0 0 6px;
+
+    color: #5a422a;
+    font-variant: small-caps;
+    font-size: 1.6rem;
+}
+
+.tree-modal-copy h3 {
+    margin: 0 0 16px;
+
+    text-decoration: underline;
+    text-decoration-color: #b8a27a;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+
+    color: #7b6141;
+    font-variant: small-caps;
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.tree-modal-copy p {
+    margin: 0 0 18px;
+
+    color: #7b6141;
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.5;
+}
+
+.tree-modal-copy p.tree-modal-role {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    text-decoration-color: #b8a27a;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    color: #7b6141;
+    font-style: italic;
+    line-height: 1.0;
+}
+
+.tree-modal-facts {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tree-modal-copy p.tree-modal-detail {
+    margin: 0 0 3px;
+
+    line-height: 1.5;
+}
+
+.tree-modal-label {
+    display: inline-block;
+    min-width: 100px;
+
+    font-size: 1.2rem;
+    color: #7b6141;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.tree-modal-value {
+    margin-top: 2px;
+    font-size: 1.1rem;
+    color: #b8a27a;
+    font-weight: bold;
+}
+
+.tree-modal-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0px;
+}
+
+.tree-modal-detail {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.tree-modal-detail .tree-modal-label {
+    flex-shrink: 0;
+}
+
+.tree-modal-detail .tree-modal-list {
+    flex: 1;
+}
+
+.tree-modal-person-link {
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #b8a27a;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+}
+
+.tree-modal-person-link:hover {
+    color: #7b6141;
+    text-decoration: underline;
+}
+
+.tree-modal-link {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+
+    padding: 0.5rem 1rem;
+
+    background: #b8a27a;
+    color: #fffaf3;
+
+    text-decoration: none;
+    border-radius: 6px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.tree-modal-link.disabled {
+    pointer-events: none;
+    opacity: 0.45;
 }

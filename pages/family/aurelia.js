@@ -1,7 +1,12 @@
 window.aureliaPage = {
     name: "Aurelia Antonius",
     title: "Daughter of Rome",
+	status: "Living",
+	residence: "Antonius Estate - Ilva",
     parent: "iullus",
+	spouses: [],
+	children: ["kierdyn", "eben"],
+	role: "Devoted mother and lover of the arts.",
     portrait: "images/portraits/aurelia.png",
     next: "kaleb",
     previous: "jaiden",

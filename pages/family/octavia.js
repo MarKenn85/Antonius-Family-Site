@@ -1,10 +1,16 @@
 window.octaviaPage = {
-  name: "Octavia the Younger",
-  title: "Matriarch of the Antonii",
-  portrait: "images/portraits/octavia.png",
-  next: "iullus",
-  previous: "joak",
-  text: [
+	name: "Octavia the Younger",
+	title: "Matriarch of the Antonii",
+	status: "Deceased",
+	residence: "Antonius Estate - Ilva",
+    parent: "atia",
+	spouses: ["marcus"],
+	children: ["airiana", "antonia"],
+	role: "Third wife of Marcus and adored mother to many Antonii.",
+	portrait: "images/portraits/octavia.png",
+	next: "iullus",
+	previous: "joak",
+	text: [
     `
     <p>
     I awoke this morning to the soft song of birds outside, the early light creeping in through the open window.

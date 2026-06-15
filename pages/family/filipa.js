@@ -1,7 +1,12 @@
 window.filipaPage = {
     name: "Filipa Antonius",
     title: "Queen of Nubia & Renowned Architect",
+	status: "Living",
+	residence: "All across the Empire",
     parent: "antonia",
+	spouses: ["teriteqas"],
+	children: ["blay"],
+	role: "Builder of Rome and drinker of HER wine.",
     portrait: "images/portraits/filipa.png",
     next: "teriteqas",
     previous: "kaleb",

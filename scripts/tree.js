@@ -277,16 +277,21 @@ function layoutSubBranches() {
         const parentId = parent.dataset.id;
 
         const branches = Array.from(
-            document.querySelectorAll(
-                `.sub-branch-container[data-parent="${parentId}"]`
-            )
-        );
+            document.querySelectorAll(".sub-branch-container[data-parent]")
+        ).filter(branch => {
+            const ids = branch.dataset.parent
+                .split(",")
+                .map(id => id.trim());
+
+            return ids.includes(parentId);
+        });
 
         if (branches.length === 0) return;
 
         const parentContainer = parent.closest(".sub-branch-container, .branch-container");
         const containerPos = getCanvasPosition(parentContainer);
-        const parentAnchor = getRelationshipAnchor(parentId);
+        const branchParentId = branches[0].dataset.parent;
+        const parentAnchor = getRelationshipAnchor(branchParentId || parentId);
 
         if (!parentAnchor) return;
 
@@ -587,14 +592,37 @@ function layoutChildren() {
     const parents = document.querySelectorAll('[data-auto="children"]');
 
     parents.forEach(parent => {
-        const allChildren = getChildCardsFor(parent);
+        const parentContainer =
+            parent.closest(".sub-branch-container, .branch-container");
+
+        const allChildren = getChildCardsFor(parent).filter(child => {
+            const childContainer =
+                child.closest(".sub-branch-container, .branch-container");
+
+            return childContainer === parentContainer;
+        });
 
         if (allChildren.length === 0) return;
 
-        const parentContainer = parent.closest(".sub-branch-container, .branch-container");
         const containerPos = getCanvasPosition(parentContainer);
 
-        const parentAnchor = getParentAnchor(parent);
+        let parentAnchor = getParentAnchor(parent);
+
+        const firstChildWithParents = allChildren.find(child => child.dataset.parents);
+
+        if (firstChildWithParents) {
+
+            const parentIds = firstChildWithParents.dataset.parents
+                .split(",")
+                .map(id => id.trim());
+
+            if (parentIds.length > 1 && parentIds.includes(parent.dataset.id)) {
+
+                parentAnchor = getRelationshipAnchor(parentIds.join(","));
+
+            }
+
+        }
 
         if (!parentAnchor) return;
 
@@ -987,6 +1015,267 @@ function centerOnOctavia() {
     updateCanvasTransform();
 }
 
+function centerOnCard(id) {
+    const card = document.querySelector(`[data-id="${id}"]`);
+
+    if (!card) {
+        centerOnOctavia();
+        return;
+    }
+
+    const viewportRect = viewport.getBoundingClientRect();
+    const cardPos = getCanvasPosition(card);
+
+    currentX =
+        viewportRect.width / 2 -
+        (cardPos.x + card.offsetWidth / 2);
+
+    currentY =
+        viewportRect.height / 2 -
+        (cardPos.y + card.offsetHeight / 2);
+
+    updateCanvasTransform();
+}
+
+/* =========================================================
+   TEST MODAL
+========================================================= */
+
+async function openTreeModal(card) {
+
+    const modal = document.getElementById("tree-modal");
+
+    if (!modal) return;
+
+    const id = card.dataset.id;
+    const image = card.dataset.image;
+    const cardText = card.textContent.trim();
+
+    const modalImg = document.getElementById("tree-modal-img");
+    const modalName = document.getElementById("tree-modal-name");
+    const modalTitle = document.getElementById("tree-modal-title");
+    const modalSummary = document.getElementById("tree-modal-summary");
+    const modalJournal = document.getElementById("tree-modal-journal");
+
+    modalImg.src = image || "images/background/emblem.png";
+    modalName.textContent = cardText || id;
+    modalTitle.textContent = "Family Tree Entry";
+    modalSummary.innerHTML = "Journal details to come.";
+
+    modalJournal.href = `journal.html?char=${encodeURIComponent(id)}`;
+
+    modal.classList.add("open");
+
+    await loadTreeCharacterScript(id);
+
+    const data = window[`${id}Page`];
+
+    if (!data) return;
+
+    modalImg.src = data.portrait || modalImg.src;
+    modalName.textContent = data.name || modalName.textContent;
+    modalTitle.textContent = data.title || "";
+
+    modalSummary.innerHTML = buildTreeModalFacts(data);
+}
+
+function loadTreeCharacterScript(id) {
+
+    return new Promise((resolve, reject) => {
+
+        const existingScript = document.querySelector(`script[data-tree-character="${id}"]`);
+
+        if (existingScript) {
+            resolve();
+            return;
+        }
+
+        const script = document.createElement("script");
+
+        script.src = `pages/family/${id}.js`;
+        script.dataset.treeCharacter = id;
+
+        script.onload = () => {
+            resolve();
+        };
+
+        script.onerror = () => {
+            console.warn(`Could not load character file for: ${id}`);
+            resolve();
+        };
+
+        document.body.appendChild(script);
+
+    });
+
+}
+
+function formatTreeName(id) {
+
+    const card = document.querySelector(`[data-id="${id}"]`);
+
+    if (card) {
+
+        const name = card.textContent.trim();
+
+        if (name) return name;
+
+    }
+
+    return id
+        .split("_")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+}
+
+function buildTreePersonLink(id) {
+
+    const name = formatTreeName(id);
+
+    return `
+        <button class="tree-modal-person-link" type="button" data-person-id="${id}">
+            ${name}
+        </button>
+    `;
+
+}
+
+function buildTreeModalFacts(data) {
+
+    const roleParts = [];
+    const factParts = [];
+
+    if (data.role) {
+        roleParts.push(`
+            <p class="tree-modal-role">
+                ${data.role}
+            </p>
+        `);
+    }
+
+    if (data.status) {
+        factParts.push(`
+            <p class="tree-modal-detail">
+                <span class="tree-modal-label">Status:</span>
+                <span class="tree-modal-value">${data.status}</span>
+            </p>
+        `);
+    }
+
+    if (data.residence) {
+        factParts.push(`
+            <p class="tree-modal-detail">
+                <span class="tree-modal-label">Residence:</span>
+                <span class="tree-modal-value">${data.residence}</span>
+            </p>
+        `);
+    }
+
+    if (Array.isArray(data.spouses) && data.spouses.length > 0) {
+        factParts.push(`
+            <p class="tree-modal-detail">
+                <span class="tree-modal-label">Spouse:</span>
+                <span class="tree-modal-value"> ${data.spouses.map(buildTreePersonLink).join(", ")}</span>
+            </p>
+        `);
+    }
+
+    if (Array.isArray(data.children) && data.children.length > 0) {
+
+        factParts.push(`
+        <div class="tree-modal-detail">
+
+            <div class="tree-modal-label">
+                Children:
+            </div>
+
+            <div class="tree-modal-list">
+
+                ${data.children
+                    .map(child => `
+                        <div class="tree-modal-value">
+                            ${buildTreePersonLink(child)}
+                        </div>
+                    `)
+                    .join("")}
+
+            </div>
+
+        </div>
+        `);
+
+    }
+
+    return `
+        ${roleParts.join("")}
+
+        <div class="tree-modal-facts">
+            ${factParts.join("")}
+        </div>
+    `;
+}
+
+function closeTreeModal() {
+    const modal = document.getElementById("tree-modal");
+
+    if (!modal) return;
+
+    modal.classList.remove("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll("[data-id][data-image]").forEach(card => {
+
+    card.addEventListener("click", event => {
+
+        const rect = card.getBoundingClientRect();
+
+        const clickX = event.clientX - rect.left;
+        const clickY = event.clientY - rect.top;
+
+        const portraitLeft = rect.width / 2 - 55;
+        const portraitRight = rect.width / 2 + 55;
+        const portraitTop = 15;
+        const portraitBottom = 145;
+
+        const clickedPortrait =
+            clickX >= portraitLeft &&
+            clickX <= portraitRight &&
+            clickY >= portraitTop &&
+            clickY <= portraitBottom;
+
+        if (!clickedPortrait) return;
+
+        event.stopPropagation();
+
+        openTreeModal(card);
+
+    });
+
+});
+
+    document.querySelectorAll("[data-close-modal]").forEach(button => {
+        button.addEventListener("click", () => {
+            closeTreeModal();
+        });
+    });
+
+    document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+        closeTreeModal();
+    }
+
+});
+
+});
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
 function initializeTree() {
 
     addTreeImages();
@@ -1011,9 +1300,46 @@ function initializeTree() {
 
     drawMarriageLines();
 
-    centerOnOctavia();
+    const params = new URLSearchParams(window.location.search);
+    const focusId = params.get("focus");
+
+    if (focusId) {
+
+        centerOnCard(focusId);
+
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+        );
+
+    } else {
+
+        centerOnOctavia();
+
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    document.addEventListener("click", event => {
+
+    const link = event.target.closest(".tree-modal-person-link");
+
+    if (!link) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const personId = link.dataset.personId;
+    const card = document.querySelector(`[data-id="${personId}"]`);
+
+    if (!card) return;
+
+    openTreeModal(card);
+
+});
+
     initializeTree();
 });

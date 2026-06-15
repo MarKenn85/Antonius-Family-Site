@@ -1,7 +1,13 @@
 window.fulviaPage = {
     name: "Fulvia",
     title: "Third wife of Marcus",
-    portrait: "images/background/emblem.png",
+	status: "Deceased",
+	residence: "Antonius Estate - Ilva",
+    parent: "",
+	spouse: ["marcus"],
+	children: [],
+	role: "Matriarch of the Antonius family.",
+    portrait: "images/portraits/fulvia.png",
     next: "",
     previous: "",
     text: [

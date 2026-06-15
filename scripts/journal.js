@@ -97,11 +97,26 @@ window.loadCharacter = async function (id) {
 
 // === Display current page ===
 function displayPage() {
-  if (!currentData) return;
-  document.getElementById("entry-name").textContent = currentData.name;
-  document.getElementById("entry-title").textContent = currentData.title;
-  document.getElementById("portrait").src = currentData.portrait;
-  document.getElementById("entry-text").innerHTML = currentData.text[currentPageIndex];
+
+    if (!currentData) return;
+
+    document.getElementById("entry-name").textContent = currentData.name;
+
+    document.getElementById("entry-title").textContent = currentData.title;
+
+    document.getElementById("portrait").src = currentData.portrait;
+
+    document.getElementById("entry-text").innerHTML = currentData.text[currentPageIndex];
+
+    const treeLink = document.getElementById("tree-link");
+
+    if (treeLink && currentCharacter) {
+
+        treeLink.href =
+            `tree.html?focus=${encodeURIComponent(currentCharacter)}`;
+
+    }
+
 }
 
 // === Navigation Arrows ===
