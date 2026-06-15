@@ -1,4 +1,39 @@
 
+/*
+ * Antonius Family Tree
+ * -------------------
+ *
+ * Layout Flow:
+ *
+ * 1. Add portrait images to cards.
+ * 2. Position primary family branches.
+ * 3. Position children beneath parents.
+ * 4. Position spouses beside partners.
+ * 5. Calculate branch widths and spacing.
+ * 6. Position sub-branches.
+ * 7. Re-run child/spouse positioning to account for branch changes.
+ * 8. Size main branches.
+ * 9. Draw marriage and parent-child connector lines.
+ *
+ * Notes:
+ *
+ * - Child positioning may be performed multiple times as branch
+ *   widths affect later layout calculations.
+ *
+ * - Parent-child connector lines are dynamically calculated from
+ *   card positions rather than fixed offsets.
+ *
+ * - Portrait images are added before layout calculations so card
+ *   heights are measured correctly.
+ *
+ * - Initialization is delayed until DOMContentLoaded to ensure all
+ *   cards exist before measurements and line calculations occur.
+ */
+
+/* =========================================================
+   INITIAL DRAW
+========================================================= */
+
 /* =========================================================
    SETUP
 ========================================================= */
@@ -757,6 +792,21 @@ partnerCards.forEach(person => {
         const parentBottomX = anchor.x;
         const parentBottomY = anchor.y;
 
+        let parentClearY = parentBottomY;
+
+        const parentCards = parentId
+            .split(",")
+            .map(id => document.querySelector(`[data-id="${id.trim()}"]`))
+            .filter(card => card);
+
+        if (parentCards.length > 0) {
+            parentClearY =
+                Math.max(...parentCards.map(card => {
+                    const pos = getCanvasPosition(card);
+                    return pos.y + card.offsetHeight;
+                })) + 20;
+        }
+
         const childPoints = children.map(child => {
             const childPos = getCanvasPosition(child);
 
@@ -783,7 +833,10 @@ partnerCards.forEach(person => {
 
         /* Multiple children: branching connector */
 
-        const branchY = parentBottomY + 140;
+        const highestChildY = Math.min(...childPoints.map(point => point.y));
+
+        const branchY =
+            parentClearY + ((highestChildY - parentClearY) * 0.35);
 
         const leftX = Math.min(...childPoints.map(point => point.x));
         const rightX = Math.max(...childPoints.map(point => point.x));
@@ -814,32 +867,6 @@ partnerCards.forEach(person => {
 }
 
 /* =========================================================
-   INITIAL DRAW
-========================================================= */
-
-layoutBranches();
-
-layoutChildren();
-layoutPartners();
-
-sizeSubBranches();
-layoutSubBranches();
-
-layoutChildren();
-layoutPartners();
-
-sizeSubBranches();
-layoutSubBranches();
-
-sizeMainBranches();
-
-layoutBranches();
-
-addTreeImages();
-
-drawMarriageLines();
-
-/* =========================================================
    CARD IMAGES
 ========================================================= */
 
@@ -847,6 +874,8 @@ function addTreeImages() {
     const cards = document.querySelectorAll("[data-image]");
 
     cards.forEach(card => {
+        if (card.querySelector(".tree-card-img")) return;
+
         const img = document.createElement("img");
 
         img.className = "tree-card-img";
@@ -939,9 +968,11 @@ viewport.addEventListener("wheel", (e) => {
 
 }, { passive: false });
 
-const octavia = document.querySelector('[data-id="octavia"]');
+function centerOnOctavia() {
+    const octavia = document.querySelector('[data-id="octavia"]');
 
-if (octavia) {
+    if (!octavia) return;
+
     const viewportRect = viewport.getBoundingClientRect();
     const octaviaPos = getCanvasPosition(octavia);
 
@@ -956,4 +987,33 @@ if (octavia) {
     updateCanvasTransform();
 }
 
-drawMarriageLines();
+function initializeTree() {
+
+    addTreeImages();
+
+    layoutBranches();
+
+    layoutChildren();
+    layoutPartners();
+
+    sizeSubBranches();
+    layoutSubBranches();
+
+    layoutChildren();
+    layoutPartners();
+
+    sizeSubBranches();
+    layoutSubBranches();
+
+    sizeMainBranches();
+
+    layoutBranches();
+
+    drawMarriageLines();
+
+    centerOnOctavia();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeTree();
+});
