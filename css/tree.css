@@ -18,22 +18,29 @@ body {
 #side-panel {
     width: 220px;
     min-width: 220px;
-
     border-right: 2px solid #b89b68;
-
     background: #efe4ce;
-
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2rem;
+    font-variant: small-caps;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 0px;
+    text-align: center;
+    padding: 10px;
     box-sizing: border-box;
+}
+
+.family-emblem {
+    display: block;
+    width: 80px;      /* adjust to taste */
+    height: auto;
+    margin: 0 auto 15px auto;
 }
 
 #side-panel h1 {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-variant: small-caps;
   color: #5a422a;
   text-align: center;
@@ -48,7 +55,7 @@ body {
 
 #side-panel h2 {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-variant: small-caps;
   color: #b8a27a;
   text-align: center;
@@ -70,6 +77,23 @@ body {
   padding: 0.2rem 0.4rem;
   border-radius: 6px;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  background-color: #b8a27a;
+  color: #fff;
+  text-decoration: none;
+  font-variant: small-caps;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.home-btn:hover {
+  background-color: #a28c64;
+  transform: translateY(-2px);
 }
 
 /* Tree viewport */
@@ -215,23 +239,6 @@ body {
     background: white;
 
     border: 1px solid #cdb387;
-}
-
-.home-btn {
-  display: inline-block;
-  padding: 0.8rem 1.4rem;
-  background-color: #b8a27a;
-  color: #fff;
-  text-decoration: none;
-  font-variant: small-caps;
-  border-radius: 6px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-.home-btn:hover {
-  background-color: #a28c64;
-  transform: translateY(-2px);
 }
 
 /* =========================================================
