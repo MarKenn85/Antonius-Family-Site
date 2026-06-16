@@ -33,9 +33,9 @@ body {
 
 .family-emblem {
     display: block;
-    width: 80px;      /* adjust to taste */
+    width: 120px;      /* adjust to taste */
     height: auto;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 0px auto;
 }
 
 #side-panel h1 {
