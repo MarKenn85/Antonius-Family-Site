@@ -62,6 +62,20 @@
   user-select: none;
 }
 
+/* === Marcus link === */
+.standalone-link {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+/* Prevent subtle arrow indicator */
+.no-arrow::after {
+    display: none !important;
+}
+
 /* === Section headers (dropdown toggles) === */
 .section-header {
   width: 100%;
@@ -186,4 +200,10 @@
 .nav-list a.current {
   background-color: #f0e6d3;
   color: #7b6141;
+}
+
+/* Highlighted standalone section entry     background-color: #f0e6d3; */
+.section-header.current {
+
+  color: #a28c64;
 }

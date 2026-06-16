@@ -12,7 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // === Load family data dynamically ===
   async function loadFamilyData() {
     const family = {};
-    const allMembers = Object.values(categories).flat();
+    const allMembers = [
+      "marcus",
+      ...Object.values(categories).flat()
+    ];
 
       for (const id of allMembers) {
         try {
@@ -69,80 +72,120 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  // === Build sidebar ===
-  async function buildSidebar() {
-    const family = await loadFamilyData();
-    const wrapper = document.createElement("div");
+// === Build sidebar ===
+async function buildSidebar() {
+  const family = await loadFamilyData();
+  const wrapper = document.createElement("div");
 
-    const marcusTitle = document.createElement("div");
-    marcusTitle.classList.add("sidebar-title");
-    marcusTitle.textContent = "The House of Marcus Antonius";
-    wrapper.appendChild(marcusTitle);
+  const marcusTitle = document.createElement("div");
+  marcusTitle.classList.add("sidebar-title");
+  marcusTitle.textContent = "The House of Marcus Antonius";
+  wrapper.appendChild(marcusTitle);
 
-    for (const [section, ids] of Object.entries(categories)) {
-      const sectionDiv = document.createElement("div");
-      sectionDiv.classList.add("sidebar-section");
+  // === Marcus Antonius standalone entry ===
+  const marcusSection = document.createElement("div");
+  marcusSection.classList.add("sidebar-section");
 
-      const header = document.createElement("button");
-      header.classList.add("section-header");
-      header.textContent = section;
-      sectionDiv.appendChild(header);
+  const marcusHeader = document.createElement("button");
+  marcusHeader.classList.add("section-header");
+  marcusHeader.classList.add("no-arrow");
+  marcusHeader.textContent = family["marcus"]?.name || "Marcus Antonius";
+  marcusHeader.dataset.id = "marcus";
 
-      const list = document.createElement("ul");
-      list.classList.add("nav-list");
-      list.style.maxHeight = "0";
-      list.style.overflow = "hidden";
+  marcusHeader.addEventListener("click", (event) => {
+  linkHandler("marcus")(event);
 
-      for (const id of ids) {
-        const li = document.createElement("li");
-        if (spouses.includes(id)) {
+  document
+    .querySelectorAll("#sidebar-content .current")
+    .forEach(el => el.classList.remove("current"));
+
+  marcusHeader.classList.add("current");
+  });
+
+  marcusSection.appendChild(marcusHeader);
+  wrapper.appendChild(marcusSection);
+
+  for (const [section, ids] of Object.entries(categories)) {
+    const sectionDiv = document.createElement("div");
+    sectionDiv.classList.add("sidebar-section");
+
+    const header = document.createElement("button");
+    header.classList.add("section-header");
+    header.textContent = section;
+    sectionDiv.appendChild(header);
+
+    const list = document.createElement("ul");
+    list.classList.add("nav-list");
+    list.style.maxHeight = "0";
+    list.style.overflow = "hidden";
+
+    for (const id of ids) {
+      const li = document.createElement("li");
+      if (spouses.includes(id)) {
         li.classList.add("spouse-link");
-        }
-        const a = document.createElement("a");
-        a.textContent = family[id]?.name || id;
-        a.href = "#";
-        a.dataset.id = id;
-
-        if (starredMembers.includes(id)) a.classList.add("starred");
-
-        a.addEventListener("click", linkHandler(id));
-        li.appendChild(a);
-        list.appendChild(li);
       }
 
-      header.addEventListener("click", () => {
-        const isOpen = list.classList.toggle("open");
-        header.classList.toggle("open", isOpen);
-        list.style.maxHeight = isOpen ? (list.scrollHeight + 28) + "px" : "0";
-      });
+      const a = document.createElement("a");
+      a.textContent = family[id]?.name || id;
+      a.href = "#";
+      a.dataset.id = id;
 
-      sectionDiv.appendChild(list);
-      wrapper.appendChild(sectionDiv);
+      if (starredMembers.includes(id)) a.classList.add("starred");
+
+      a.addEventListener("click", linkHandler(id));
+      li.appendChild(a);
+      list.appendChild(li);
     }
 
-    content.innerHTML = "";
-    content.appendChild(wrapper);
+    header.addEventListener("click", () => {
+      const isOpen = list.classList.toggle("open");
+      header.classList.toggle("open", isOpen);
+      list.style.maxHeight = isOpen ? (list.scrollHeight + 28) + "px" : "0";
+    });
 
-    // === Auto-expand current section ===
-    const url = new URL(window.location.href);
-    const isJournalPage = document.body.id === "journal";
-    const activeChar = url.searchParams.get("char") || (isJournalPage ? "octavia" : null);
+    sectionDiv.appendChild(list);
+    wrapper.appendChild(sectionDiv);
+  }
+
+  content.innerHTML = "";
+  content.appendChild(wrapper);
+
+  // === Auto-expand current section ===
+  const url = new URL(window.location.href);
+  const isJournalPage = document.body.id === "journal";
+  const activeChar = url.searchParams.get("char") || (isJournalPage ? "octavia" : null);
 
     if (activeChar) {
-      const activeLink = document.querySelector(`#sidebar-content a[data-id='${activeChar}']`);
 
-      if (activeLink) {
-        activeLink.classList.add("current");
+      if (activeChar === "marcus") {
+        const marcusHeader = document.querySelector(
+          '#sidebar-content .section-header[data-id="marcus"]'
+        );
 
-        const list = activeLink.closest(".nav-list");
-        if (list) {
-          list.classList.add("open");
-          list.style.maxHeight = (list.scrollHeight + 28) + "px";
-          list.previousElementSibling.classList.add("open");
+        if (marcusHeader) {
+          marcusHeader.classList.add("current");
         }
+
+      } else {
+
+        const activeLink = document.querySelector(
+          `#sidebar-content a[data-id='${activeChar}']`
+        );
+
+        if (activeLink) {
+          activeLink.classList.add("current");
+
+          const list = activeLink.closest(".nav-list");
+          if (list) {
+            list.classList.add("open");
+            list.style.maxHeight = (list.scrollHeight + 28) + "px";
+            list.previousElementSibling.classList.add("open");
+          }
+        }
+
       }
     }
-  }
+}
 
     // === Run it ===
   buildSidebar();
