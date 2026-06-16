@@ -1,15 +1,4 @@
 window.blayPage = {
-    name: "Blay Antonius",
-    title: "Son of Nubia",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "filipa",
-	spouses: [],
-	children: [],
-	role: "Prince of Nubia and enthusiastic lover of canines.",
-    portrait: "images/portraits/blay.png",
-    next: "nero",
-    previous: "eben",
     text: [
       `
         <p>

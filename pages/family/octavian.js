@@ -1,15 +1,4 @@
 window.octavianPage = {
-    name: "Octavian 'Augustus' Caesar",
-    title: "Emperor of the Roman Empire",
-	status: "Living",
-	residence: "Palatine Hill, Rome",
-    parent: "Atia",
-	spouses: [],
-	children: [],
-	role: "The man who rules Rome and all its people.",
-    portrait: "images/portraits/octavian.png",
-    next: "octavia",
-    previous: "atia",
     text: [
       `
         <p>

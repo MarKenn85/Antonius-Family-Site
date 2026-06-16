@@ -1,15 +1,4 @@
 window.batreshPage = {
-    name: "Batresh Antonius",
-    title: "Scholar of Alexandria",
-	status: "Living",
-	residence: "Caesarea - Mauritania",
-    parent: "selene",
-	spouses: ["amun"],
-	children: [],
-	role: "Scholar of political sciences and adoring daughter.",
-    portrait: "images/portraits/batresh.png",
-    next: "amun",
-    previous: "xal",
     text: [
       `
         <p>

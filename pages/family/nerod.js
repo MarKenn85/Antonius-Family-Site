@@ -1,10 +1,4 @@
 window.nerodPage = {
-    name: "Nero Claudius Drusus",
-    title: "Son of Rome",
-    parent: "",
-    portrait: "images/portraits/nerod.png",
-    next: "helios",
-    previous: "antonia",
     text: [
       `
         <p>

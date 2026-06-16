@@ -1,10 +1,4 @@
 window.zarekPage = {
-    name: "Zarek Antonius",
-    title: "Imperial Senator & Family Scribe",
-    parent: "selene",
-    portrait: "images/portraits/zarek.png",
-    next: "xal",
-    previous: "gage",
     text: [
       `
         <p>

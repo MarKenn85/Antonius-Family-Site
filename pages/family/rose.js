@@ -1,10 +1,4 @@
 window.rosePage = {
-    name: "AutumnRose Antonius",
-    title: "Daughter of Rome",
-    parent: "gamilla",
-    portrait: "images/portraits/rose.png",
-    next: "frederick",
-    previous: "claudius",
     text: [
       `
         <p>

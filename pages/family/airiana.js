@@ -1,16 +1,4 @@
 window.airianaPage = {
-    name: "Antonia 'Airiana' Major",
-    title: "Lady of Liesure",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "octavia",
-	spouses: [],
-	children: ["kaleb"],
-	role: "Traveler of the Empire and breaker of bal..er.. hearts.",
-    parent: "octavia",
-    portrait: "images/portraits/airiana.png",
-    next: "antonia",
-    previous: "aemilia",
     text: [
     `
       <p>

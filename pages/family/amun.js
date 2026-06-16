@@ -1,15 +1,4 @@
 window.amunPage = {
-    name: "Amun Antonius",
-    title: "Nobleman of Tyre",
-	status: "Living",
-	residence: "Alexandria - Egypt",
-    parent: "",
-	spouses: ["batresh"],
-	children: [],
-	role: "Prince of Tyre and scholar of Pheonicia",
-    portrait: "images/portraits/amun.png",
-    next: "kierdyn",
-    previous: "batresh",
     text: [
       `
         <p>

@@ -1,15 +1,4 @@
 window.alessandroPage = {
-    name: "Alessandro Antonius",
-    title: "Legatus of the Antonius armies",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "iullus",
-	spouses: [],
-	children: [],
-	role: "Commander of legions and enthusiast of legionaries.",
-    portrait: "images/portraits/alessandro.png",
-    next: "jaiden",
-    previous: "juba",
     text: [
       `
         <p>

@@ -1,15 +1,4 @@
 window.juliaPage = {
-    name: "Julia Minor",
-    title: "Daughter of Caesar",
-	status: "Deceased",
-	residence: "Antonius Estate - Ilva",
-    parent: "caesar",
-	spouses: [],
-	children: ["atia"],
-	role: "A dutiful daughter and fashion forward figure of Rome.",
-    portrait: "images/portraits/julia.png",
-    next: "atia",
-    previous: "julius",
     text: [
       `
         <p>

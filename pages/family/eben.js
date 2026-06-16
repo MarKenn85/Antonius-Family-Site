@@ -1,15 +1,4 @@
 window.ebenPage = {
-    name: "Eben Antonius Tenebrus",
-    title: "Custos Sacrī Plutonis",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "aurelia",
-	spouses: [],
-	children: [],
-	role: "Flamen of Pluto and Bzzter of Vincent.",
-    portrait: "images/portraits/eben.png",
-    next: "blay",
-    previous: "kierdyn",
     text: [
       `
         <p>

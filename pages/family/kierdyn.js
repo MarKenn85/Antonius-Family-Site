@@ -1,10 +1,4 @@
 window.kierdynPage = {
-    name: "Kierdyn Antonius",
-    title: "Son of Rome & Brother of Eben",
-    parent: "aurelia",
-    portrait: "images/portraits/kierdyn.png",
-    next: "eben",
-    previous: "amun",
     text: [
       `
         <p>

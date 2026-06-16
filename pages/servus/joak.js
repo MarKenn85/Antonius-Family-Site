@@ -3,7 +3,7 @@ window.joakPage = {
     title: "Servus Antonius",
     parent: "",
     portrait: "images/portraits/joak.png",
-    next: "caesar",
+    next: "marcus",
     previous: "miklos",
     text: [
       `

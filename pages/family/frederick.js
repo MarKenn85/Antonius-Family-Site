@@ -1,15 +1,4 @@
 window.frederickPage = {
-    name: "Aulus Antonius Feradachus",
-    title: "The Red Wolf of Brigantia",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "gamila",
-	spouses: ["lhiannon"],
-	children: [],
-	role: "Bragantian warrior and lover of song.",
-    portrait: "images/portraits/frederick.png",
-    next: "lhiannon",
-    previous: "rose",
     text: [
       `
       <p>

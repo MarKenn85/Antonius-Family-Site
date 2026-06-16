@@ -1041,6 +1041,16 @@ function centerOnCard(id) {
    TEST MODAL
 ========================================================= */
 
+function getTreeCharacterData(id) {
+    const registryData = FAMILY_REGISTRY.members?.[id] || {};
+    const pageData = window[`${id}Page`] || {};
+
+    return {
+        ...registryData,
+        ...pageData
+    };
+}
+
 async function getTreeLineage(id) {
     const LINEAGE_ROOT_ID = "octavia";
 
@@ -1050,8 +1060,8 @@ async function getTreeLineage(id) {
     while (currentId) {
         await loadTreeCharacterScript(currentId);
 
-        const data = window[`${currentId}Page`];
-        if (!data) break;
+        const data = getTreeCharacterData(currentId);
+        if (!data.name && !data.parent) break;
 
         lineage.unshift(data.name || formatTreeName(currentId));
 
@@ -1092,9 +1102,9 @@ async function openTreeModal(card) {
 
     await loadTreeCharacterScript(id);
 
-    const data = window[`${id}Page`];
+    const data = getTreeCharacterData(id);
 
-    if (!data) return;
+    if (!data.name && !data.title && !data.role) return;
 
     modalImg.src = data.portrait || modalImg.src;
     modalName.textContent = data.name || modalName.textContent;
@@ -1122,7 +1132,8 @@ function loadTreeCharacterScript(id) {
 
         const script = document.createElement("script");
 
-        script.src = `pages/family/${id}.js`;
+        const folder = getCharacterFolder(id);
+        script.src = `pages/${folder}/${id}.js`;
         script.dataset.treeCharacter = id;
 
         script.onload = () => {

@@ -4,38 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("sidebar-content");
   if (!sidebar || !content) return;
 
-  // === Categories ===
-  
-  const categories = {
-    "Ancestors": ["caesar", "julius", "julia", "atia", "octavian"],
-    "Wives": ["fulvia", "octavia", "cleopatra"],
-    "Children": ["iullus", "aemilia", "airiana", "antonia", "nerod", "helios", "selene", "juba"],
-    "Grandchildren": ["alessandro", "jaiden", "aurelia", "kaleb", "filipa", "teriteqas", "damion", "gamila", "decimus", "gage", "zarek", "xal", "batresh", "amun"],
-    "Great Grandchildren": ["eben", "kierdyn", "blay", "nero", "sid", "claudius", "rose", "frederick", "lhiannon", "vincent", "josiah", "taurus"],
-    "Servus / Custo": ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"]
-  };
-
-  // === Starred members ===
-  const starredMembers = ["damion"];
-
-  // === Spouses ===
-  const spouses = ["aemilia", "nerod", "juba", "teriteqas", "decimus", "amun", "lhiannon"];
-
-  // === Folder resolver ===
-  function getCharacterFolder(id) {
-    const servusList = ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"];
-    return servusList.includes(id) ? "servus" : "family";
-  }
+    // === Shared family registry data ===
+  const categories = FAMILY_REGISTRY.categories;
+  const starredMembers = FAMILY_REGISTRY.starredMembers;
+  const spouses = FAMILY_REGISTRY.spouses;
 
   // === Load family data dynamically ===
   async function loadFamilyData() {
     const family = {};
     const allMembers = Object.values(categories).flat();
 
-    for (const id of allMembers) {
-      try {
-        const folder = getCharacterFolder(id);
-        const res = await fetch(`pages/${folder}/${id}.js`);
+      for (const id of allMembers) {
+        try {
+          if (FAMILY_REGISTRY.members?.[id]) {
+            family[id] = FAMILY_REGISTRY.members[id];
+            continue;
+          }
+
+          const folder = getCharacterFolder(id);
+          const res = await fetch(`pages/${folder}/${id}.js`);
         if (!res.ok) throw new Error(`Missing file for ${id}`);
         const js = await res.text();
         const fn = new Function(js + "\nreturn this;");

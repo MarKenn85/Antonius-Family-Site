@@ -1,10 +1,4 @@
 window.xalPage = {
-    name: "Xal Antonius",
-    title: "Procurator Metallorum & Procurator Famiglia",
-    parent: "selene",
-    portrait: "images/portraits/xal.png",
-    next: "batresh",
-    previous: "zarek",
     text: [
       `
         <p>

@@ -1,15 +1,4 @@
 window.caesarPage = {
-    name: "Gaius Julius Caesar",
-    title: "Father of Rome",
-	status: "Deceased",
-	residence: "Antonius Estate - Ilva",
-    parent: "",
-	spouses: [],
-	children: ["julius", "julia"],
-	role: "The man who spawned the future of Rome.",
-    portrait: "images/portraits/caesar.png",
-    next: "julius",
-    previous: "joak",
     text: [
       `
         <p>

@@ -1,10 +1,4 @@
 window.teriteqasPage = {
-    name: "Teriteqas",
-    title: "King of Nubia",
-    parent: "",
-    portrait: "images/portraits/teriteqas.png",
-    next: "damion",
-    previous: "filipa",
     text: [
       `
         <p>

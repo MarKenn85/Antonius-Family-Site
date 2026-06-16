@@ -1,15 +1,4 @@
 window.decimusPage = {
-    name: "Decimus Cosmas",
-    title: "Son of Rome",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "",
-	spouses: ["gamila"],
-	children: ["rose", "frederick"],
-	role: "Roman political leader and devoted husband.",
-    portrait: "images/portraits/decimus.png",
-    next: "gage",
-    previous: "gamila",
     text: [
       `
         <p>

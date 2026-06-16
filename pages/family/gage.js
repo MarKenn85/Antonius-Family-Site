@@ -1,15 +1,4 @@
 window.gagePage = {
-    name: "'Gage' Gaius Antonius Menelaus",
-    title: "Praefectus classis of the Antonius fleet",
-	  status: "Living",
-	  residence: "Antonius Estate - Ilva",
-    parent: "helios",
-	  spouses: [],
-	  children: ["vincent"],
-	  role: "A naval commander and good man who sails into your heart.",
-    portrait: "images/portraits/gage.png",
-    next: "zarek",
-    previous: "decimus",
     text: [
     `
       <p>

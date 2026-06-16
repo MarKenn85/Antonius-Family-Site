@@ -1,15 +1,4 @@
 window.claudiusPage = {
-    name: "Claudius Antonius Paullus",
-    title: "Champion of Rome",
-	status: "Living",
-	residence: "Antonius Estate - Ilva",
-    parent: "damion",
-	spouses: [],
-	children: [],
-	role: "Gladiator, Racer and loving son.",
-    portrait: "images/portraits/claudius.png",
-    next: "rose",
-    previous: "sid",
     text: [
       `
         <p>

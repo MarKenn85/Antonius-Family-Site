@@ -1,10 +1,4 @@
 window.lhiannonPage = {
-    name: "Lhiannon Antonius",
-    title: "Daughter of Brigatane",
-    parent: "",
-    portrait: "images/portraits/lhiannon.png",
-    next: "vincent",
-    previous: "frederick",
     text: [
       `
         <p>

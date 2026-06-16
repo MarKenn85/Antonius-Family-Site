@@ -72,13 +72,16 @@ window.addEventListener("load", () => {
   </div>
 
   <!-- Scripts (ORDER MATTERS) -->
-  <!-- 1️⃣ Define loadCharacter FIRST -->
+  <!-- Gather family member info -->
+  <script src="scripts/family-registry.js"></script>
+  
+  <!-- Define loadCharacter -->
   <script src="scripts/journal.js"></script>
 
-  <!-- 2️⃣ Then load the sidebar (so it can call loadCharacter) -->
+  <!-- Then load the sidebar (so it can call loadCharacter) -->
   <script src="scripts/sidebar.js"></script>
 
-  <!-- 3️⃣ Optional data helper (if used for preloading extra info) -->
+  <!-- Optional data helper (if used for preloading extra info) -->
   <script src="scripts/journal-data.js"></script>
 
   <script>

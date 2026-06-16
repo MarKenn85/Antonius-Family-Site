@@ -4,13 +4,6 @@ let currentData = null;
 let currentPageIndex = 0;
 let currentScriptEl = null;
 
-// === Folder resolver ===
-function getCharacterFolder(id) {
-  // Add any new Servus entries here
-  const servusList = ["tor", "quintus", "dane", "arnulf", "inanna", "zane", "talon", "kenny", "wilhelm", "miklos", "joak"];
-  return servusList.includes(id) ? "servus" : "family";
-}
-
 // === Global loader so sidebar links always work ===
 window.loadCharacter = async function (id) {
   const container = document.querySelector(".journal-container");
@@ -50,7 +43,13 @@ window.loadCharacter = async function (id) {
     const varName = `${id}Page`;
     if (window[varName]) {
       currentCharacter = id;
-      currentData = window[varName];
+
+      const registryData = FAMILY_REGISTRY.members?.[id] || {};
+      currentData = {
+        ...registryData,
+        ...window[varName]
+      };
+
       currentPageIndex = 0;
       displayPage();
       await buildLineageTrail(id);
@@ -165,7 +164,18 @@ async function buildLineageTrail(id) {
 
   const lineage = [];
   let currentId = id;
-  let current = window[`${currentId}Page`];
+
+  function getJournalCharacterData(charId) {
+    const registryData = FAMILY_REGISTRY.members?.[charId] || {};
+    const pageData = window[`${charId}Page`] || {};
+
+    return {
+      ...registryData,
+      ...pageData
+    };
+  }
+
+  let current = getJournalCharacterData(currentId);
 
   // Walk up through parents — load missing ones if needed
   while (current) {
@@ -194,7 +204,7 @@ async function buildLineageTrail(id) {
     }
 
     currentId = parentId;
-    current = parentId ? window[`${parentId}Page`] : null;
+    current = parentId ? getJournalCharacterData(parentId) : null;
   }
 
   // Build plain breadcrumb trail (non-clickable)

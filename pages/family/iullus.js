@@ -1,10 +1,4 @@
 window.iullusPage = {
-    name: "Iullus Antonius",
-    title: "Son of the Lion",
-    parent: "fulvia",
-    portrait: "images/portraits/iullus.png",
-    next: "aemilia",
-    previous: "octavia",
     text: [
       `
         <p>

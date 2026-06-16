@@ -1,10 +1,4 @@
 window.jubaPage = {
-    name: "Juba II",
-    title: "King of Mauritania",
-    parent: "juba1",
-    portrait: "images/portraits/jubaII.png",
-    next: "alessandro",
-    previous: "selene",
     text: [
       `
         <p>

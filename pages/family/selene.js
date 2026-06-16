@@ -1,10 +1,4 @@
 window.selenePage = {
-    name: "Cleopatra Selene II",
-    title: "Daughter of Isis & Queen of Mauritania",
-    parent: "cleopatra",
-    portrait: "images/portraits/selene.png",
-    next: "juba",
-    previous: "helios",
     text: [
     `
       <p>

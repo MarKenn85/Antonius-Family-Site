@@ -1,10 +1,4 @@
 window.heliosPage = {
-    name: "Alexander Helios",
-    title: "Son of Egypt",
-    parent: "cleopatra",
-    portrait: "images/portraits/helios.png",
-    next: "selene",
-    previous: "nerod",
     text: [
       `
         <p>

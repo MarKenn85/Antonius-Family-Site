@@ -1,15 +1,4 @@
 window.gamilaPage = {
-    name: "Gamila Antonius",
-    title: "Daughter of the Sun",
-	  status: "Living",
-	  residence: "Around the world",
-    parent: "helios",
-	  spouses: [],
-	  children: ["rose", "frederick"],
-	  role: "A woman of the world and expert swordswoman.",
-    portrait: "images/portraits/gamila.png",
-    next: "decimus",
-    previous: "damion",
     text: [
       `
         <p>

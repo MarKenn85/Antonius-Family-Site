@@ -1,10 +1,4 @@
 window.vincentPage = {
-    name: "Vincent Antonius",
-    title: "Champion of Rome",
-    parent: "gage",
-    portrait: "images/portraits/vincent.png",
-    next: "josiah",
-    previous: "lhiannon",
     text: [
         `
         <p>
