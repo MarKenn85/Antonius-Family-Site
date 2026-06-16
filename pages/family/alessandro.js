@@ -6,7 +6,7 @@ window.alessandroPage = {
     parent: "iullus",
 	spouses: [],
 	children: [],
-	role: "Commander of armies and indulger of soldiers.",
+	role: "Commander of legions and enthusiast of legionaries.",
     portrait: "images/portraits/alessandro.png",
     next: "jaiden",
     previous: "juba",
