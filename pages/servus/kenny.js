@@ -1,10 +1,4 @@
 window.kennyPage = {
-    name: "Kenneth",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/kenny.png",
-    next: "wilhelm",
-    previous: "talon",
     text: [
       `
         <p>

@@ -1,10 +1,4 @@
 window.danePage = {
-    name: "Dane",
-    title: "Custos Antonius",
-    parent: "",
-    portrait: "images/portraits/dane.png",
-    next: "arnulf",
-    previous: "quintus",
     text: [
       `
         <p>

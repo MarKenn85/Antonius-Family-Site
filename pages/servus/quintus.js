@@ -1,10 +1,4 @@
 window.quintusPage = {
-    name: "Quintus",
-    title: "Antonius Custos & Sporting Champion",
-    parent: "",
-    portrait: "images/portraits/quintus.png",
-    next: "dane",
-    previous: "tor",
     text: [
     `
       <p>

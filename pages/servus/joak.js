@@ -1,10 +1,4 @@
 window.joakPage = {
-    name: "Joak",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/joak.png",
-    next: "marcus",
-    previous: "miklos",
     text: [
       `
         <p>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Antonius</title>
+
+    <link rel="stylesheet" href="css/tree-v2.css">
+</head>
+
+<body>
+
+<div id="tree-page">
+
+    <aside id="side-panel">
+
+        <h1>The House of the Family Antonius</h1>
+        <br>
+        <img    src="images/background/emblem.png"
+                alt="Antonius Family Emblem"
+                class="family-emblem">
+        <h2>Family Tree</h2>
+        <p>
+            <br>
+            Click and drag to explore the tree.
+            <br>
+            <br>
+            <br>
+            Mousewheel to zoom in and out.
+            <br>
+            <br>
+            <br>
+            Click an individual portrait to get more info and read that persons journal entry.
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="home.html" class="home-btn">Return</a>
+        </p>
+    </aside>
+
+    <!-- === TREE VIEW === -->
+    <main id="tree-viewport">
+
+        <div id="tree-canvas">
+            <svg id="tree-lines"></svg>
+            <div id="tree-graph"></div>
+        </div>
+
+    </main>
+
+</div>
+
+<div id="tree-modal" class="tree-modal" aria-hidden="true">
+    <div class="tree-modal-backdrop" data-close-modal></div>
+
+    <div class="tree-modal-card">
+        <div id="tree-modal-lineage" class="tree-modal-lineage"></div>
+
+        <div class="tree-modal-content">
+            <img id="tree-modal-img" class="tree-modal-img" src="" alt="">
+
+            <div class="tree-modal-copy">
+                <h2 id="tree-modal-name"></h2>
+                <h3 id="tree-modal-title"></h3>
+                <p id="tree-modal-summary"></p>
+
+                <a id="tree-modal-journal" class="tree-modal-link" href="#">
+                    Read Journal Entry
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/family-registry.js"></script>
+<script src="scripts/tree-v2.js"></script>
+
+</body>
+
+</html>

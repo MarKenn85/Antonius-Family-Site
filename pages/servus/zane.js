@@ -1,10 +1,4 @@
 window.zanePage = {
-    name: "Zane",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/zane.png",
-    next: "talon",
-    previous: "inanna",
     text: [
       `
         <p>

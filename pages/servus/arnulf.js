@@ -1,10 +1,4 @@
 window.arnulfPage = {
-    name: "Arnulf",
-    title: "Custos Antonius",
-    parent: "",
-    portrait: "images/portraits/arnulf.png",
-    next: "inanna",
-    previous: "dane",
     text: [
       `
         <p>

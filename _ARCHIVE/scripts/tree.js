@@ -42,7 +42,6 @@ const viewport = document.getElementById("tree-viewport");
 const canvas = document.getElementById("tree-canvas");
 const lines = document.getElementById("tree-lines");
 
-
 /* =========================================================
    SVG LINE HELPER
 ========================================================= */
@@ -79,6 +78,58 @@ function getCanvasPosition(card) {
     }
 
     return { x, y };
+}
+
+/* =========================================================
+   REGISTRY RELATIONSHIP HYDRATION
+========================================================= */
+
+function hydrateTreeRelationshipsFromRegistry() {
+    Object.keys(FAMILY_REGISTRY.members).forEach(id => {
+        const member = FAMILY_REGISTRY.members?.[id];
+        const card = document.querySelector(`[data-id="${id}"]`);
+
+        if (!member || !card) return;
+
+        const spouses = Array.isArray(member.spouses) ? member.spouses : [];
+
+        if (spouses.length === 0) return;
+
+        const spouseId = spouses[0];
+        const spouseCard = document.querySelector(`[data-id="${spouseId}"]`);
+
+        card.dataset.partner = spouseId;
+
+        if (spouseCard) {
+            spouseCard.dataset.partner = id;
+        }
+    });
+
+    Object.keys(FAMILY_REGISTRY.members).forEach(id => {
+        const member = FAMILY_REGISTRY.members?.[id];
+
+        if (!member) return;
+
+        const spouses = Array.isArray(member.spouses) ? member.spouses : [];
+        const children = Array.isArray(member.children) ? member.children : [];
+
+        if (children.length === 0) return;
+
+        const parentIds = [id, ...spouses];
+        const parentKey = parentIds.join(",");
+
+        children.forEach(childId => {
+            const childCard = document.querySelector(`[data-id="${childId}"]`);
+
+            if (!childCard) return;
+
+            childCard.dataset.parents = parentKey;
+
+            if (childCard.dataset.parent) {
+                delete childCard.dataset.parent;
+            }
+        });
+    });
 }
 
 /* =========================================================
@@ -408,6 +459,16 @@ function layoutPartners() {
 
 function getChildCardsFor(card) {
     const cardId = card.dataset.id;
+    const registryEntry = FAMILY_REGISTRY.members?.[cardId];
+
+    if (Array.isArray(registryEntry?.children)) {
+        return registryEntry.children
+            .map(childId => document.querySelector(`[data-id="${childId}"]`))
+            .filter(child =>
+                child &&
+                !child.classList.contains("sub-branch-container")
+            );
+    }
 
     return Array.from(
         document.querySelectorAll("[data-parent], [data-parents]")
@@ -748,12 +809,34 @@ function drawMarriageLines() {
 
 const drawnPartners = new Set();
 
-const partnerCards = Array.from(document.querySelectorAll("[data-partner]"));
+let partnerCards = Array.from(document.querySelectorAll("[data-partner]"));
+
+const registryPartnerCards = Object.entries(FAMILY_REGISTRY.members)
+    .filter(([id, member]) =>
+        Array.isArray(member.spouses) &&
+        member.spouses.length > 0 &&
+        document.querySelector(`[data-id="${id}"]`)
+    )
+    .map(([id]) => document.querySelector(`[data-id="${id}"]`));
+
+partnerCards = [...new Set([...partnerCards, ...registryPartnerCards])];
 
 partnerCards.forEach(person => {
+    const personId = person.dataset.id;
+    const registryEntry = FAMILY_REGISTRY.members?.[personId];
 
-    const partnerId = person.dataset.partner;
-    const pairKey = [person.dataset.id, partnerId].sort().join("-");
+    let partnerId = person.dataset.partner;
+
+    if (
+        Array.isArray(registryEntry?.spouses) &&
+        registryEntry.spouses.length > 0
+    ) {
+        partnerId = registryEntry.spouses[0];
+    }
+
+    if (!partnerId) return;
+
+    const pairKey = [personId, partnerId].sort().join("-");
 
     if (drawnPartners.has(pairKey)) return;
 
@@ -899,17 +982,33 @@ partnerCards.forEach(person => {
 ========================================================= */
 
 function addTreeImages() {
-    const cards = document.querySelectorAll("[data-image]");
+    const cards = document.querySelectorAll("[data-id]");
 
     cards.forEach(card => {
-        if (card.querySelector(".tree-card-img")) return;
+        const id = card.dataset.id;
+        const registryEntry = FAMILY_REGISTRY.members?.[id];
 
-        const img = document.createElement("img");
+        if (!card.dataset.image && registryEntry?.portrait) {
+            card.dataset.image = registryEntry.portrait;
+        }
 
-        img.className = "tree-card-img";
-        img.src = card.dataset.image;
+        if (card.dataset.image && !card.querySelector(".tree-card-img")) {
+            const img = document.createElement("img");
 
-        card.prepend(img);
+            img.className = "tree-card-img";
+            img.src = card.dataset.image;
+
+            card.prepend(img);
+        }
+
+        const existingText = Array.from(card.childNodes)
+            .filter(node => node.nodeType === Node.TEXT_NODE)
+            .map(node => node.textContent.trim())
+            .join("");
+
+        if (!existingText && registryEntry?.name) {
+            card.append(document.createTextNode(registryEntry.name));
+        }
     });
 }
 
@@ -1267,7 +1366,9 @@ function closeTreeModal() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    document.querySelectorAll("[data-id][data-image]").forEach(card => {
+    document.querySelectorAll(
+        ".tree-marcus-card[data-id], .tree-wife-card[data-id], .tree-child-card[data-id]"
+    ).forEach(card => {
 
     card.addEventListener("click", event => {
 
@@ -1318,6 +1419,8 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================================================= */
 
 function initializeTree() {
+
+    hydrateTreeRelationshipsFromRegistry();
 
     addTreeImages();
 

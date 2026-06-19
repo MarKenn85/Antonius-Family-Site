@@ -1,10 +1,4 @@
 window.talonPage = {
-    name: "Talon",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/talon.png",
-    next: "kenny",
-    previous: "zane",
     text: [
       `
         <p>

@@ -112,7 +112,7 @@ function displayPage() {
     if (treeLink && currentCharacter) {
 
         treeLink.href =
-            `tree.html?focus=${encodeURIComponent(currentCharacter)}`;
+            `tree-v2.html?focus=${encodeURIComponent(currentCharacter)}`;
 
     }
 

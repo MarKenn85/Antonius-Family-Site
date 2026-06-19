@@ -1,10 +1,4 @@
 window.torPage = {
-    name: "Tor",
-    title: "Servus Antonius",
-    parent: "",
-    portrait: "images/portraits/tor.png",
-    next: "quintus",
-    previous: "taurus",
     text: [
       `
         <p>

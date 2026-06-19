@@ -1,4 +1,4 @@
-window.miklosPage = {
+window.galateaPage = {
     text: [
       `
         <p>

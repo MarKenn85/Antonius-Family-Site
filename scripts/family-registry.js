@@ -24,6 +24,7 @@ const FAMILY_REGISTRY = {
         "antonia",
         "nerod",
         "helios",
+        "galatea",
         "selene",
         "juba"
         ],
@@ -154,6 +155,9 @@ const FAMILY_REGISTRY = {
 	        residence: "Antonius Estate, Ilva",
             parent: "octavia",
 	        spouses: ["nerod"],
+            spouseSides: {
+                nerod: "right"
+            },
 	        children: ["filipa", "damion"],
 	        role: "Shrewd political figure and cunning diplomat.",
             portrait: "images/portraits/antonia.png",
@@ -196,6 +200,9 @@ const FAMILY_REGISTRY = {
 	        residence: "Caesarea, Mauritania",
             parent: "selene",
 	        spouses: ["amun"],
+            spouseSides: {
+                amun: "right"
+            },
 	        children: [],
 	        role: "Scholar of political sciences and adoring daughter.",
             portrait: "images/portraits/batresh.png",
@@ -308,6 +315,9 @@ const FAMILY_REGISTRY = {
 	        residence: "Across the Empire",
             parent: "antonia",
 	        spouses: ["teriteqas"],
+            spouseSides: {
+                teriteqas: "right"
+            },
 	        children: ["blay"],
 	        role: "Builder of Rome and drinker of HER wine.",
             portrait: "images/portraits/filipa.png",
@@ -322,6 +332,9 @@ const FAMILY_REGISTRY = {
 	        residence: "Antonius Estate, Ilva",
             parent: "gamila",
 	        spouses: ["lhiannon"],
+            spouseSides: {
+                lhiannon: "right"
+            },
 	        children: [],
 	        role: "Bragantian warrior and lover of song.",
             portrait: "images/portraits/frederick.png",
@@ -357,6 +370,20 @@ const FAMILY_REGISTRY = {
             previous: "decimus",
         },
 
+        galatea: {
+            name: "Galatea of Atropatene",
+            title: "Daughter of Artavasdes I",
+	        status: "Deceased",
+	        residence: "Antonius Villa, Athens",
+            parent: "",
+	        spouses: ["helios"],
+	        children: ["gamila", "gage"],
+	        role: "A Princess of Persia, and lover of the sea.",
+            portrait: "images/portraits/galatea.png",
+            next: "selene",
+            previous: "helios",
+        },
+
         gamila: {
             name: "Gamila Antonius",
             title: "Daughter of the Sun",
@@ -364,6 +391,9 @@ const FAMILY_REGISTRY = {
 	        residence: "Around the world",
             parent: "helios",
 	        spouses: ["decimus"],
+            spouseSides: {
+                decimus: "right"
+            },
 	        children: ["rose", "frederick"],
 	        role: "A woman of the world and expert swordswoman.",
             portrait: "images/portraits/gamila.png",
@@ -377,7 +407,10 @@ const FAMILY_REGISTRY = {
             status: "Deceased",
 	        residence: "Rome, Italia",
             parent: "cleopatra",
-            spouses: [],
+            spouses: ["galatea"],
+            spouseSides: {
+                galatea: "right"
+            },
 	        children: ["gamila", "gage"],
             role: "Born of Isis and made the Sun.",
             portrait: "images/portraits/helios.png",
@@ -392,6 +425,9 @@ const FAMILY_REGISTRY = {
 	        residence: "Rome, Italia",
             parent: "fulvia",
             spouses: ["aemilia"],
+            spouseSides: {
+                aemilia: "left"
+            },
 	        children: ["alessandro", "jaiden", "aurelia"],
             role: "Expected heir and loving father.",
             portrait: "images/portraits/iullus.png",
@@ -583,13 +619,13 @@ const FAMILY_REGISTRY = {
 
         rose: {
             name: "AutumnRose Antonius",
-            title: "Daughter of Rome",
+            title: "The Heart that Endures",
             status: "Living",
 	        residence: "Antonius Estate, Ilva",
             parent: "gamila",
             spouses: [],
 	        children: [],
-            role: "A quiet beauty yet a delightful host.",
+            role: "A quiet beauty yet a delightful hostess.",
             portrait: "images/portraits/rose.png",
             next: "frederick",
             previous: "claudius",
@@ -602,11 +638,14 @@ const FAMILY_REGISTRY = {
 	        residence: "Antonius Estate, Ilva",
             parent: "cleopatra",
             spouses: ["juba"],
+            spouseSides: {
+                juba: "right"
+            },
 	        children: ["zarek", "xal", "batresh"],
             role: "Her hair-'Money!' Her clothe-'Money!'...",
             portrait: "images/portraits/selene.png",
             next: "juba",
-            previous: "helios",
+            previous: "galatea",
         },
 
         sid: {
@@ -691,6 +730,98 @@ const FAMILY_REGISTRY = {
             portrait: "images/portraits/zarek.png",
             next: "xal",
             previous: "gage",
+        },
+
+/* =========================================================
+SERVUS/CUSTOS METADATA
+========================================================= */
+
+        arnulf:{
+            name: "Arnulf",
+            title: "Custos Antonius",
+            portrait: "images/portraits/arnulf.png",
+            next: "inanna",
+            previous: "dane",
+        },
+
+        dane:{
+            name: "Dane",
+            title: "Custos Antonius",
+            portrait: "images/portraits/dane.png",
+            next: "arnulf",
+            previous: "quintus",
+        },
+
+        inanna: {
+            name: "Inanna",
+            title: "Servus Antonius",
+            portrait: "images/portraits/inanna.png",
+            next: "zane",
+            previous: "arnulf",
+        },
+
+        joak: {
+            name: "Joak",
+            title: "Servus Antonius",
+            portrait: "images/portraits/joak.png",
+            next: "marcus",
+            previous: "miklos",
+        },
+
+        kenny: {
+            name: "Kenneth",
+            title: "Servus Antonius",
+            portrait: "images/portraits/kenny.png",
+            next: "wilhelm",
+            previous: "talon",
+        },
+
+        miklos: {
+            name: "Miklos",
+            title: "Servus Antonius",
+            portrait: "images/portraits/miklos.png",
+            next: "joak",
+            previous: "wilhelm",
+        },
+
+        quintus: {
+            name: "Quintus",
+            title: "Antonius Custos & Sporting Champion",
+            portrait: "images/portraits/quintus.png",
+            next: "dane",
+            previous: "tor",
+        },
+
+        talon: {
+            name: "Talon",
+            title: "Servus Antonius",
+            portrait: "images/portraits/talon.png",
+            next: "kenny",
+            previous: "zane",
+        },
+
+        tor: {
+            name: "Tor",
+            title: "Servus Antonius",
+            portrait: "images/portraits/tor.png",
+            next: "quintus",
+            previous: "taurus",
+        },
+
+        wilhelm: {
+            name: "Wilhelm",
+            title: "Custos Antonius",
+            portrait: "images/portraits/wilhelm.png",
+            next: "miklos",
+            previous: "kenny",
+        },
+
+        zane: {
+            name: "Zane",
+            title: "Servus Antonius",
+            portrait: "images/portraits/zane.png",
+            next: "talon",
+            previous: "inanna",
         }
     }
 };

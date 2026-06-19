@@ -12,9 +12,8 @@ window.octaviaPage = {
     <br>
     <br>
     She scoffed at the remark. Today, she dresses me in my newest stola—a rich purple, a gift as I recall—and draped my favorite black shawl over my shoulders. Another day has arrived, yet somehow, it feels less inviting than the last. As did yesterday, and the day before.
-    </p>
-
-    <p>
+    <br>
+    <br>
     Two hours have passed. I have bathed, eaten fruit and bread, and drunk wine from the vineyards nearby—grapes grown in the rich earth of this island, Ilva. I am refreshed. I must admit, residing here at the Antonius estate allows me to focus.
     <br>
     <br>
@@ -22,9 +21,8 @@ window.octaviaPage = {
     <br>
     <br>
     Our walk ends at my writing table looking out at the Egyptian garden. Yet my mind remains unsettled. Slowly, I sit, bracing against aching bones, anticipation building as I listen for something. Aemilia ensures I am well before departing for the day.
-    </p>
-
-    <p>
+    <br>
+    <br>
     From here, I hear the sea—the waves crashing against the rocks below. Leaves rustle in the nearby trees. The distant palms click as they sway. A magpie chatters, calling to me.
     <br>
     <br>
@@ -37,9 +35,8 @@ window.octaviaPage = {
     <br>
     <br>
     I reach across the table and take up a stylus once belonging to my late husband’s mother. Fashioned of gold and silver, encrusted with lapis lazuli and carnelian, it was a wedding gift. I can still see her face as she presented it to me.
-    </p>
-
-    <p>
+    <br>
+    <br>
     Before me, at the heart of the garden, stands a towering obelisk. A gleaming monument of polished basalt, its surface covered in gold hieroglyphs. I wish I knew how to read them.
     <br>
     <br>
@@ -50,9 +47,8 @@ window.octaviaPage = {
     <br>
     <br>
     His toga, cut high at the leg and hanging from the shoulder, leaves his chest bare. He always wears it a little too short. I swear that boy is forever seeking a reaction from anyone who passes. He must spend too much time around Airiana.
-    </p>
-
-    <p>
+    <br>
+    <br>
     His twin brother, Kenneth, dressed in the same cut of toga, sits closer, shaded beneath the roof. He reads a scroll, though he keeps a watchful eye on me. My guardian. My shadow.
     <br>
     <br>
@@ -63,9 +59,8 @@ window.octaviaPage = {
     <br>
     <br>
     His brow gleaming with sweat as he returns from the morning races. How he loved the races.
-    </p>
-
-    <p>
+    <br>
+    <br>
     I sometimes imagine him coming to me, tearing the tunic from his chiselled body—he was always so unashamed—and taking me in the garden for more than an hour. Such sweet idle fantasies.
     <br>
     <br>
@@ -77,9 +72,8 @@ window.octaviaPage = {
     I have been implored to write this account of my family—pestered and nagged for months. And though they are correct that such a record must be made, those closest to me understand well: An Antonius does not act simply because they are told to.
     <br>
     Many in Rome have learned this the hard way.
-    </p>
-
-    <p>
+    <br>
+    <br>
     So now, I write this journal, not just to recount our history, but to remind all children of  Marcus Antonius—no matter their origins—that they are Antonius.
     <br>
     Wherever they find themselves, no matter their circumstances, the Antonius name will always be theirs to carry.
@@ -92,9 +86,8 @@ window.octaviaPage = {
     <br>
     <br>
     Before he became my husband, Marcus had already been married three times.
-    </p>
-
-    <p>
+    <br>
+    <br>
     His first wife was Fadia, the daughter of a freeman. She bore him several children, though they quickly fell into obscurity and have not been heard from.
     <br>
     <br>
@@ -105,9 +98,8 @@ window.octaviaPage = {
     <br>
     <br>
     His third and perhaps most politically significant wife was Fulvia—an ambitious and formidable woman whose deep political connections Marcus valued.
-    </p>
-
-    <p>
+    <br>
+    <br>
     Their union made them a powerful political force that eventually left Marcus as the most powerful man in Rome after Julius Caesar's death. She bore two sons, Marcus Antonius Antyllus and Iullus Antonius.
     <br>
     <br>
@@ -118,9 +110,8 @@ window.octaviaPage = {
     <br>
     <br>
     After the failed and short-lived siege of Rome during the Perusine War—a conflict in which Fulvia played a key role—she fled with her children to Greece.
-    </p>
-
-    <p>
+    <br>
+    <br>
     Marcus met with her later in Athens, upset at her being involved in the conflict. 
     <br>
     He then returned to Rome to deal with Octavian and the aftermath of the war.
@@ -133,71 +124,20 @@ window.octaviaPage = {
     <br>
     <br>
     It was only a few months after that Marcus married me. Octavia the Younger. He brought his children into our home, and I welcomed them as if they were my own.
-    </p>
-
-    <p>
+    <br>
+    <br>
     Of course, I have also given him our two beautiful daughters, Airiana and Antonia.
     <br>
     <br>
     During our marriage, I suppose it is fair to say that I gained some influence. While I am not one to dwell on my own achievements, I suppose it is enough to say that my brothers wasn’t the only face minted on Roman coins.
     <br>
     <br>
-    After eight years, Marcus left me to marry Cleopatra VII, the Queen of Egypt.
+    After eight years, Marcus left me to marry Cleopatra VII, the Queen of Egypt. Our marriage was of course politically driven, meant to secure peace between himself and my brother, but I still remember the pain and embarrassment vividly.
     <br>
     <br>
-    Our marriage was of course politically driven, meant to secure peace between himself and my brother, but I still remember the pain and embarrassment vividly.
+    It is, perhaps, the one thing for which I cannot forgive him. However, I must acknowledge Cleopatras place in our familys history, particularly because her children now play a role in shaping its future.
     <br>
     <br>
-    It is, perhaps, the one thing for which I cannot forgive him. 
-    </p>
-
-    <p>
-    However, I must acknowledge Cleopatras place in our familys history, particularly because her children now play a role in shaping its future.
-    <br>
-    <br>
-    So now, let me tell you of the last Queen of Egypt.
-    </p>
-
-    <p>
-    They claim her to have been a great beauty—a ridiculous notion. It was never her features, but her mind that so enraptured everyone around her.
-    <br>
-    <br>
-    She was brilliant. To be in her presence and hear her speak was captivating, even to me.
-    <br>
-    <br>
-    A witch? Hardly! A seductress? I think not. To me, and to many other women who saw her, she seemed to be a man in a woman's body.
-    <br>
-    <br>
-    She flouted the rules, ignored social conventions, and used her power and intellect to rule a nation as effectively as any man. She spoke with the confidence and authority that our society typically expects from men.
-    </p>
-
-    <p>
-    That is why Caesar loved her. That's why my husband loved her. She was a woman unlike any they'd ever seen. She did not bewitch them; she stood as their equal.
-    <br>
-    <br>
-    When my brother, Octavian, brought the Queen's children to Rome, I saw strength and capability in them that was only equaled by the solemn looks on their faces.
-    <br>
-    <br>
-    The twins, Alexander Helios and Cleopatra Selene II, and their little brother, Ptolemy Philadelphus were paraded through the streets in chains, making a grand show of Octavians victory.
-    <br>
-    <br>
-    While I understood that this was how it had to be, I also grieved their loss and heartache. As I watched them, I realized I could see my husband's face in the twins.
-    </p>
-
-    <p>
-    Selene had her father's will and determination written all over her face. She held herself proudly, though the emotional pain was evident.
-    <br>
-    <br>
-    Her brother, Helios, inherited their father's looks and features—almost a mirror of him. He struggled to compose himself as his sister did—but he tried.
-    <br>
-    <br>
-    Little Ptolemy, on the other hand, seemed to be entirely his mother's son, and his fear at their circumstance was far more obvious.
-    <br>
-    <br>
-    They were soon given to me to raise. I promised myself that I would give them a life worthy of their father, even if it could never be what their mother had envisioned.
-    </p>
-
-    <p>
     I would give them the best I could. In the years since, I have watched them grow alongside the rest of Marcus' children, as well as my own.
     <br>
     <br>

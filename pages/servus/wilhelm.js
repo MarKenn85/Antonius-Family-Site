@@ -1,10 +1,4 @@
 window.wilhelmPage = {
-    name: "Wilhelm",
-    title: "Custos Antonius",
-    parent: "",
-    portrait: "images/portraits/wilhelm.png",
-    next: "miklos",
-    previous: "kenny",
     text: [
       `
         <p>
