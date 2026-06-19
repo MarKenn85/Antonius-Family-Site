@@ -83,6 +83,7 @@ const FAMILY_REGISTRY = {
         "juba",
         "teriteqas",
         "decimus",
+        "galatea",
         "amun",
         "lhiannon"
     ],
