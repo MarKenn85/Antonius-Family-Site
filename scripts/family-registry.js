@@ -10,6 +10,7 @@ const FAMILY_REGISTRY = {
         "julius",
         "julia",
         "atia",
+        "octavius",
         "octavian"
         ],
         "Wives": [
@@ -32,6 +33,7 @@ const FAMILY_REGISTRY = {
         "alessandro",
         "jaiden",
         "aurelia",
+        "marius",
         "kaleb",
         "filipa",
         "teriteqas",
@@ -78,7 +80,9 @@ const FAMILY_REGISTRY = {
     ],
 
     spouses: [
+        "octavius",
         "aemilia",
+        "marius",
         "nerod",
         "juba",
         "teriteqas",
@@ -172,11 +176,14 @@ const FAMILY_REGISTRY = {
 	        status: "Deceased",
 	        residence: "Antonius Estate, Ilva",
             parent: "julia",
-	        spouses: [],
+	        spouses: ["octavius"],
+            spouseSides: {
+                octavius: "right"
+            },
 	        children: ["octavia", "octavian"],
 	        role: "A powerful Roman noble who always goes first.",
             portrait: "images/portraits/atia.png",
-            next: "octavian",
+            next: "octavius",
             previous: "julia",
         },
 
@@ -186,11 +193,14 @@ const FAMILY_REGISTRY = {
 	        status: "Living",
 	        residence: "Antonius Estate, Ilva",
             parent: "iullus",
-	        spouses: [],
+	        spouses: ["marius"],
+            spouseSides: {
+                marius: "right"
+            },
 	        children: ["kierdyn", "eben"],
 	        role: "Devoted mother and lover of the arts.",
             portrait: "images/portraits/aurelia.png",
-            next: "kaleb",
+            next: "marius",
             previous: "jaiden",
         },
 
@@ -562,6 +572,20 @@ const FAMILY_REGISTRY = {
             previous: "joak",
         },
 
+        marius: {
+            name: "Marius Valerius",
+            title: "Tribune of the People",
+            status: "Deceased",
+	        residence: "Rome, Italia",
+            parent: "",
+            spouses: ["aurelia"],
+	        children: ["kierdyn", "eben"],
+            role: "A strong man of the people and cunning political figure.",
+            portrait: "images/portraits/marius.png",
+            next: "kaleb",
+            previous: "aurelia",
+        },
+
         nero: {
             name: "Nero Antonius",
             title: "Rector of the Roman Hippodrome",
@@ -616,6 +640,20 @@ const FAMILY_REGISTRY = {
             portrait: "images/portraits/octavian.png",
             next: "octavia",
             previous: "atia",
+        },
+
+        octavius: {
+           name: "Gaius Octavius",
+            title: "Progenitor of Emperors",
+	        status: "Deceased",
+	        residence: "Rome, Italia",
+            parent: "",
+	        spouses: ["atia"],
+	        children: ["octavia", "octavian"],
+	        role: "A Praetor of Rome and dutiful family man.",
+            portrait: "images/portraits/octavius.png",
+            next: "octavian",
+            previous: "atia", 
         },
 
         rose: {
@@ -832,6 +870,11 @@ SERVUS/CUSTOS METADATA
 ========================================================= */
 
 function getCharacterFolder(id) {
-  const servusList = FAMILY_REGISTRY.categories["Servus / Custo"] || [];
-  return servusList.includes(id) ? "servus" : "family";
+    const servusList = FAMILY_REGISTRY.categories["Servus / Custo"] || [];
+    const ancestorList = FAMILY_REGISTRY.categories["Ancestors"] || [];
+
+    if (servusList.includes(id)) return "servus";
+    if (ancestorList.includes(id)) return "ancestors";
+
+    return "family";
 }

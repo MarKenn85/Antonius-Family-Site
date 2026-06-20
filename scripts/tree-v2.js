@@ -34,7 +34,7 @@ const TREE_STRUCTURE = {
         octavia: ["airiana", "antonia"],
         cleopatra: ["helios", "selene"]
     },
-    octaviaAncestors: ["caesar", "julia", "julius", "atia", "octavian"]
+    octaviaAncestors: ["caesar", "julia", "julius", "atia", "octavius", "octavian"]
 };
 
 let treeViewport;
@@ -421,34 +421,47 @@ function layoutOctaviaAncestors(tree, treeX, treeY, octaviaX, octaviaY) {
        The intended visual path is:
 
                     Caesar
-                       |
-                +------+-----+
+                      |
+                +-----+-----+
                 |            |
               Julia        Julius
                 |
-                Atia
-                |
-          +-----+-------+
-          |             |
-          |          Octavian
-          |
-          |
-       Octavia
+              Atia -+- Octavius
+                    |
+              +-----+-----+
+              |           |
+           Octavia     Octavian
 
        Julia is the direct parent line. Julius is Julia's brother.
-       Atia sits on the vertical trunk above Octavia. Octavian branches off
-       from that trunk and must not share Octavia's generation row.
-       This routine runs after Octavia is placed so its line anchors exist.
+       Atia sits centered above Octavia and Octavian.
+       Octavia is deliberately lower than Octavian because she anchors
+       the main descendant tree.
     */
 
-     const octavianX =
+    const octavianX =
         octaviaX +
         TREE_CONFIG.cardWidth +
         TREE_CONFIG.siblingGap;
 
-    const atiaX = Math.round(
-        (octaviaX + octavianX) / 2
-    );
+    const octaviaCenterX =
+        octaviaX + TREE_CONFIG.cardWidth / 2;
+
+    const octavianCenterX =
+        octavianX + TREE_CONFIG.cardWidth / 2;
+
+    const childGroupCenterX =
+        (octaviaCenterX + octavianCenterX) / 2;
+
+    const octaviusOnLeft =
+        shouldShowSpouseOnLeft("atia", "octavius");
+
+    const atiaX = octaviusOnLeft
+        ? Math.round(childGroupCenterX + TREE_CONFIG.coupleGap / 2)
+        : Math.round(childGroupCenterX - TREE_CONFIG.cardWidth - TREE_CONFIG.coupleGap / 2);
+
+    const octaviusX = octaviusOnLeft
+        ? atiaX - TREE_CONFIG.cardWidth - TREE_CONFIG.coupleGap
+        : atiaX + TREE_CONFIG.cardWidth + TREE_CONFIG.coupleGap;
 
     const octavianY =
         octaviaY -
@@ -458,6 +471,8 @@ function layoutOctaviaAncestors(tree, treeX, treeY, octaviaX, octaviaY) {
         octavianY -
         TREE_CONFIG.cardHeight -
         Math.round(TREE_CONFIG.generationGap * 1.1);
+
+    const octaviusY = atiaY;
 
     const juliaX = atiaX;
 
@@ -485,8 +500,17 @@ function layoutOctaviaAncestors(tree, treeX, treeY, octaviaX, octaviaY) {
     placeCard("caesar", caesarX, caesarY, "tree-child-card tree-ancestor-card");
     placeCard("julia", juliaX, juliaY, "tree-child-card tree-ancestor-card");
     placeCard("julius", juliusX, juliusY, "tree-child-card tree-ancestor-card");
+
     placeCard("atia", atiaX, atiaY, "tree-child-card tree-ancestor-card");
+    placeCard("octavius", octaviusX, octaviusY, "tree-child-card tree-ancestor-card");
+
     placeCard("octavian", octavianX, octavianY, "tree-child-card tree-ancestor-card");
+
+    if (octaviusOnLeft) {
+        addSpouseLine("octavius", "atia");
+    } else {
+        addSpouseLine("atia", "octavius");
+    }
 
     addSiblingLine(["julia", "julius"], "caesar");
     addVerticalLine("julia", "atia");
@@ -680,23 +704,18 @@ function addSiblingLine(childIds, parentId) {
 }
 
 function addAtiaAncestorLines() {
-    const atiaBottom = getBottomCenter("atia");
+    const parent = getCoupleBottomCenter("atia", "octavius");
     const octaviaTop = getTopCenter("octavia");
     const octavianTop = getTopCenter("octavian");
 
-    if (!atiaBottom || !octaviaTop || !octavianTop) return;
+    if (!parent || !octaviaTop || !octavianTop) return;
 
-    /*
-       Match the normal parent-to-children branch style:
-       vertical down from Atia, horizontal branch halfway,
-       then equal vertical drops to Octavia and Octavian.
-    */
-
-    const branchY = atiaBottom.y + (octavianTop.y - atiaBottom.y) / 2;
+    const branchY =
+        parent.y + (octavianTop.y - parent.y) / 2;
 
     renderedLines.push({
         type: "path",
-        d: `M ${atiaBottom.x} ${atiaBottom.y} L ${atiaBottom.x} ${branchY}`
+        d: `M ${parent.x} ${parent.y} L ${parent.x} ${branchY}`
     });
 
     renderedLines.push({
