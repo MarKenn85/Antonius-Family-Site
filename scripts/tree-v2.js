@@ -1028,6 +1028,551 @@ function centerInitialView() {
 }
 
 /* =========================================================
+   RELATIONSHIP FINDER
+========================================================= */
+
+function getParents(member) {
+
+    if (!member) return [];
+
+    if (Array.isArray(member.parents)) {
+        return member.parents.filter(Boolean);
+    }
+
+    if (member.parent) {
+        return [member.parent];
+    }
+
+    return [];
+}
+
+function getAncestorChain(id) {
+
+    const ancestors = [];
+    const visited = new Set();
+
+    function climb(currentId, depth) {
+
+        if (visited.has(currentId)) return;
+        visited.add(currentId);
+
+        const member = FAMILY_REGISTRY.members[currentId];
+        if (!member) return;
+
+        const parents = getParents(member);
+
+        parents.forEach(parentId => {
+
+            const parent = FAMILY_REGISTRY.members[parentId];
+
+            if (parent) {
+                ancestors.push({
+                    id: parentId,
+                    name: parent.name,
+                    depth: depth
+                });
+
+                climb(parentId, depth + 1);
+            }
+
+        });
+
+    }
+
+    climb(id, 1);
+
+    return ancestors;
+}
+
+function findNearestCommonAncestor(id1, id2) {
+
+    const ancestors1 = getAncestorChain(id1);
+    const ancestors2 = getAncestorChain(id2);
+
+    let nearest = null;
+
+    ancestors1.forEach(ancestor1 => {
+
+        const match = ancestors2.find(ancestor2 =>
+            ancestor2.id === ancestor1.id
+        );
+
+        if (!match) return;
+
+        const totalDepth = ancestor1.depth + match.depth;
+
+        if (!nearest || totalDepth < nearest.totalDepth) {
+            nearest = {
+                id: ancestor1.id,
+                name: ancestor1.name,
+                depthFromFirst: ancestor1.depth,
+                depthFromSecond: match.depth,
+                totalDepth: totalDepth
+            };
+        }
+
+    });
+
+    return nearest;
+}
+
+/* =========================================================
+   RELATIONSHIP HELPERS
+========================================================= */
+
+function getOrdinalNumber(number) {
+
+    const ordinals = [
+        "",
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth"
+    ];
+
+    return ordinals[number] || `${number}th`;
+}
+
+function getRemovalLabel(removalCount) {
+
+    if (removalCount === 0) return "";
+    if (removalCount === 1) return " once removed";
+    if (removalCount === 2) return " twice removed";
+
+    return ` ${removalCount} times removed`;
+}
+
+function getCousinRelationshipLabel(depthFromFirst, depthFromSecond) {
+
+    const lowerDepth = Math.min(depthFromFirst, depthFromSecond);
+    const higherDepth = Math.max(depthFromFirst, depthFromSecond);
+
+    if (lowerDepth < 2) return null;
+
+    const cousinDegree = lowerDepth - 1;
+    const removalCount = higherDepth - lowerDepth;
+
+    return `${getOrdinalNumber(cousinDegree)} cousins${getRemovalLabel(removalCount)}`;
+}
+
+function getDirectAncestorLabel(depth) {
+
+    if (depth === 1) return "parent";
+    if (depth === 2) return "grandparent";
+    if (depth === 3) return "great-grandparent";
+
+    return `${"great-".repeat(depth - 2)}grandparent`;
+}
+
+function getParentLabel(member) {
+    return member?.gender === "female" ? "mother" : "father";
+}
+
+function getGrandparentLabel(member, depth) {
+
+    const base = member?.gender === "female"
+        ? "grandmother"
+        : "grandfather";
+
+    if (depth === 2) {
+        return base;
+    }
+
+    return `${"great-".repeat(depth - 2)}${base}`;
+}
+
+function getSiblingLabel(member, half = false) {
+
+    const label = member?.gender === "female"
+        ? "sister"
+        : "brother";
+
+    return half ? `half-${label}` : label;
+}
+
+function getAuntUncleLabel(member) {
+    return member?.gender === "female" ? "aunt" : "uncle";
+}
+
+function getNieceNephewLabel(member) {
+    return member?.gender === "female" ? "niece" : "nephew";
+}
+
+function getSpouseLabel(member) {
+    return member?.gender === "female" ? "wife" : "husband";
+}
+
+function getGreatAuntUncleLabel(member, generationsDown) {
+
+    const base = getAuntUncleLabel(member);
+
+    if (generationsDown === 1) {
+        return base;
+    }
+
+    return `${"great-".repeat(generationsDown - 1)}${base}`;
+}
+
+function getGreatNieceNephewLabel(member, generationsDown) {
+
+    const base = getNieceNephewLabel(member);
+
+    if (generationsDown === 1) {
+        return base;
+    }
+
+    return `${"great-".repeat(generationsDown - 1)}${base}`;
+}
+
+function populateRelationshipFinder() {
+
+    const selectOne = document.getElementById("relationship-person-one");
+    const selectTwo = document.getElementById("relationship-person-two");
+
+    if (!selectOne || !selectTwo) return;
+
+    selectOne.innerHTML = "";
+    selectTwo.innerHTML = "";
+
+    const blankOption1 = document.createElement("option");
+    blankOption1.value = "";
+    blankOption1.textContent = "First Person";
+
+    const blankOption2 = document.createElement("option");
+    blankOption2.value = "";
+    blankOption2.textContent = "Second Person";
+
+    selectOne.appendChild(blankOption1);
+    selectTwo.appendChild(blankOption2);
+
+    const members = Object.entries(FAMILY_REGISTRY.members)
+        /*.sort((a, b) => a[1].name.localeCompare(b[1].name)); */
+
+    members.forEach(([id, member]) => {
+
+        const option1 = document.createElement("option");
+        option1.value = id;
+        option1.textContent = member.name;
+
+        const option2 = option1.cloneNode(true);
+
+        selectOne.appendChild(option1);
+        selectTwo.appendChild(option2);
+
+    });
+
+    selectOne.value = "";
+    selectTwo.value = "";
+
+}
+
+function findDirectAncestorRelationship(id1, id2) {
+
+    const ancestorsOfFirst = getAncestorChain(id1);
+    const ancestorsOfSecond = getAncestorChain(id2);
+
+    const firstHasSecondAsAncestor = ancestorsOfFirst.find(ancestor =>
+        ancestor.id === id2
+    );
+
+    if (firstHasSecondAsAncestor) {
+        return {
+            ancestorId: id2,
+            descendantId: id1,
+            depth: firstHasSecondAsAncestor.depth
+        };
+    }
+
+    const secondHasFirstAsAncestor = ancestorsOfSecond.find(ancestor =>
+        ancestor.id === id1
+    );
+
+    if (secondHasFirstAsAncestor) {
+        return {
+            ancestorId: id1,
+            descendantId: id2,
+            depth: secondHasFirstAsAncestor.depth
+        };
+    }
+
+    return null;
+}
+
+function findAuntUncleRelationship(id1, id2) {
+
+    function isSiblingOfParent(possibleAuntUncleId, possibleNieceNephewId) {
+
+        const person = FAMILY_REGISTRY.members[possibleNieceNephewId];
+        if (!person) return false;
+
+        const parentIds = getParents(person);
+
+        return parentIds.some(parentId => {
+
+            const parent = FAMILY_REGISTRY.members[parentId];
+            if (!parent) return false;
+
+            const parentParents = getParents(parent);
+            const possibleAuntUncleParents = getParents(FAMILY_REGISTRY.members[possibleAuntUncleId]);
+
+            return parentParents.some(sharedParent =>
+                possibleAuntUncleParents.includes(sharedParent)
+            );
+
+        });
+
+    }
+
+    if (isSiblingOfParent(id1, id2)) {
+        return {
+            auntUncleId: id1,
+            nieceNephewId: id2
+        };
+    }
+
+    if (isSiblingOfParent(id2, id1)) {
+        return {
+            auntUncleId: id2,
+            nieceNephewId: id1
+        };
+    }
+
+    return null;
+}
+
+function findExtendedAuntUncleRelationship(id1, id2) {
+
+    function findRelationship(auntUncleId, descendantId) {
+
+        const auntUncle = FAMILY_REGISTRY.members[auntUncleId];
+        if (!auntUncle) return null;
+
+        const auntUncleParents = getParents(auntUncle);
+
+        const descendants = getAncestorChain(descendantId);
+
+        for (const ancestor of descendants) {
+
+            const ancestorMember = FAMILY_REGISTRY.members[ancestor.id];
+            if (!ancestorMember) continue;
+
+            const ancestorParents = getParents(ancestorMember);
+
+            const sharedParent = ancestorParents.some(parentId =>
+                auntUncleParents.includes(parentId)
+            );
+
+            if (sharedParent) {
+                return {
+                    auntUncleId,
+                    descendantId,
+                    generationsDown: ancestor.depth
+                };
+            }
+        }
+
+        return null;
+    }
+
+    return (
+        findRelationship(id1, id2) ||
+        findRelationship(id2, id1)
+    );
+}
+
+function setupRelationshipFinderEvents() {
+
+    const selectOne = document.getElementById("relationship-person-one");
+    const selectTwo = document.getElementById("relationship-person-two");
+
+    if (!selectOne || !selectTwo) return;
+
+    selectOne.addEventListener("change", updateRelationshipResult);
+    selectTwo.addEventListener("change", updateRelationshipResult);
+
+    const finder = document.getElementById("relationship-finder");
+
+    if (finder) {
+        finder.addEventListener("mousedown", event => {
+            event.stopPropagation();
+        });
+
+        finder.addEventListener("wheel", event => {
+            event.stopPropagation();
+        });
+    }
+
+}
+
+function updateRelationshipResult() {
+
+    const selectOne = document.getElementById("relationship-person-one");
+    const selectTwo = document.getElementById("relationship-person-two");
+    const result = document.getElementById("relationship-result");
+
+    if (!selectOne || !selectTwo || !result) return;
+
+    const id1 = selectOne.value;
+    const id2 = selectTwo.value;
+
+    if (!id1 || !id2) {
+        result.textContent = "Choose two people.";
+        return;
+    }
+
+    if (id1 === id2) {
+        result.textContent = "That is the same person.";
+        return;
+    }
+
+    const member1 = FAMILY_REGISTRY.members[id1];
+    const member2 = FAMILY_REGISTRY.members[id2];
+
+    const parents1 = getParents(member1);
+    const parents2 = getParents(member2);
+
+    const sharedParents = parents1.filter(parent =>
+        parents2.includes(parent)
+    );
+
+    if (sharedParents.length === 2) {
+        result.innerHTML = `${member1.name} is
+        <br>
+        ${member2.name}'s ${getSiblingLabel(member1)}.`;
+        return;
+    }
+
+    if (sharedParents.length === 1) {
+        result.innerHTML = `${member1.name} is
+        <br>
+        ${member2.name}'s ${getSiblingLabel(member1, true)}.`;
+        return;
+    }
+
+    if ((member1.children || []).includes(id2)) {
+        result.innerHTML = `${member2.name} is the child of
+        <br>
+        ${member1.name}`;
+        return;
+    }
+
+    if ((member2.children || []).includes(id1)) {
+        result.innerHTML = `${member1.name} is the child of
+        <br>
+        ${member2.name}`;
+        return;
+    }
+
+    if ((member1.spouses || []).includes(id2) || (member2.spouses || []).includes(id1)) {
+
+        if ((member1.spouses || []).includes(id2)) {
+            result.innerHTML = `${member1.name} is
+            <br>
+            ${member2.name}'s ${getSpouseLabel(member1)}.`;
+        } else {
+            result.innerHTML = `${member2.name} is
+            <br>
+            ${member1.name}'s ${getSpouseLabel(member2)}.`;
+        }
+
+        return;
+    }
+
+    const directAncestor = findDirectAncestorRelationship(id1, id2);
+
+    if (directAncestor) {
+
+        const ancestor = FAMILY_REGISTRY.members[directAncestor.ancestorId];
+        const descendant = FAMILY_REGISTRY.members[directAncestor.descendantId];
+        const ancestorLabel =
+            directAncestor.depth === 1
+                ? getParentLabel(ancestor)
+                : getGrandparentLabel(ancestor, directAncestor.depth);
+
+        result.innerHTML = `
+            ${ancestor.name} is
+            <br>
+            ${descendant.name}'s ${ancestorLabel}.
+        `;
+        return;
+    }
+
+    const auntUncle = findExtendedAuntUncleRelationship(id1, id2);
+
+    if (auntUncle) {
+
+        const auntUncleMember =
+            FAMILY_REGISTRY.members[auntUncle.auntUncleId];
+
+        const nieceNephewMember =
+            FAMILY_REGISTRY.members[auntUncle.descendantId];
+
+        if (id1 === auntUncle.descendantId) {
+
+            result.innerHTML = `${nieceNephewMember.name} is
+            <br>
+            ${auntUncleMember.name}'s
+            ${getGreatNieceNephewLabel(
+                nieceNephewMember,
+                auntUncle.generationsDown
+            )}.`;
+
+        } else {
+
+            result.innerHTML = `${auntUncleMember.name} is
+            <br>
+            ${nieceNephewMember.name}'s
+            ${getGreatAuntUncleLabel(
+                auntUncleMember,
+                auntUncle.generationsDown
+            )}.`;
+
+        }
+
+        return;
+    }
+
+    const commonAncestor = findNearestCommonAncestor(id1, id2);
+
+    if (commonAncestor) {
+
+        const cousinLabel = getCousinRelationshipLabel(
+        commonAncestor.depthFromFirst,
+        commonAncestor.depthFromSecond
+        );
+
+        if (cousinLabel) {
+            result.innerHTML = `
+                ${member1.name} and
+                <br>
+                ${member2.name} are ${cousinLabel}.
+                <br>
+                Their nearest shared ancestor is ${commonAncestor.name}.
+            `;
+            return;
+        }
+
+        result.innerHTML = `
+            ${member1.name} and
+            <br>
+            ${member2.name} are connected.
+            <br>
+            Their nearest shared ancestor is ${commonAncestor.name}.
+        `;
+        return;
+    }
+    
+
+    result.textContent = "Relationship not yet identified.";
+}
+
+/* =========================================================
    MODAL
 ========================================================= */
 
@@ -1054,7 +1599,9 @@ async function getTreeLineage(id) {
         await loadTreeCharacterScript(currentId);
 
         const data = getTreeCharacterData(currentId);
-        if (!data.name && !data.parent) break;
+        const parentId = Array.isArray(data.parents) ? data.parents[0] : null;
+
+        if (!data.name && !parentId) break;
 
         lineage.unshift(data.name || formatTreeName(currentId));
 
@@ -1067,7 +1614,7 @@ async function getTreeLineage(id) {
             break;
         }
 
-        currentId = data.parent || null;
+        currentId = parentId;
     }
 
     return lineage.join('<span class="lineage-separator">/</span>');
@@ -1274,6 +1821,8 @@ function initializeTree() {
     renderTree();
     setupPanAndZoom();
     setupModalEvents();
+    populateRelationshipFinder();
+    setupRelationshipFinderEvents();
     centerInitialView();
 }
 

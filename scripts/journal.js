@@ -185,7 +185,7 @@ async function buildLineageTrail(id) {
       break;
     }
 
-    const parentId = current.parent;
+    const parentId = Array.isArray(current.parents) ? current.parents[0] : null;
 
     if (parentId && !window[`${parentId}Page`]) {
       try {

@@ -21,26 +21,36 @@
                 class="family-emblem">
         <h2>Family Tree</h2>
         <p>
-            <br>
             Click and drag to explore the tree.
             <br>
             <br>
             <br>
-            Mousewheel to zoom in and out.
             <br>
-            <br>
-            <br>
-            Click an individual portrait to get more info and read that persons journal entry.
+            Use the mousewheel to zoom in and out.
             <br>
             <br>
             <br>
             <br>
+            Click a portrait for info and to read the related journal.
+            <p>
             <a href="home.html" class="home-btn">Return</a>
-        </p>
+
+            </p>
     </aside>
 
     <!-- === TREE VIEW === -->
     <main id="tree-viewport">
+
+        <div id="relationship-finder">
+            <h2>Relationship Finder</h2>
+
+            <select id="relationship-person-one"></select>
+            <select id="relationship-person-two"></select>
+
+            <p id="relationship-result">
+                Select people to see their relationship.
+            </p>
+        </div>
 
         <div id="tree-canvas">
             <svg id="tree-lines"></svg>

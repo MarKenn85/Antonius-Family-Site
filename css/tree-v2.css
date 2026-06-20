@@ -21,7 +21,7 @@ body {
     border-right: 2px solid #b89b68;
     background: #efe4ce;
     font-family: 'Libre Baskerville', serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-variant: small-caps;
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@ body {
   text-align: center;
   border-bottom: 2px solid #b8a27a;
   margin-bottom: 1.0rem;
-  padding-top: 0.5rem;
+  padding-top: 0.0rem;
   padding-bottom: 0.0rem;
   letter-spacing: 0.08em;
   cursor: default;
@@ -61,7 +61,7 @@ body {
   text-align: center;
   border-bottom: 2px solid #b8a27a;
   margin-bottom: 1.0rem;
-  padding-top: 0.5rem;
+  padding-top: 0.0rem;
   padding-bottom: 0.0rem;
   letter-spacing: 0.08em;
   cursor: default;
@@ -94,6 +94,62 @@ body {
 .home-btn:hover {
   background-color: #a28c64;
   transform: translateY(-2px);
+}
+
+/* =========================================================
+   RELATIONSHIP FINDER
+========================================================= */
+
+#relationship-finder {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 400px;
+    padding: 14px;
+
+    background: #efe4ce;
+    border: 2px solid #b8a27a;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    color: #5a422a;
+
+    z-index: 20;
+}
+
+#relationship-finder h2 {
+    margin: 0 0 0.75rem 0;
+    color: #b8a27a;
+    font-size: 1.1rem;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid #b8a27a;
+    padding-bottom: 0.25rem;
+}
+
+#relationship-person-one,
+#relationship-person-two {
+    display: block;
+    width: 100%;
+    margin: 0.35rem 0;
+    padding: 0.35rem;
+
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #4b2e12;
+
+    background-color: #f8f3e8;
+    border: 1px solid #b8a27a;
+    border-radius: 4px;
+}
+
+#relationship-result {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+    line-height: 1.75;
 }
 
 /* Tree viewport */
