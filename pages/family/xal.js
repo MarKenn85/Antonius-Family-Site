@@ -116,7 +116,7 @@ window.xalPage = {
        </p>
 
         <p>
-        Now, Xal is to and fro with his work. I sometimes think I'll join Marcus before I see him again, but somehow, almost as if he heard my thoughts, he returns home.
+        Now, Xal is to and fro with his work or at some undisclosed location with his adopted son, Taurus. I sometimes think I'll join Marcus before I see him again, but somehow, almost as if he heard my thoughts, he returns home.
         <br>
         <br>
         He has come to see me as a grandmother more since he came to live with us. As he should.
