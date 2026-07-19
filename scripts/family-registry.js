@@ -66,6 +66,7 @@ const FAMILY_REGISTRY = {
         "dane",
         "arnulf",
         "inanna",
+        "gray",
         "zane",
         "talon",
         "kenny",
@@ -837,11 +838,19 @@ SERVUS/CUSTOS METADATA
             previous: "quintus",
         },
 
+        gray: {
+            name: "Gray",
+            title: "Custos Antonius",
+            portrait: "images/portraits/gray.png",
+            next: "zane",
+            previous: "inanna",
+        },
+
         inanna: {
             name: "Inanna",
             title: "Servus Antonius",
             portrait: "images/portraits/inanna.png",
-            next: "zane",
+            next: "gray",
             previous: "arnulf",
         },
 
