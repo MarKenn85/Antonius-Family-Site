@@ -2,73 +2,88 @@ window.frederickPage = {
     text: [
       `
       <p>
-      I have often thought that the gods delight in disguising the most important moments of our lives as ordinary ones.
+      When I think about Aulus, my mind is given to stories that stretch all the way back to his childhood.
       <br>
       <br>
-      When Gamilia first wrote to me about a Brigantian woman named Maela, there was nothing in her letters to suggest how important that friendship would one day become to our family. Maela was intelligent, stubborn, and entirely unimpressed by Rome's opinion of itself, which I suspect is precisely why Gamilia liked her so much.
+      Many years ago, Gamila was exploring the farthest regions of Britannia, and northern Rome, and traveled to the Brigantes. Their culture seemed to fascinate her to the point that she spent several weeks among them.
       <br>
       <br>
-      It was through those letters that I first heard of her son, Feradach.
+      During this time she wrote to me of her meeting with a brigantine woman, Maela. Like all brigantine people, Maela was not impressed by the civilized way of Romans. 
       <br>
       <br>
-      At the time he was merely a boy. Tall, copper-haired, and possessed of the sort of watchful silence that often unsettles adults. Gamilia remarked that he seemed older than his years. Some children laugh without restraint and move through the world believing themselves immortal. Feradach was never one of them. Even in youth he carried himself as though he already understood that life could be unkind.
+      Gamila was, initially, shunned for what she was. A Roman noble. But Maela, as stubborn as she was, did not hold to this for long, eventually realizing the true worth of Gamila's character.
       <br>
       <br>
-      His father, Aedan, taught him discipline, duty, and the ways of soldiers. His mother taught him the older truths of Britannia, the traditions of her people, and the quiet certainty that a person belongs to the land as much as the land belongs to them. Looking back, I think this explains much about the man he became. Rome taught him structure. Britannia taught him endurance. Neither ever fully claimed him, and perhaps because of that he learned to stand firmly upon his own feet.
+      The two became fast friends after that. I also think Gamila's demonstrations of knocking silly "boys" on their rumps carried some weight. Apparently Maela laughed uproariously after Gamila planted Maela's husband, Aedan, on the ground after he made some derogatory comment about her.
       <br>
       <br>
-      When the raid came, it took nearly everything. The stories tell us he fought, though he was scarcely more than a child. His father was slain. His mother was slain. The settlement was left to ash and ruin, and by the time word reached Gamilia there was little left to search but ghosts.
+      "If only women put their men in dirt like that more often, we'd all have fewer headaches," she said. While culturally I cannot truly relate to these people, I must admit there are moments I find their ways of thinking... appealing.
       <br>
       <br>
-      She honored her promise nonetheless. Men were sent north. Questions were asked. Coin was spent. Years passed. Nothing was found. For a long time she believed she had failed him. Yet fate, stubborn thing that it is, had other plans.
+      But then there was Maela and Aedan's son, Feradach. Much like his father, he was an imposing child for his age, and possessing a quiet watchfulness that some found unsettling at times. Gamila mused that he seemed wise beyond his years, certainly beyond his piers.
       <br>
       <br>
-      When reports began arriving from Britannia of a red-haired warrior serving among the auxiliaries, Gamilia recognized him almost immediately. The soldiers called him the Red Wolf. They wrote of his ferocity in battle, his discipline, his refusal to yield, and his uncanny ability to survive circumstances that should have killed him.
+      She watched him during her time with his village. His lessons with his parents, Aedan teaching how to be a man. Maela giving him a reason to care about his people and their traditions.
       <br>
       <br>
-      Soldiers always favor dramatic stories. What interests me far more is what happened afterward. Anyone can become hardened by suffering. There is nothing remarkable in bitterness. The world manufactures it daily. What astonishes me is that Feradach endured everything he endured and still emerged with kindness intact.
+      When she left them, Gamila ensured that she and Maela would remain in contact. Their friendship was rooted in a deep respect for each other and Gamila had come to care for the family significantly.
       <br>
       <br>
-      He became protective rather than cruel. Loyal rather than cynical. Steadfast rather than cold. I have often believed this is his greatest victory.
+      That line of communication proved vital, as months later word reached her about a barbarian raid befell the village. Survivors recounted that Maela and Aedan fell defending their home. Due to the delay between events and others hearing about them, the village was ash.
       <br>
       <br>
-      People see his size before they see the man. They notice the broad shoulders, the commanding presence, the reputation earned on distant battlefields. They expect severity. Instead they discover patience.
+      Gamila was, understandably, deeply upset. Though I think she felt a greater sense of guilt for not doing more to keep them safe. Even though their honor system would never have allowed it.
       <br>
       <br>
-      Children have always trusted him. Animals seem drawn to him without hesitation. Those who seek his counsel rarely leave disappointed. There is a gentleness in him that many overlook, hidden beneath the appearance of a warrior. I suspect the boy who survived among ashes never forgot what it felt like to be vulnerable, and because of that the man became determined to protect those who were.
+      She searched fervently for any word of Feradach. There had been survivors, few as they were, that had managed to escape the carnage. But there was no sign the boy had been among them.
       <br>
       <br>
-      Though I should also note that he possesses the Antonius gift for stubbornness. On this matter I blame both Rome and Britannia equally.
+      I watched for years as that event seemed to haunt her. Even after her own children came along, I could still see her looking off at nothing, no doubt wondering if he was still out there.
       <br>
       <br>
-      Once Aulus has decided upon a course of action, moving him from it can feel like attempting to redirect a river. It is maddening. It is also one of the reasons so many of us trust him. He does not abandon those under his care simply because circumstances become difficult.
+      It was years later that word arrived. A report came to Alessandro of an auxiliary soldier serving in the northern infantry. A soldier recruited as a  teenager of Britannian origin. Red hair, ferocious in battle, disciplined and unyielding.
       <br>
       <br>
-      I saw that same devotion reflected in his marriage to Lhiannon. No account of Aulus would be complete without her.
+      But the detail that caught Gamila's attention was his unusual fighting style. From the descriptions, she recognized it as the same style used by the men in the village.
       <br>
       <br>
-      There are some loves that arrive with great fanfare and others that reveal their strength quietly over time. Theirs was the latter. Lhiannon possessed a calm strength that complemented him beautifully. She understood him in ways few others did. Where Aulus could become burdened by responsibility, she reminded him that he was not required to carry the world alone. Where others saw only the warrior, she saw the man beneath the armor.
+      Gamila asked Alessandro to have him brought to Rome so she could meet him. Several weeks later, she was presented with an impossibly tall, hulking beast of a man. She later admitted to me privately that in that moment, if she had been a few years younger... well!
       <br>
       <br>
-      I always admired that. Many people treated Aulus as a legend. Lhiannon treated him as a husband. There is a difference.
+      She quickly confirmed it was the same boy she'd met years before. He remembered her right away and I'm told they had a touching reunion. Over the next few weeks, she stayed in Rome with him and learned all she could about him.
       <br>
       <br>
-      In her presence there was a lightness to him that I treasured seeing. Not because she changed who he was, but because she allowed him to set aside, if only for a moment, the weight he so often carried. The strongest relationships do not transform us into different people. They give us permission to be fully ourselves.
+      What is perhaps the most surprising about him, is his character has not become hardened and filled with anger from the events of his childhood. In fact, you would say the opposite is true.
       <br>
       <br>
-      Though time carried them along different paths, I have never thought of Lhiannon as absent from his story. Some souls leave footprints too deep for even the years to erase. The shape of our lives is determined not only by those who remain beside us, but also by those who walked with us for a time and changed us forever.
+      Feradach is an enormous man dedicated to the safety and protection of others. His temperament is one of patience and kindness, to the point that children adore him.
       <br>
       <br>
-      Aulus was shaped by many things. By a father who taught him courage. By a mother who taught him identity. By loss that taught him endurance. By family that taught him belonging. And by love that taught him grace.
+      I can still remember young Rose chattering on as she stood behind Feradach, sitting in front of her as she braided his hair. She also had him braiding her dolls hair, of course.
       <br>
       <br>
-      When the soldiers called him the Red Wolf of Eboracum, they believed they were describing the most important thing about him.
+      In the years I have known him, I have seen the man become devoted to the Antonius family. So much so that Gamila and Decimus formally adopted him into their family. He even chose to take a new name, Aulus, as part of his acclimation to life in Rome.
       <br>
       <br>
-      And when I think of Aulus Antonius, I do not think first of battlefields or victories. I think of promises kept. I think of loyalty freely given. I think of a boy who lost everything and yet somehow grew into a man capable of giving so much of himself to others.
+      His inclusion in the family clearly meant a great deal to both him and Gamila. She was finally able to release the guilt she'd held onto as she embraced the boy she'd come to care for so long ago, into her family.
       <br>
       <br>
-      In my experience, that is the rarer achievement. And the far nobler one.
+      Aulus grew from his reputation in the military, where he garnered the title of The Red Wolf, to a life of a Roman patrician. Holding a position of respect and perhaps even envy.
+      <br>
+      <br>
+      One aspect of his life I was delighted to see was his marriage to a beautiful woman, Lhiannon. She came into his life quite by happenstance, without fanfare or spectacle. Their courtship was a quiet affair, but obviously a joyful one.
+      <br>
+      <br>
+      It was clear that she complimented his personality and character as only a true partner ever could. I must confess I wish Marcus and I had been fortunate enough for such a connection.
+      <br>
+      <br>
+      Even though today, Lhiannon has departed from us, she is integral to Aulus' story, and ours.
+      <br>
+      <br>
+      Aulus is a man shaped from so many events in his life. A childhood that was cut short, a life of war and hardship as he grew up, into serving to protect others, to now a life of comfort and ease.
+      <br>
+      <br>
+      Through all of it, he has remained a steadfast example how life does not always have to shape who you are, but that your choices can define your final character. He has made me very proud that he is part of the family.
       </p>
       `
     ]

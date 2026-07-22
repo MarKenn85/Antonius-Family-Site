@@ -23,7 +23,7 @@ window.neroPage = {
 		Another note of wisdom... Keep weapons out of the reach of children.
 		<br>
 		<br>
-		Damion cherished his firstborn son dearly, at first. I think the euphoria of parenthood was fleeting for him, because as the young boy grew, Damion seemed to retreat from his role as parent. Damion had clearly learned well from his mother's example.
+		Damion cherished his firstborn son dearly, at first. I think the euphoria of parenthood was fleeting, because as the young boy grew, Damion seemed to retreat from his role as parent. Damion had clearly learned from his mother's example.
 		<br>
 		<br>
 		As a toddler, Nero had been fascinated by flame. Often he would sit, sometimes for hours, just looking at a brazier. But somewhere around the age of ten, he discovered its uses were even more fascinating to him.

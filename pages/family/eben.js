@@ -5,13 +5,16 @@ window.ebenPage = {
         As my dear, sweet, unfiltered Innana loves to remind me, I am an old woman. I have lived a full life and seen much. I have had the joy of children, grandchildren, and even great-grandchildren.
         <br>
         <br>
-        My dear granddaughter, Aurelia, is mother to one of the sweetest young boys. Eben is such a caring and generous soul—quite shy and reserved at first, but he shines in his own way. Aurelia has told me various stories about him, and she is so proud of her son.
+        My dear granddaughter, Aurelia, is mother to one of the sweetest young boys. Eben is such a caring and generous soul. Quite shy and reserved at first, but he shines in his own way. Aurelia has told me various stories about him, and she is so proud of her son.
         <br>
         <br>
-        He has been raised here, at the Antonius estate. A fact I am delighted by, as it has meant I have been a daily part of his life. From his time as a young toddler to now, as he approaches manhood, I have watched over him and doted on him as only a great-grandmother could.
+        He has been raised here, primarily, at the Antonius estate. A fact I am delighted by, as it has meant I have been a daily part of his life. From his time as a young toddler to now, as he approaches manhood, I have watched over him and doted on him as only a great-grandmother could.
         <br>
         <br>
-        His early years were relatively unremarkable—playing with his brother and cousins, learning to ride under his mother’s tutelage. She insisted she teach him, saying it was only right, since she had managed to defeat her brother and his entire military council at horse racing. I remember that day; it was thrilling to watch her streak ahead of Alessandro and take the victory.
+        His early years were relatively unremarkable. From his time in Hispania playing with his brother and exploring the western culture, to learning to ride under his mother's tutelage.
+        <br>
+        <br>
+        She insisted she teach him, saying it was only right, since she had managed to defeat her brother and his entire military council at horse racing. I remember that day; it was thrilling to watch her streak ahead of Alessandro and take the victory.
         <br>
         <br>
         But while Eben has embraced the Antonius way of life, his academic pursuits were somewhat surprising, given his heritage. His mother is outgoing and charming, and his father was first a legionary, then a man of the people, loved and respected by all who knew him.
