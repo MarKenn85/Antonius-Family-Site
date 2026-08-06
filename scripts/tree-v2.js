@@ -1552,8 +1552,6 @@ function updateRelationshipResult() {
                 ${member1.name} and
                 <br>
                 ${member2.name} are ${cousinLabel}.
-                <br>
-                Their nearest shared ancestor is ${commonAncestor.name}.
             `;
             return;
         }
