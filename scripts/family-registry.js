@@ -448,7 +448,7 @@ const FAMILY_REGISTRY = {
 	        children: ["gamila", "gage"],
             role: "Born of Isis and made the Sun.",
             portrait: "images/portraits/helios.png",
-            next: "selene",
+            next: "galatea",
             previous: "nerod",
         },
 
@@ -557,7 +557,7 @@ const FAMILY_REGISTRY = {
             role: "A culinary delighter and evokative dancer.",
             portrait: "images/portraits/kaleb.png",
             next: "filipa",
-            previous: "aurelia",
+            previous: "marius",
         },
 
         kierdyn: {
@@ -915,7 +915,7 @@ SERVUS/CUSTOS METADATA
             title: "Servus Antonius",
             portrait: "images/portraits/zane.png",
             next: "talon",
-            previous: "inanna",
+            previous: "gray",
         }
     }
 };
