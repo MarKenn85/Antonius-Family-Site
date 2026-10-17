@@ -273,6 +273,7 @@ body {
     width: 120px;
     height: 160px;
     object-fit: cover;
+    object-position: center 0%;
 
     display: block;
     margin: 0 auto 10px auto;
