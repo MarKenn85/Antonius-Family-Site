@@ -34,7 +34,7 @@ window.octaviaPage = {
     Now, I can write.
     <br>
     <br>
-    I reach across the table and take up a stylus once belonging to my late husband’s mother. Fashioned of gold and silver, encrusted with lapis lazuli and carnelian, it was a wedding gift. I can still see her face as she presented it to me.
+    I reach across the table and take up a stylus once belonging to my late husbands mother. Fashioned of gold and silver, encrusted with lapis lazuli and carnelian, it was a wedding gift. I can still see her face as she presented it to me.
     <br>
     <br>
     Before me, at the heart of the garden, stands a towering obelisk. A gleaming monument of polished basalt, its surface covered in gold hieroglyphs. I wish I knew how to read them.
@@ -103,7 +103,7 @@ window.octaviaPage = {
     Their union made them a powerful political force that eventually left Marcus as the most powerful man in Rome after Julius Caesar's death. She bore two sons, Marcus Antonius Antyllus and Iullus Antonius.
     <br>
     <br>
-    It should be noted that, as the eldest son of Marcus, Antyllus was designated his heir by law. As a result, after Marcus died, Octavian ordered the boy’s execution at age 17.
+    It should be noted that, as the eldest son of Marcus, Antyllus was designated his heir by law. As a result, after Marcus died, Octavian ordered the boys execution at age 17.
     <br>
     <br>
     Although I understand the harsh realities of politics and law, I have always struggled with that decision—perhaps because I knew him well.
@@ -129,13 +129,13 @@ window.octaviaPage = {
     Of course, I have also given him our two beautiful daughters, Airiana and Antonia.
     <br>
     <br>
-    During our marriage, I suppose it is fair to say that I gained some influence. While I am not one to dwell on my own achievements, I suppose it is enough to say that my brothers wasn’t the only face minted on Roman coins.
+    During our marriage, I suppose it is fair to say that I gained some influence. While I am not one to dwell on my own achievements, I suppose it is enough to say that my brother's wasn't the only face minted on Roman coins.
     <br>
     <br>
     After eight years, Marcus left me to marry Cleopatra VII, the Queen of Egypt. Our marriage was of course politically driven, meant to secure peace between himself and my brother, but I still remember the pain and embarrassment vividly.
     <br>
     <br>
-    It is, perhaps, the one thing for which I cannot forgive him. However, I must acknowledge Cleopatras place in our familys history, particularly because her children now play a role in shaping its future.
+    It is, perhaps, the one thing for which I cannot forgive him. However, I must acknowledge Cleopatra's place in our family's history, particularly because her children now play a role in shaping its future.
     <br>
     <br>
     I would give them the best I could. In the years since, I have watched them grow alongside the rest of Marcus' children, as well as my own.
